@@ -16,3 +16,8 @@ export default class Search {
     }
   }
 }
+
+/* queries examples
+ ** Here is an example of searching for Daniel Keyes' "Flowers for Algernon":
+ * https://www.googleapis.com/books/v1/volumes?q=flowers+inauthor:keyes
+ */

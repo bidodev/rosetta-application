@@ -5,7 +5,6 @@ import * as searchView from "./views.js";
 const controlSearch = async () => {
   // get the query from the user..
   const query = searchView.getInput();
-  //now I have google.
 
   /**
    * We create a new instance of class Search, this will create an object with 2 properties..
