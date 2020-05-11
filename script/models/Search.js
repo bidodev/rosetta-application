@@ -10,14 +10,22 @@ export default class Search {
       );
       const data = await response.json();
 
-      this.result = data;
+      /**
+       * Google will return to us an object with 3 properties..
+       * 
+       * {
+       *    "kind": "books#volumes",
+            "totalItems": 454,
+            "items": [
+                //it returns an array of objects
+            ]
+       * }
+       * the items properties is the our data, for more informations check docs/example.callapi.json
+       */
+      //we just need items
+      this.result = data.items;
     } catch (error) {
       console.log(error);
     }
   }
 }
-
-/* queries examples
- ** Here is an example of searching for Daniel Keyes' "Flowers for Algernon":
- * https://www.googleapis.com/books/v1/volumes?q=flowers+inauthor:keyes
- */
