@@ -11,12 +11,11 @@ const controlSearch = async () => {
   elements.fetchBtn.classList.add("spinning");
 
   /**
-   * We create a new instance of class Search, this will create an object with 2 properties..
+   * First we create a new instance of class Search, it will creates an object with 2 properties..
    * query = value from the user Input.
    * result = value with the data from GOOGLE BOOKS API
    */
   const search = new Search(query);
-
   //fetch the data from the API.
   await search.fetchData();
 
