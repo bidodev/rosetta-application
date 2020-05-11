@@ -10,12 +10,14 @@ export const clearResults = () => {
 const renderBook = (book, query) => {
   console.log(book.volumeInfo);
 
-  const { title, subtitle, description } = book.volumeInfo;
+  let { title, description, authors } = book.volumeInfo;
+
+  description ? description : (description = "No Description");
 
   let markUp = `
     <div class="description">
     <div class="title">Title: ${title}</div>
-    <div class="sub-desc">Subtitle: ${subtitle}</div>
+    <div class="sub-desc">Authors: ${authors}</div>
     <div class="book-desc">${description}</div>
   </div>`;
 
