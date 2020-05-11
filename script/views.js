@@ -16,9 +16,10 @@ export const clearResults = () => {
 export const renderResults = data => {
   //console.log(data);
   const { query, result } = data;
+  console.log(data.result);
 
   const resultsArr = result.items;
   resultsArr.forEach(element => {
-    console.log(element);
+    console.log(element.accessInfo);
   });
 };
