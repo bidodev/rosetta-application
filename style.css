@@ -31,3 +31,40 @@ body {
   flex-direction: column;
   align-items: center;
 }
+
+.center {
+  text-align: center;
+}
+.fetch-values {
+  position: relative;
+  padding: 10px 20px;
+  line-height: 1.4;
+  transition: padding-right 0.3s ease;
+}
+
+.fetch-values.spinning {
+  padding-right: 40px;
+}
+
+.fetch-values.spinning:before {
+  content: "";
+  border-radius: 50%;
+  right: 6px;
+  top: 50%;
+  position: absolute;
+  border-right: 3px solid #27ae60;
+  animation: rotate360 1s infinite linear, exist 0.1s forwards ease;
+}
+
+@keyframes rotate360 {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes exist {
+  100% {
+    width: 15px;
+    height: 15px;
+    margin: -8px 5px 0 0;
+  }
+}
