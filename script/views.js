@@ -7,10 +7,8 @@ export const clearResults = () => {
   elements.resultDiv.innerHTML = "";
 };
 
-const renderBook = (book, query) => {
-  console.log(book.volumeInfo);
-
-  let { title, description, authors } = book.volumeInfo;
+const renderBook = book => {
+  let { title, description, authors, imageLinks } = book.volumeInfo;
 
   description ? description : (description = "No Description");
 
@@ -18,6 +16,9 @@ const renderBook = (book, query) => {
     <div class="description">
     <div class="title">Title: ${title}</div>
     <div class="sub-desc">Authors: ${authors}</div>
+    <figure class="thumb-image">
+      <img src="${imageLinks.thumbnail}" alt="${title}" srcset="">
+    </figure>
     <div class="book-desc">${description}</div>
   </div>`;
 
@@ -25,8 +26,12 @@ const renderBook = (book, query) => {
 };
 
 export const renderResults = data => {
-  //console.log(data);
   const { query, result } = data;
 
-  result.items.forEach(renderBook);
+  let markUp = `
+  The search for ${query} has ${result.length} results
+`;
+  elements.resultDiv.insertAdjacentHTML("beforeend", markUp);
+
+  result.forEach(renderBook);
 };
