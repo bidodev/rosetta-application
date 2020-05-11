@@ -32,7 +32,16 @@ const controlSearch = async () => {
 
   //render results on the UI, passing an object inside the function..
   searchView.renderResults(search);
+  console.log(search);
 };
 
-//EVENT HANDLER
+//EVENTS HANDLER
 elements.fetchBtn.addEventListener("click", controlSearch);
+
+//ENTER BUTTON
+document.addEventListener("keypress", event => {
+  //check if the user pressed the return key (enter)
+  if (event.keyCode === 13) {
+    controlSearch();
+  }
+});

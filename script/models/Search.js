@@ -22,8 +22,8 @@ export default class Search {
        * }
        * the items properties is the our data, for more informations check docs/example.callapi.json
        */
-      //we just need items
-      this.result = data.items;
+      //console.log(data);
+      this.result = data.items; //we need just items
     } catch (error) {
       console.log(error);
     }
