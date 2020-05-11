@@ -15,7 +15,14 @@
         value=""
         placeholder="Author, book title"
       />
-      <button class="fetch-values">Grab...</button>
+      <select class="search-type">
+        <option value="title" selected>Title</option>
+        <option value="author">Author</option>
+        <option value="publisher">Publisher</option>
+        <option value="subject">Subject</option>
+        <option value="isbn">Isbn</option>
+      </select>
+      <button class="fetch-values">Start the Search</button>
     </div>
     <div class="result">
       <!-- the result from the API -->
