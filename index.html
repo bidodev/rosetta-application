@@ -3,20 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Rosetta</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
       <h1>Rosetta</h1>
-      <input
-        class="search-field"
-        type="text"
-        value=""
-        placeholder="Author, book title"
-      />
+      <div class="header-search">
+        <input
+          class="search-field"
+          type="text"
+          value=""
+          autofocus
+          placeholder="Author, book title"
+        />
 
-      <!-- filters
+        <!-- filters
       <select class="search-type">
         <option value="title" selected>Title</option>
         <option value="author">Author</option>
@@ -25,7 +27,7 @@
         <option value="isbn">Isbn</option>
       </select> -->
 
-      <!-- filter for the languages
+        <!-- filter for the languages
       <select class="search-languages">
         <option value="en" selected>English</option>
         <option value="de">German</option>
@@ -36,8 +38,13 @@
         <option value="ar">Arabic</option>
       </select> -->
 
-      <!-- start seach button -->
-      <button class="fetch-values">Start the Search</button>
+        <!-- start seach button -->
+        <button class="fetch-values">Start the Search</button>
+      </div>
+      <h3>
+        Discover thousands of books. How about searching for "how to grown
+        Majihuana"?
+      </h3>
     </div>
 
     <!-- results displayed to the users -->
