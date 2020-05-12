@@ -4,6 +4,8 @@ body {
 .container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .header-search {
@@ -36,9 +38,13 @@ body {
   align-items: center;
 }
 
-.center {
-  text-align: center;
+.search-field {
+  padding: 10px 20px;
+  line-height: 1.4;
+  height: 3vh;
+  margin-right: 0.5rem;
 }
+
 .fetch-values {
   position: relative;
   padding: 10px 20px;
