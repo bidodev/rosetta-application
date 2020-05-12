@@ -28,9 +28,12 @@ const renderBook = book => {
   elements.resultDiv.insertAdjacentHTML("beforeend", markUp);
 };
 
-const renderBooksbyAuthor = authors => {
+function renderBooksbyAuthor(authors) {
+  // const search = new Search("harry potter", authors);
+  // await search.filterbyAuthor();
+  // console.log(search);
   return `${authors}`;
-};
+}
 
 export const renderResults = data => {
   const { query, result } = data;
@@ -41,9 +44,9 @@ export const renderResults = data => {
     .addEventListener("click", filterLanguages);
 
   async function filterLanguages(event) {
-    const valueLang = event.target.value;
-    const search = new Search(query, valueLang);
-    await search.filterLang();
+    const language = event.target.value;
+    const search = new Search(query, language);
+    await search.fetchResults();
 
     //Prepare the UI for the RESULTS.
     clearResults();

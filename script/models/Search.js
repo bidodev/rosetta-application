@@ -1,14 +1,21 @@
 export default class Search {
-  constructor(query, language = "en") {
-    this.query = query;
-    this.language = language;
+  constructor(
+    _query,
+    _language = "en",
+    _maxResults = 6,
+    _orderBy = "relevance"
+  ) {
+    this.query = _query;
+    this.language = _language;
+    this.maxResults = _maxResults;
+    this.orderBy = _orderBy;
   }
 
-  async fetchData() {
+  async fetchResults() {
     try {
-      const response = await fetch(
-        `https://www.googleapis.com/books/v1/volumes?q=${this.query}`
-      );
+      const API_URL = `https://www.googleapis.com/books/v1/volumes?q=${this.query}&langRestrict=${this.language}&maxResults=${this.maxResults}&orderBy=${this.orderBy}`;
+      //console.log(API_URL);
+      const response = await fetch(API_URL);
       const data = await response.json();
 
       /**
@@ -29,17 +36,16 @@ export default class Search {
       console.log(error);
     }
   }
+  // async filterbyAuthor() {
+  //   try {
+  //     const response = await fetch(
+  //       `https://www.googleapis.com/books/v1/volumes?q=${this.query}+inauthor:${this.author}`
+  //     );
+  //     const data = await response.json();
 
-  async filterLang() {
-    try {
-      const response = await fetch(
-        `https://www.googleapis.com/books/v1/volumes?q=${this.query}&langRestrict=${this.language}`
-      );
-      const data = await response.json();
-
-      this.result = data.items;
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  //     this.result = data.items;
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
 }

@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rosetta</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;1,200&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -34,18 +38,24 @@
         Discover thousands of books. How about searching for "How to Grown
         Majihuana or How to Kill Your Boyfriend"?
       </h4>
+      <div class="filters">
+        <h5>Only results in...</h5>
+        <select class="search-languages">
+          <option value="en" selected>English</option>
+          <option value="de">German</option>
+          <option value="pt">Portuguese</option>
+          <option value="es">Spanish</option>
+          <option value="fr">French</option>
+          <option value="ro">Romenian</option>
+          <option value="ar">Arabic</option>
+        </select>
+        <h5>orderBy...</h5>
+        <select class="order-by">
+          <option value="relevance" selected>Relevance</option>
+          <option value="newest" selected>Newest</option>
+        </select>
+      </div>
     </div>
-
-    <h3>Only results in...</h3>
-    <select class="search-languages">
-      <option value="en" selected>English</option>
-      <option value="de">German</option>
-      <option value="pt">Portuguese</option>
-      <option value="es">Spanish</option>
-      <option value="fr">French</option>
-      <option value="ro">Romenian</option>
-      <option value="ar">Arabic</option>
-    </select>
 
     <!-- results displayed to the users -->
     <div class="result">
