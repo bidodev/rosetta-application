@@ -9,7 +9,7 @@ const controlSearch = async () => {
     const query = searchView.getInput();
 
     //change the status of the search button..
-    elements.fetchBtn.innerHTML = "Content is loading...";
+    elements.fetchBtn.innerHTML = "Searching...";
     elements.fetchBtn.classList.add("spinning");
 
     /**
@@ -18,8 +18,9 @@ const controlSearch = async () => {
      * result = value with the data from GOOGLE BOOKS API
      */
     const search = new Search(query);
+
     //fetch the data from the API.
-    await search.fetchData();
+    await search.fetchResults();
 
     //we return the status of our button to normal if the search return something..
     if (search) {
@@ -34,6 +35,7 @@ const controlSearch = async () => {
 
     //render results on the UI, passing an object inside the function..
     searchView.renderResults(search);
+    console.log(search);
 
     //clean input
     //searchView.clearInput();
