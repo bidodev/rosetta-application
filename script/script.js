@@ -36,7 +36,7 @@ const controlSearch = async () => {
     searchView.renderResults(search);
 
     //clean input
-    searchView.clearInput();
+    //searchView.clearInput();
   } catch (error) {
     console.log(error);
   }
