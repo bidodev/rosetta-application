@@ -13,8 +13,12 @@ export default class Search {
 
   async fetchResults() {
     try {
-      const API_URL = `https://www.googleapis.com/books/v1/volumes?q=${this.query}&langRestrict=${this.language}&maxResults=${this.maxResults}&orderBy=${this.orderBy}`;
-      console.log(API_URL);
+      const API_URL = `https://www.googleapis.com/books/v1/volumes?q=${encodeURI(
+        this.query
+      )}&langRestrict=${this.language}&maxResults=${this.maxResults}&orderBy=${
+        this.orderBy
+      }`;
+      //console.log(API_URL);
       const response = await fetch(API_URL);
       const data = await response.json();
 
