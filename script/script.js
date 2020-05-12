@@ -49,12 +49,35 @@ elements.fetchBtn.addEventListener("click", controlSearch);
 
 //ENTER BUTTON
 document.addEventListener("keypress", event => {
-  if (searchView.getInput().length > 0) {
-    elements.fetchBtn.disabled = false;
-  }
-
   //check if the user pressed the return key (enter)
   if (event.keyCode === 13) {
     controlSearch();
   }
 });
+
+//X BUTTON
+let spanX = document.querySelector(".spanX");
+let search = document.querySelector(".search-field");
+let btn = document.querySelector(".fetch-values");
+
+search.addEventListener("keyup", disableBtn);
+
+function disableBtn() {
+  if (search.value.length > 0) {
+    spanX.style.opacity = 1;
+    spanX.addEventListener("click", () => {
+      searchView.clearResults();
+      searchView.clearInput();
+
+      document.querySelector(".filters").style.display = "none";
+    });
+    btn.disabled = false;
+  } else {
+    spanX.style.opacity = 0;
+    searchView.clearResults();
+    searchView.clearInput();
+
+    document.querySelector(".filters").style.display = "none";
+    btn.disabled = true;
+  }
+}
