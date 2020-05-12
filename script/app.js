@@ -1,3 +1,5 @@
+//IMPORT BASE / CLASSES / VIEWS
+
 //import all DOM queries as elements..
 import { DOMstrings as elements } from "./elements.js";
 
@@ -7,7 +9,10 @@ import Search from "./models/Search.js";
 //import everything which is public from views as searcView
 import * as searchView from "./views.js";
 
-//main function
+//default language for the search
+const defaultLanguage = "en";
+
+//MAIN CONTROLLER
 const controlSearch = async () => {
   try {
     // get the values from the user..
@@ -15,8 +20,7 @@ const controlSearch = async () => {
     const type = searchView.getSearchType();
 
     //change the status of the search button..
-    elements.fetchBtn.innerHTML = "Searching...";
-    elements.fetchBtn.classList.add("spinning");
+    searchView.addSpinner();
 
     /**
      * First we create a new instance of class Search, it will create an object..
@@ -24,36 +28,39 @@ const controlSearch = async () => {
      * type = title, author and so on..
      * result = value with the data from GOOGLE BOOKS API
      */
-    const search = new Search(query, type);
-    console.log(search);
+    const search = new Search(query, defaultLanguage, type);
 
     //get the results from the Google Books API.
     await search.fetchResults();
 
     //we return the status of our button to normal if the search return something..
     if (search.result) {
-      elements.fetchBtn.classList.remove("spinning");
-      elements.fetchBtn.innerHTML = "Search";
+      searchView.removerSpinner();
     }
-
-    //we have now an object called "search" with our data and also the query for use later
+    console.log("controlSearch -> search", search);
 
     //Prepare the UI for the RESULTS.
     searchView.clearResults();
 
+    //time to use our object "search"
     //render results on the UI, passing an object inside the function..
     searchView.renderResults(search);
-    //console.log(search);
-
-    //clean input
-    //searchView.clearInput();
   } catch (error) {
     console.log(error);
   }
 };
 
 //EVENTS HANDLER
+
+//SEARCH BUTTON
 elements.fetchBtn.addEventListener("click", controlSearch);
+
+//EVENTS HANDLER FOR THE FILTERS BUTTONS
+//ORDER RESULTS BY
+elements.filterLanguages.addEventListener("change", searchView.filterLanguages);
+
+//ORDERS RESULTS BY STATUS
+elements.orderBy.addEventListener("change", searchView.filterStatus);
 
 //ENTER BUTTON
 document.addEventListener("keypress", event => {
