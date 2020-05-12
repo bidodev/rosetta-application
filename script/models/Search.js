@@ -1,6 +1,7 @@
 export default class Search {
-  constructor(query) {
+  constructor(query, language = "en") {
     this.query = query;
+    this.language = language;
   }
 
   async fetchData() {
@@ -24,6 +25,19 @@ export default class Search {
        */
       //console.log(data);
       this.result = data.items; //we need just items
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async filterLang() {
+    try {
+      const response = await fetch(
+        `https://www.googleapis.com/books/v1/volumes?q=${this.query}&langRestrict=${this.language}`
+      );
+      const data = await response.json();
+
+      this.result = data.items;
     } catch (error) {
       console.log(error);
     }

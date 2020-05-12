@@ -1,4 +1,5 @@
 import { DOMstrings as elements } from "./elements.js";
+import Search from "./models/Search.js";
 
 //query input value
 export const getInput = () => elements.searchQuery.value;
@@ -34,10 +35,20 @@ const renderBooksbyAuthor = authors => {
 export const renderResults = data => {
   const { query, result } = data;
 
-  let markUp = `
-  The search for ${query} has ${result.length} results
-`;
-  elements.resultDiv.insertAdjacentHTML("beforeend", markUp);
+  //create event
+  document
+    .querySelector(".search-languages")
+    .addEventListener("click", filterLanguages);
+
+  async function filterLanguages(event) {
+    const valueLang = event.target.value;
+    const search = new Search(query, valueLang);
+    await search.filterLang();
+
+    //Prepare the UI for the RESULTS.
+    clearResults();
+    search.result.forEach(renderBook);
+  }
 
   result.forEach(renderBook);
 };
