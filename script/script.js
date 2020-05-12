@@ -68,7 +68,6 @@ function disableBtn() {
     spanX.addEventListener("click", () => {
       searchView.clearResults();
       searchView.clearInput();
-
       document.querySelector(".filters").style.display = "none";
     });
     btn.disabled = false;
