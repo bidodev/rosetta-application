@@ -81,16 +81,17 @@ h1 {
   height: 6vh;
   width: 5vw;
   border: none;
+  font-size: 1rem;
 }
 
-.fetch-values.spinning {
-  padding-right: 40px;
+.result {
+  position: relative;
 }
 
-.fetch-values.spinning:before {
+.result.spinning:before {
   content: "";
   border-radius: 50%;
-  right: 6px;
+  right: 50%;
   top: 50%;
   position: absolute;
   border-right: 3px solid #27ae60;
@@ -134,9 +135,9 @@ X BUTTON
 /*select*/
 .select-type {
   display: block;
-  font-size: 16px;
-  font-family: sans-serif;
-  font-weight: 700;
+  font-size: 1rem;
+  padding-left: 1rem;
+  font-weight: 600;
   color: #f1f1f1;
   line-height: 1.3;
   height: 6vh;
@@ -164,13 +165,34 @@ X BUTTON
 }
 .select-type:focus {
   border-color: #aaa;
-  box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
+  box-shadow: 0 0 1px 3px rgba(141, 22, 38, 0.7);
   box-shadow: 0 0 0 3px -moz-mac-focusring;
-  color: #222;
+  color: #f1f1f1;
   outline: none;
 }
 .select-type option {
   font-weight: normal;
+}
+
+/* description cut.. */
+.txt {
+  width: 50vw;
+  letter-spacing: 0.2px;
+  line-height: 1.6;
+}
+
+.readLess,
+.readMore {
+  display: inline-block;
+  color: #27ae60;
+}
+
+.readLess,
+.readMore:hover {
+  cursor: pointer;
+}
+.readLess {
+  opacity: 0;
 }
 
 @keyframes rotate360 {

@@ -1,12 +1,14 @@
 export default class Search {
   constructor(
     _query,
-    _language = "en",
+    _language,
+    _type,
     _maxResults = 6,
     _orderBy = "relevance"
   ) {
     this.query = _query;
     this.language = _language;
+    this.searchType = _type;
     this.maxResults = _maxResults;
     this.orderBy = _orderBy;
   }
