@@ -3,6 +3,8 @@ import { DOMstrings as elements } from "./elements.js";
 //query input value
 export const getInput = () => elements.searchQuery.value;
 
+export const clearInput = () => (elements.searchQuery.value = "");
+
 export const clearResults = () => {
   elements.resultDiv.innerHTML = "";
 };
