@@ -36,7 +36,6 @@ export const clearResults = () => {
 // };
 
 const renderBook = book => {
-  console.log(book.volumeInfo);
   let { title, description, authors, pageCount, imageLinks } = book.volumeInfo;
 
   let markUp = `
@@ -49,7 +48,7 @@ const renderBook = book => {
       <img src="${imageLinks.thumbnail}" alt="${title}" srcset="">
     </figure>
     <div class="book-desc">
-    <p class="txt">${description}<span class="readMore" >Read more</span></p>
+    <p class="txt">${description}<span class="readMore">Read more</span></p>
     
     <span class="readLess" >Read less</span></div>
   </div>`;
@@ -84,15 +83,42 @@ export const renderResults = data => {
   result.forEach(renderBook);
 };
 
-// filterLanguages
-export async function filterLanguages() {
-  const query = getSearchQuery();
+// // filterLanguages
+// export async function filterLanguages() {
+//   const query = getSearchQuery();
 
-  const language = event.target.value;
+//   const language = event.target.value;
 
-  const search = new Search(query, language);
+//   const search = new Search(query, language);
+//   //change the status of the search button..
+//   addSpinner();
+//   //fetch the data from the API.
+//   await search.fetchResults();
+
+//   //Prepare the UI for the RESULTS.
+//   clearResults();
+
+//   if (search.result) {
+//     removerSpinner();
+//   }
+//   search.result.forEach(renderBook);
+// }
+
+// export async function filterStatus() {}
+
+export async function filters() {
+  const filters = {
+    query: getSearchQuery(),
+    language: document.querySelector(".search-languages").value,
+    type: document.querySelector(".select-type").value,
+    max: 10,
+    order: document.querySelector(".order-by").value,
+  };
+  const search = new Search(filters);
+
   //change the status of the search button..
   addSpinner();
+
   //fetch the data from the API.
   await search.fetchResults();
 
@@ -103,6 +129,5 @@ export async function filterLanguages() {
     removerSpinner();
   }
   search.result.forEach(renderBook);
+  // console.log(search);
 }
-
-export async function filterStatus() {}
