@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./styles/search-styles.css" />
+
+    <title>Rosetta APP</title>
+  </head>
+  <body>
+    <!-- ----------------------------------- -->
+    <!-- ----------------------------------- -->
+    <!-- ----------------------------------- -->
+    <header id="header">
+      <nav>
+        <h3 class="logo"><a href="index.html">ROS3TTA</a></h3>
+        <ul>
+          <li><a href="#">FAVORITES</a></li>
+          <li><a href="#middleSection">CREDITS</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- ----------------------------------- -->
+    <!-- ----------------------------------- -->
+    <!-- ----------------------------------------------------- -->
+    <div class="container">
+      <h1>Rosetta</h1>
+      <!-- SEARCH BOX  ------- -->
+      <div class="header-search">
+        <input
+          class="search-field"
+          type="text"
+          value=""
+          autofocus
+          placeholder="Author, book title"
+        />
+
+        <!-- start search button -->
+        <button type="button" disabled class="fetch-values">Search</button>
+      </div>
+      <h4>
+        stimulate your research
+      </h4>
+    </div>
+    <!-- ------------------------------------- -->
+    <!-- ------------------------------------- -->
+    <!-- ------------------------------------- -->
+    <!-- ------------------------------------- -->
+    <!-- results displayed to the users -->
+    <!-- the result from the API -->
+    <div class="result">
+      <h4>STAY INSPIRED</h4>
+      <!-- filters to the results -->
+      <section class="filters">
+        <select class="select-type">
+          <option value="author" selected>By Author</option>
+          <option value="title">Title</option>
+          <option value="publisher">Publisher</option>
+          <option value="subject">Subject</option>
+          <option value="isbn">Isbn</option>
+        </select>
+        <select class="search-languages">
+          <option value="en" selected>Any language</option>
+          <option value="en">English</option>
+          <option value="de">German</option>
+          <option value="pt">Portuguese</option>
+          <option value="es">Spanish</option>
+          <option value="fr">French</option>
+          <option value="ro">Romenian</option>
+          <option value="ar">Arabic</option>
+        </select>
+        <select class="order-by">
+          <option value="relevance" selected>Sorted by relevance</option>
+          <option value="newest" selected>Sorted by date</option>
+        </select>
+      </section>
+
+      <!-- --------------------------------------- -->
+      <!-- --------------------------------------- -->
+      <!-- --------------------------------------- -->
+      <div class="container-books">
+        <!-- ------------------------------------- -->
+        <!-- ------------------------------------- -->
+        <!-- 1 -->
+        <div class="quote">
+          <h3>L’Officiel Art #332 April/May/June</h3>
+          <h6>7,90 €</h6>
+          <img class="img-box img1" src="./img/item1.jpg" alt="img One" />
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium
+            totam aspernatur inventore rem voluptatem quos. Lorem ipsum dolor
+            sit amet consectetur adipisicing elit. Laudantium totam aspernatur
+            inventore rem voluptatem quos.
+          </p>
+          <h5>Read More</h5>
+        </div>
+        <!-- 2 -->
+        <div class="quote">
+          <h3>L’Officiel Art #332 April</h3>
+          <h6>7,90 €</h6>
+          <img class="img-box img2" src="./img/item4.jpg" alt="img One" />
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium
+            totam aspernatur inventore rem voluptatem quos. Lorem ipsum dolor
+            sit amet consectetur adipisicing elit. Laudantium totam aspernatur
+            inventore rem voluptatem quos.
+          </p>
+          <h5>Read More</h5>
+        </div>
+        <!-- 3 -->
+        <div class="quote">
+          <h3>Andy Warhol Gregor Muir, Yilmaz Dziewior</h3>
+          <h6>33,90 €</h6>
+          <img class="img-box img3" src="./img/item3.jpg" alt="img One" />
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium
+            totam aspernatur inventore rem voluptatem quos. Lorem ipsum dolor
+            sit amet consectetur adipisicing elit. Laudantium totam aspernatur
+            inventore rem voluptatem quos.
+          </p>
+          <h5>Read More</h5>
+        </div>
+        <!-- 4 -->
+        <div class="quote">
+          <h3>L’Officiel Art #332 April</h3>
+          <h6>7,90 €</h6>
+          <img class="img-box img4" src="./img/item2.jpg" alt="img One" />
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium
+            totam aspernatur inventore rem voluptatem quos. Lorem ipsum dolor
+            sit amet consectetur adipisicing elit. Laudantium totam aspernatur
+            inventore rem voluptatem quos.
+          </p>
+          <h5>Read More</h5>
+        </div>
+        <!-- 5 -->
+        <div class="quote">
+          <h3>L’Officiel Art #332 April/May/June 2020</h3>
+          <h6>7,90 €</h6>
+          <img class="img-box img5" src="./img/item3.jpg" alt="img One" />
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium
+            totam aspernatur inventore rem voluptatem quos. Lorem ipsum dolor
+            sit amet consectetur adipisicing elit. Laudantium totam aspernatur
+            inventore rem voluptatem quos.
+          </p>
+          <h5>Read More</h5>
+        </div>
+        <!-- 6 -->
+        <div class="quote">
+          <h3>L’Officiel Art #332 April</h3>
+          <h6>7,90 €</h6>
+          <img class="img-box img6" src="./img/item1.jpg" alt="img One" />
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium
+            totam aspernatur inventore rem voluptatem quos. Lorem ipsum dolor
+            sit amet consectetur adipisicing elit. Laudantium totam aspernatur
+            inventore rem voluptatem quos.
+          </p>
+          <h5>Read More</h5>
+        </div>
+      </div>
+
+      <!----------------------------------------->
+      <div id="containePagination">
+        <div class="pagination">
+          <a href="#" class="page">1</a><a href="#" class="page">2</a
+          ><a href="#" class="page">3</a><span class="page active">4</span
+          ><a href="#" class="page">5</a><a href="#" class="page">6</a
+          ><a href="#" class="page">...</a>
+        </div>
+      </div>
+    </div>
+    <!-- ----------------------------------- -->
+    <!-- ----------------------------------- -->
+
+    <!-- <footer id="searchFooter"></footer> -->
+    <!-- ----------------------------------- -->
+    <!-- ----------------------------------- -->
+
+    <script type="module" src="./scripts/search-styles.js"></script>
+
+    <!-- ------------------------------------------------- -->
+  </body>
+</html>
