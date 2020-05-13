@@ -91,7 +91,7 @@ function disableBtn() {
     spanX.addEventListener("click", () => {
       searchView.clearResults();
       searchView.clearInput();
-      elements.filters.style.display = "none";
+      elements.result.style.display = "none";
     });
     btn.disabled = false;
   } else {
@@ -99,7 +99,7 @@ function disableBtn() {
     searchView.clearResults();
     searchView.clearInput();
 
-    elements.filters.style.display = "none";
+    elements.result.style.display = "none";
     btn.disabled = true;
   }
 }

@@ -1,4 +1,8 @@
-@import "base";
+@charset "UTF-8";
+
+// 3. Base stuff
+@import "base/base", "base/scrollbar";
+
 @import "mixin";
 @import "bgChanger";
 @import "indexContent";

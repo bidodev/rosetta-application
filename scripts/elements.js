@@ -3,6 +3,7 @@ export const DOMstrings = {
   orderBy: document.querySelector(".order-by"),
   searchType: document.querySelector(".select-type"),
   resultDiv: document.querySelector(".container-books"),
+  result: document.querySelector(".result"),
   fetchBtn: document.querySelector(".fetch-values"),
   filterLanguages: document.querySelector(".search-languages"),
   container: document.querySelector(".container"),
