@@ -63,7 +63,7 @@ elements.filterLanguages.addEventListener("change", searchView.filterLanguages);
 elements.orderBy.addEventListener("change", searchView.filterStatus);
 
 //ENTER BUTTON
-document.addEventListener("keypress", event => {
+document.addEventListener("keypress", (event) => {
   //check if the user pressed the return key (enter)
   if (event.keyCode === 13) {
     controlSearch();
@@ -82,7 +82,7 @@ function disableBtn() {
     spanX.addEventListener("click", () => {
       searchView.clearResults();
       searchView.clearInput();
-      document.querySelector(".filters").style.display = "none";
+      elements.filters.style.display = "none";
     });
     btn.disabled = false;
   } else {
@@ -90,7 +90,7 @@ function disableBtn() {
     searchView.clearResults();
     searchView.clearInput();
 
-    document.querySelector(".filters").style.display = "none";
+    elements.filters.style.display = "none";
     btn.disabled = true;
   }
 }
