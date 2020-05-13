@@ -37,7 +37,7 @@ const controlSearch = async () => {
     if (search.result) {
       searchView.removerSpinner();
     }
-    console.log("controlSearch -> search", search);
+    //console.log("controlSearch -> search", search);
 
     //Prepare the UI for the RESULTS.
     searchView.clearResults();

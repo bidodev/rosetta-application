@@ -22,21 +22,23 @@ export const clearResults = () => {
   elements.resultDiv.innerHTML = "";
 };
 
-const displayDesc = desc => {
-  let splited = desc.split(" ");
-  let counter = [];
+// const displayDesc = desc => {
+//   let splited = desc.split(" ");
+//   let counter = [];
 
-  for (let i = 0; i < splited.length; i++) {
-    counter.push(splited[i]);
-    if (counter.length == 40) {
-      break;
-    }
-  }
-  return counter.join(" ") + "...";
-};
+//   for (let i = 0; i < splited.length; i++) {
+//     counter.push(splited[i]);
+//     if (counter.length == 40) {
+//       break;
+//     }
+//   }
+//   return counter.join(" ") + "...";
+// };
 
 const renderBook = book => {
+  console.log(book.volumeInfo);
   let { title, description, authors, pageCount, imageLinks } = book.volumeInfo;
+
   let markUp = `
     <div class="description">
     <div class="title">Title: ${title}</div>
@@ -47,9 +49,7 @@ const renderBook = book => {
       <img src="${imageLinks.thumbnail}" alt="${title}" srcset="">
     </figure>
     <div class="book-desc">
-    <p class="txt">${displayDesc(
-      description
-    )}<span class="readMore" >Read more</span></p>
+    <p class="txt">${description}<span class="readMore" >Read more</span></p>
     
     <span class="readLess" >Read less</span></div>
   </div>`;
@@ -75,11 +75,11 @@ function renderBooksbyAuthor(authors) {
 }
 
 export const renderResults = data => {
-  const { result } = data;
+  const { query, result } = data;
   // console.log(decodeURI(query));
 
-  //make the filters appear again
-  document.querySelector(".filters").style.display = "flex";
+  //we make the filters appears again on the page
+  elements.filters.style.display = "flex";
 
   result.forEach(renderBook);
 };
