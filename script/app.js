@@ -1,4 +1,4 @@
-//IMPORT BASE / CLASSES / VIEWS
+//IMPORT BASE / CLASSES / VIEWS //
 
 //import all DOM queries as elements..
 import { DOMstrings as elements } from "./elements.js";
@@ -63,7 +63,7 @@ elements.filterLanguages.addEventListener("change", searchView.filterLanguages);
 elements.orderBy.addEventListener("change", searchView.filterStatus);
 
 //ENTER BUTTON
-document.addEventListener("keypress", (event) => {
+document.addEventListener("keypress", event => {
   //check if the user pressed the return key (enter)
   if (event.keyCode === 13) {
     controlSearch();
