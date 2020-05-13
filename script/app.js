@@ -17,7 +17,7 @@ const controlSearch = async () => {
   try {
     // get the values from the user..
     const query = searchView.getSearchQuery();
-    const type = searchView.getSearchType();
+    ///const type = searchView.getSearchType();
 
     //change the status of the search button..
     searchView.addSpinner();
@@ -28,7 +28,7 @@ const controlSearch = async () => {
      * type = title, author and so on..
      * result = value with the data from GOOGLE BOOKS API
      */
-    const search = new Search(query, defaultLanguage, type);
+    const search = new Search(query, defaultLanguage);
 
     //get the results from the Google Books API.
     await search.fetchResults();

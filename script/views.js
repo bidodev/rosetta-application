@@ -8,14 +8,14 @@ export const getSearchType = () => elements.searchType.value;
 
 export const clearInput = () => (elements.searchQuery.value = "");
 
-export const removerSpinner = () => {
-  elements.resultDiv.classList.remove("spinning");
-  elements.fetchBtn.innerHTML = "Search";
-};
-
 export const addSpinner = () => {
   elements.fetchBtn.innerHTML = "Searching...";
-  elements.resultDiv.classList.add("spinning");
+  elements.container.classList.add("spinning");
+};
+
+export const removerSpinner = () => {
+  elements.container.classList.remove("spinning");
+  elements.fetchBtn.innerHTML = "Search";
 };
 
 export const clearResults = () => {

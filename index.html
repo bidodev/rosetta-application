@@ -12,48 +12,47 @@
   </head>
   <body>
     <div class="container">
-      <h1>Rosetta</h1>
-      <div class="header-search">
-        <div class="book-search">
-          <div><span class="spanX">x</span></div>
-          <input type="text" class="search-field"
-          placeholder="charles.."autofocus" />
+      <div class="container-elements">
+        <h1>Rosetta</h1>
+        <div class="header-search">
+          <div class="book-search">
+            <div><span class="spanX">x</span></div>
+            <input type="text" class="search-field"
+            placeholder="charles.."autofocus" />
+          </div>
+
+          <!-- start seach button -->
+          <button type="button" disabled class="fetch-values">Search</button>
         </div>
-
-        <select class="select-type">
-          <option value="author" selected>Author</option>
-          <option value="title">Title</option>
-          <option value="publisher">Publisher</option>
-          <option value="subject">Subject</option>
-          <option value="isbn">Isbn</option>
-        </select>
-
-        <!-- start seach button -->
-        <button type="button" disabled class="fetch-values">Search</button>
-      </div>
-      <h4>
-        Discover thousands of books. How about searching for "How to Grown
-        Majihuana or How to Kill Your Boyfriend"?
-      </h4>
-      <div class="filters">
-        <h5>Only results in...</h5>
-        <select class="search-languages">
-          <option value="en" selected>English</option>
-          <option value="de">German</option>
-          <option value="pt">Portuguese</option>
-          <option value="es">Spanish</option>
-          <option value="fr">French</option>
-          <option value="ro">Romenian</option>
-          <option value="ar">Arabic</option>
-        </select>
-        <h5>orderBy...</h5>
-        <select class="order-by">
-          <option value="relevance" selected>Relevance</option>
-          <option value="newest" selected>Newest</option>
-        </select>
+        <h4>
+          Discover thousands of books. How about searching for "How to Grown
+          Majihuana or Kill Your Boyfriend"?
+        </h4>
       </div>
     </div>
-
+    <div class="filters">
+      <select class="select-type">
+        <option value="author" selected>By Author</option>
+        <option value="title">Title</option>
+        <option value="publisher">Publisher</option>
+        <option value="subject">Subject</option>
+        <option value="isbn">Isbn</option>
+      </select>
+      <select class="search-languages">
+        <option value="en" selected>Any language</option>
+        <option value="en">English</option>
+        <option value="de">German</option>
+        <option value="pt">Portuguese</option>
+        <option value="es">Spanish</option>
+        <option value="fr">French</option>
+        <option value="ro">Romenian</option>
+        <option value="ar">Arabic</option>
+      </select>
+      <select class="order-by">
+        <option value="relevance" selected>Sorted by relevance</option>
+        <option value="newest" selected>Sorted by date</option>
+      </select>
+    </div>
     <!-- results displayed to the users -->
     <div class="result">
       <!-- the result from the API -->
