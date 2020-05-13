@@ -16,9 +16,13 @@
         <h1>Rosetta</h1>
         <div class="header-search">
           <div class="book-search">
-            <div><span class="spanX">x</span></div>
-            <input type="text" class="search-field"
-            placeholder="charles.."autofocus" />
+            <span class="spanX">x</span>
+            <input
+              type="text"
+              placeholder="Type author, book name, subject..."
+              value=""
+              class="search-field"
+            />
           </div>
 
           <!-- start seach button -->
@@ -30,7 +34,8 @@
         </h4>
       </div>
     </div>
-    <div class="filters">
+    <!-- filters to the results -->
+    <section class="filters">
       <select class="select-type">
         <option value="author" selected>By Author</option>
         <option value="title">Title</option>
@@ -52,12 +57,11 @@
         <option value="relevance" selected>Sorted by relevance</option>
         <option value="newest" selected>Sorted by date</option>
       </select>
-    </div>
+    </section>
     <!-- results displayed to the users -->
-    <div class="result">
+    <section class="result">
       <!-- the result from the API -->
-    </div>
-    <script></script>
+    </section>
     <script type="module" src="./script/app.js"></script>
   </body>
 </html>
