@@ -15,8 +15,13 @@ const defaultLanguage = "en";
 //MAIN CONTROLLER
 const controlSearch = async () => {
   try {
-    // get the values from the user..
-    const query = searchView.getSearchQuery();
+    const defSearch = {
+      // get the values from the user..
+      query: searchView.getSearchQuery(),
+      //default language to search..
+      language: defaultLanguage,
+    };
+
     ///const type = searchView.getSearchType();
 
     //change the status of the search button..
@@ -28,7 +33,7 @@ const controlSearch = async () => {
      * type = title, author and so on..
      * result = value with the data from GOOGLE BOOKS API
      */
-    const search = new Search(query, defaultLanguage);
+    const search = new Search(defSearch);
 
     //get the results from the Google Books API.
     await search.fetchResults();
@@ -56,11 +61,15 @@ const controlSearch = async () => {
 elements.fetchBtn.addEventListener("click", controlSearch);
 
 //EVENTS HANDLER FOR THE FILTERS BUTTONS
+//ORDERS RESULTS BY TYPE
+elements.searchType.addEventListener("change", searchView.filters);
+
 //ORDER RESULTS BY
-elements.filterLanguages.addEventListener("change", searchView.filterLanguages);
+// elements.filterLanguages.addEventListener("change", searchView.filterLanguages);
+elements.filterLanguages.addEventListener("change", searchView.filters);
 
 //ORDERS RESULTS BY STATUS
-elements.orderBy.addEventListener("change", searchView.filterStatus);
+elements.orderBy.addEventListener("change", searchView.filters);
 
 //ENTER BUTTON
 document.addEventListener("keypress", event => {

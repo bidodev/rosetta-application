@@ -1,27 +1,36 @@
 export default class Search {
-  constructor(
-    _query,
-    _language,
-    _type,
-    _maxResults = 6,
-    _orderBy = "relevance"
-  ) {
-    this.query = _query;
-    this.language = _language;
-    this.searchType = _type;
-    this.maxResults = _maxResults;
-    this.orderBy = _orderBy;
+  constructor(_filters) {
+    let { query, language, type, max, order } = _filters;
+
+    this.query = query;
+    this.language = language;
+    this.searchType = type;
+    this.maxResults = max;
+    this.orderBy = order;
+    console.log(_filters);
   }
 
   async fetchResults() {
     try {
-      const API_URL = `https://www.googleapis.com/books/v1/volumes?q=${encodeURI(
+      let baseURL = "https://www.googleapis.com/books/v1/volumes?q=";
+
+      const defSearch = `${encodeURIComponent(this.query)}&langRestrict=${
+        this.language
+      }`;
+
+      const filteredSearch = `${this.searchType}:${encodeURIComponent(
         this.query
       )}&langRestrict=${this.language}&maxResults=${this.maxResults}&orderBy=${
         this.orderBy
       }`;
-      //console.log(API_URL);
-      const response = await fetch(API_URL);
+
+      //check if the search has any filter applied
+      this.searchType !== undefined
+        ? (baseURL += filteredSearch)
+        : (baseURL += defSearch);
+
+      //console.log(baseURL);
+      const response = await fetch(baseURL);
       const data = await response.json();
 
       /**
@@ -42,16 +51,4 @@ export default class Search {
       console.log(error);
     }
   }
-  // async filterbyAuthor() {
-  //   try {
-  //     const response = await fetch(
-  //       `https://www.googleapis.com/books/v1/volumes?q=${this.query}+inauthor:${this.author}`
-  //     );
-  //     const data = await response.json();
-
-  //     this.result = data.items;
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // }
 }
