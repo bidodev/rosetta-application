@@ -57,7 +57,7 @@
         text-transform: uppercase;
         font-size: 0.8rem;
         color: rgba(31, 182, 122, 0.8);
-        transform: translate(7.5vw, -15vh);
+        transform: translate(7.5vw, -14.5vh);
       }
 
       // --------------
@@ -197,8 +197,9 @@
     //
     .result {
       width: 100vw;
+      height: auto;
       padding: 100px 0;
-      background-color: rgb(255, 255, 255);
+      background-color: rgb(250, 250, 250);
       @include flex-center-column;
       display: none;
 
@@ -206,13 +207,12 @@
         padding: 20px 0 100px 0;
         font-size: 1.7rem;
         font-weight: 100;
-        color: rgba(31, 182, 122, 0.6);
+        color: rgba(31, 182, 122, 0.8);
       }
 
       //
       // FILTERS
       .filters {
-        background-color: #fff;
         padding: 15px 20px;
         margin: 20px 0 50px 0;
 
@@ -235,7 +235,7 @@
       //
       //
       // PAGINATION
-      #containePagination {
+      #pagination-cont {
         width: 100%;
         height: 20vh;
         background-color: rgb(255, 255, 255);

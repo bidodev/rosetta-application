@@ -10,10 +10,10 @@
 
 /*----------GRID-----------*/
 .container-books {
-  padding: 5em 5em;
+  padding: 3em 7em;
   display: grid;
 
-  gap: 2em;
+  gap: 3em 2em;
   grid-template-columns: repeat(auto-fit, minmax(20vw, 1fr));
   // the auto fit will make it adaptable to the device.
   // the minmax means that the box will always keep that size, unless i change it.
@@ -21,16 +21,18 @@
   background-color: white;
 
   .quote {
-    padding: 5px;
-
     h3 {
       font-size: 1.3rem;
-      color: rgb(209, 209, 209);
+      color: #606060;
     }
     h6 {
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       margin-bottom: 0.8rem;
-      color: rgba(31, 182, 122, 0.4);
+      color: rgba(31, 182, 122, 0.7);
+      span {
+        color: rgba(31, 182, 122, 0.5);
+        font-size: 0.7rem;
+      }
     }
     h5 {
       padding: 2px;
@@ -39,20 +41,27 @@
     p {
       padding: 2px;
       font-family: Arial, Helvetica, sans-serif;
-      color: rgb(168, 168, 168);
-      font-size: 1rem;
+      color: #909090;
+      font-size: 0.95rem;
     }
 
     .img-box {
       width: 140px;
       height: 202px;
-      padding-bottom: 15px;
-      box-shadow: 3px -3px 1rem -3px rgba(0, 0, 0, 0.2);
+      margin: 0.9rem 0.6rem;
+      box-shadow: 3px -3px 0.8rem -3px rgba(0, 0, 0, 0.5);
+      transform: scale(1.1);
+      opacity: 0.7;
+      transition: all 0.3s;
 
       img {
         width: 100%;
         height: auto;
         object-fit: cover;
+      }
+      &:hover {
+        transform: scale(1.03);
+        opacity: 1;
       }
     }
   }
