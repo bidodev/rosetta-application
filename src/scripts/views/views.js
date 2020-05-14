@@ -6,7 +6,10 @@ export const getSearchQuery = () => elements.searchQuery.value;
 export const getSearchType = () => elements.searchType.value;
 export const clearInput = () => (elements.searchQuery.value = "");
 export const clearResults = () => (elements.resultDiv.innerHTML = "");
-
+//finction to scroll to the top of the page
+export const goUp = () => {
+  window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+};
 //function to scroll into the results
 export const scrollToResultPage = () => {
   elements.result.scrollIntoView({

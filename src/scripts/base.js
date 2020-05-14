@@ -8,6 +8,8 @@ export const elements = {
   filterLanguages: document.querySelector(".search-languages"),
   container: document.querySelector(".container"),
   filters: document.querySelector(".filters"),
+  buttonUp: document.querySelector(".button_up"),
+  searchHeader: document.getElementById("header"),
 };
 
 export const elementsStr = {
