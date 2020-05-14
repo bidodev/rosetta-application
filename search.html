@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;1,200&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="./styles/style.css" />
+
+    <title>Rosetta Search</title>
+  </head>
+  <body>
+    <!-- ----------------------------------- -->
+    <!-- ----------------------------------- -->
+    <header id="header">
+      <nav>
+        <h3 class="logo"><a href="index.html">ros3tta</a></h3>
+        <ul>
+          <li><a href="#">favorites</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- ----------------------------------- -->
+    <!-- ----------------------------------------------------- -->
+    <div class="container">
+      <h1>Rosetta</h1>
+
+      <!-- SEARCH BOX -------->
+      <div class="header-search">
+        <div class="spanX">x</div>
+        <input
+          class="search-field"
+          type="text"
+          value=""
+          autofocus
+          placeholder="Type author, title, book..."
+        />
+        <!-- cta button -->
+        <button type="button" disabled class="fetch-values">Search</button>
+      </div>
+      <h4>
+        stimulate your research
+      </h4>
+    </div>
+    <!-- ------------------------------------- -->
+    <!-- ------------------------------------- -->
+    <!-- ------------------------------------- -->
+    <!-- ------------------------------------- -->
+    <!-- results displayed to the users -->
+    <!-- the result from the API -->
+    <!-- filters to the results -->
+    <div class="result">
+      <h4>Stay Inspired</h4>
+      <section class="filters">
+        <select class="select-type">
+          <option value="author" selected>By Author</option>
+          <option value="title">Title</option>
+          <option value="publisher">Publisher</option>
+          <option value="subject">Subject</option>
+          <option value="isbn">Isbn</option>
+        </select>
+        <select class="search-languages">
+          <option value="en" selected>Any language</option>
+          <option value="en">English</option>
+          <option value="de">German</option>
+          <option value="pt">Portuguese</option>
+          <option value="es">Spanish</option>
+          <option value="fr">French</option>
+          <option value="ro">Romenian</option>
+          <option value="ar">Arabic</option>
+        </select>
+        <select class="order-by">
+          <option value="relevance" selected>Sorted by relevance</option>
+          <option value="newest" selected>Sorted by date</option>
+        </select>
+      </section>
+
+      <!-- --------------------------------------- -->
+      <!-- --------------------------------------- -->
+      <!-- --------------------------------------- -->
+      <section class="container-books">
+        <!-- Results from the search.. -->
+      </section>
+
+      <!----------------------------------------->
+      <div id="containePagination">
+        <div class="pagination">
+          <a href="#" class="page">1</a><a href="#" class="page">2</a
+          ><a href="#" class="page">3</a><span class="page active">4</span
+          ><a href="#" class="page">5</a><a href="#" class="page">6</a
+          ><a href="#" class="page">...</a>
+        </div>
+      </div>
+
+      <footer id="footer"></footer>
+    </div>
+    <!-- ----------------------------------- -->
+    <!-- ----------------------------------- -->
+
+    <!-- ----------------------------------- -->
+    <!-- ----------------------------------- -->
+
+    <script type="module" src="./scripts/app.js"></script>
+
+    <!-- ------------------------------------------------- -->
+  </body>
+</html>
