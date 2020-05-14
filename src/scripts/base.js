@@ -11,6 +11,7 @@ export const elements = {
   buttonUp: document.querySelector(".button_up"),
   searchHeader: document.getElementById("header"),
   spanx: document.querySelector(".spanX"),
+  favorites: document.getElementById("favorites"),
 };
 
 export const elementsStr = {

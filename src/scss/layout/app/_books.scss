@@ -73,11 +73,13 @@
 
 // PAGINATION
 
-//
+// stying scroll to the top button
+
 #footer {
   display: flex;
   justify-content: flex-end;
 }
+
 .button_up {
   width: 2rem;
   height: 2rem;
@@ -86,8 +88,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  background-color: rgba(31, 182, 122, 0.4);
+  background-color: #1fb67a66;
 }
 
 .button_up div {
