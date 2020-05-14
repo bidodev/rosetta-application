@@ -38,7 +38,7 @@ export const renderSpinner = (parent, where) => {
 };
 
 export const removeSpinner = function () {
-  const loader = document.querySelector(".loader");
+  const loader = document.querySelector(`.${elementsStr.loader}`);
   if (loader) {
     loader.remove();
   }
