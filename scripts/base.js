@@ -2,12 +2,16 @@ export const elements = {
   searchQuery: document.querySelector(".search-field"),
   orderBy: document.querySelector(".order-by"),
   searchType: document.querySelector(".select-type"),
-  resultDiv: document.querySelector(".container-books"),
+  booksContainer: document.querySelector(".container-books"),
   result: document.querySelector(".result"),
   fetchBtn: document.querySelector(".fetch-values"),
   filterLanguages: document.querySelector(".search-languages"),
   container: document.querySelector(".container"),
   filters: document.querySelector(".filters"),
+  buttonUp: document.querySelector(".button_up"),
+  searchHeader: document.getElementById("header"),
+  spanx: document.querySelector(".spanX"),
+  favorites: document.getElementById("favorites"),
 };
 
 export const elementsStr = {
