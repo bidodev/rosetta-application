@@ -91,5 +91,6 @@ export async function filters() {
 
   //Prepare the UI for the RESULTS.
   removeSpinner();
+
   search.result.forEach(renderBook);
 }
