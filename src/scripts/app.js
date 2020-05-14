@@ -12,12 +12,11 @@ import * as searchView from "./views.js";
 //default language for the search
 const defaultLanguage = "en";
 
-/**Global state of the map
+/**Global state of the application
  * - Search object
  * - Description object
  * - Books object
  */
-
 const state = {};
 
 //MAIN CONTROLLER
@@ -29,11 +28,6 @@ const controlSearch = async () => {
       //default language to search..
       language: defaultLanguage,
     };
-
-    ///const type = searchView.getSearchType();
-
-    //change the status of the search button..
-    searchView.addSpinner();
 
     /**
      * First we create a new instance of class Search, it will create an object..
@@ -47,14 +41,15 @@ const controlSearch = async () => {
     //since we can only render the results after having the data, we need to use await.
     await state.search.fetchResults();
 
-    //Prepare the UI for the RESULTS.
-    searchView.clearResults();
-
-    //time to use our object "search"
-    searchView.renderResults(state.search);
-
-    //render results on the UI, passing an object inside the function..
+    //render results on the UI
     if (state.search.result) {
+      //1. Prepare the Section for the results.
+      searchView.clearResults();
+
+      //send our data to the function to be render the books
+      searchView.renderResults(state.search);
+
+      //jump to the results
       searchView.scrollToResultPage();
     }
   } catch (error) {

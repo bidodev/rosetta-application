@@ -25,12 +25,11 @@
 
     h3 {
       font-size: 1.3rem;
-      padding: 2px 10px;
       color: rgb(209, 209, 209);
     }
     h6 {
       font-size: 0.8rem;
-      padding: 5px 2px 5px 10px;
+      margin-bottom: 0.8rem;
       color: rgba(31, 182, 122, 0.4);
     }
     h5 {
@@ -46,8 +45,9 @@
 
     .img-box {
       width: 140px;
-      height: 200px;
+      height: 202px;
       padding-bottom: 15px;
+      box-shadow: 3px -3px 1rem -3px rgba(0, 0, 0, 0.2);
 
       img {
         width: 100%;

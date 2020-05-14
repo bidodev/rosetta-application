@@ -10,15 +10,19 @@ export const elements = {
   filters: document.querySelector(".filters"),
 };
 
+export const elementsStr = {
+  loader: "loader",
+};
+
 //insert the spinner loader..
-export const renderSpinner = parent => {
+export const renderSpinner = (parent, where) => {
   const loader = `
-  <div class="loader">
+  <div class="${elementsStr.loader}">
     <svg>
       <use href="img/icons.svg#icon-cw"></use>
     </svg>
   </div>`;
-  parent.insertAdjacentHTML("beforeend", loader);
+  parent.insertAdjacentHTML(where, loader);
   /** element.insertAdjacentHTML(position, text);
    * Parameters
    * 
@@ -31,4 +35,11 @@ export const renderSpinner = parent => {
       text
         The string to be parsed as HTML or XML and inserted into the tree.
    */
+};
+
+export const removeSpinner = function () {
+  const loader = document.querySelector(".loader");
+  if (loader) {
+    loader.remove();
+  }
 };
