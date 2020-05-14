@@ -32,8 +32,7 @@
     <!-- ----------------------------------- -->
     <!-- ----------------------------------------------------- -->
     <div class="container">
-      <h1>Rosetta</h1>
-
+      <h1 class="heading-search">Rosetta</h1>
       <!-- SEARCH BOX -------->
       <div class="header-search">
         <div class="spanX">x</div>
@@ -43,7 +42,7 @@
           value=""
           autofocus
           spellcheck="false"
-          placeholder="Type author, title, book..."
+          placeholder="Search by author, book name, subject..."
         />
         <!-- cta button -->
         <button type="button" disabled class="fetch-values">Search</button>
@@ -53,54 +52,54 @@
 
     <!-- results displayed to the users -->
     <!-- the result from the API -->
+    <main class="main-content">
+      <div class="result">
+        <h4>Stay Inspired</h4>
 
-    <div class="result">
-      <h4>Stay Inspired</h4>
-
-      <!-- refefine search -->
-      <section class="filters">
-        <select class="select-type">
-          <option value="author" selected>By Author </option>
-          <option value="title">Title</option>
-          <option value="publisher">Publisher</option>
-          <option value="subject">Subject</option>
-          <option value="isbn">Isbn</option>
-        </select>
-        <select class="search-languages">
-          <option value="en" selected>Any language</option>
-          <option value="en">English</option>
-          <option value="de">German</option>
-          <option value="pt">Portuguese</option>
-          <option value="es">Spanish</option>
-          <option value="fr">French</option>
-          <option value="ro">Romenian</option>
-          <option value="ar">Arabic</option>
-        </select>
-        <select class="order-by">
-          <option value="relevance" selected>Sorted by relevance</option>
-          <option value="newest" selected>Sorted by date</option>
-        </select>
-      </section>
-    </div>
-    <!-- --------------------------------------- -->
-    <section class="container-books">
-      <!-- Results from the search.. -->
-    </section>
-
-    <!----------------------------------------->
-    <div id="pagination-cont">
-      <div class="pagination">
-        <a href="#" class="page">1</a> <span class="page active">2</span
-        ><a href="#" class="page">3</a><a href="#" class="page">4</a
-        ><a href="#" class="page">5</a><a href="#" class="page">6</a
-        ><a href="#" class="page">...</a>
+        <!-- refefine search -->
+        <section class="filters">
+          <select class="select-type">
+            <option value="author" selected>By Author </option>
+            <option value="title">Title</option>
+            <option value="publisher">Publisher</option>
+            <option value="subject">Subject</option>
+            <option value="isbn">Isbn</option>
+          </select>
+          <select class="search-languages">
+            <option value="en" selected>Any language</option>
+            <option value="en">English</option>
+            <option value="de">German</option>
+            <option value="pt">Portuguese</option>
+            <option value="es">Spanish</option>
+            <option value="fr">French</option>
+            <option value="ro">Romenian</option>
+            <option value="ar">Arabic</option>
+          </select>
+          <select class="order-by">
+            <option value="relevance" selected>Sorted by relevance</option>
+            <option value="newest" selected>Sorted by date</option>
+          </select>
+        </section>
       </div>
-    </div>
+      <!-- --------------------------------------- -->
+      <section class="container-books">
+        <!-- Results from the search.. -->
+      </section>
 
-    <footer id="footer-search">
-      <div class="button_up"><div></div></div>
-    </footer>
+      <!----------------------------------------->
+      <div id="pagination-cont">
+        <div class="pagination">
+          <a href="#" class="page">1</a> <span class="page active">2</span
+          ><a href="#" class="page">3</a><a href="#" class="page">4</a
+          ><a href="#" class="page">5</a><a href="#" class="page">6</a
+          ><a href="#" class="page">...</a>
+        </div>
+      </div>
 
+      <footer id="footer-search">
+        <div class="button_up"><div></div></div>
+      </footer>
+    </main>
     <script type="module" src="./scripts/app.js"></script>
     <!-- ------------------------------------------------- -->
   </body>
