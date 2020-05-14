@@ -107,3 +107,5 @@ function disableBtn() {
     elements.result.style.display = "none";
   }
 }
+
+elements.buttonUp.addEventListener("click", searchView.goUp);
