@@ -50,7 +50,17 @@ const controlSearch = async () => {
     //time to use our object "search"
     //render results on the UI, passing an object inside the function..
     searchView.renderResults(search);
-    console.log(search);
+
+    const scrollToResultPage = () => {
+      if (search.result) {
+        elements.result.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+          inline: "nearest",
+        });
+      }
+    };
+    scrollToResultPage();
   } catch (error) {
     console.log(error);
   }
@@ -73,7 +83,7 @@ elements.filterLanguages.addEventListener("change", searchView.filters);
 elements.orderBy.addEventListener("change", searchView.filters);
 
 //ENTER BUTTON
-document.addEventListener("keypress", event => {
+document.addEventListener("keypress", (event) => {
   //check if the user pressed the return key (enter)
   if (event.keyCode === 13) {
     controlSearch();
