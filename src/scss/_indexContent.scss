@@ -1,6 +1,6 @@
 body {
   background-color: rgb(255, 255, 255);
-  height: 100%;
+  height: auto;
   overflow-x: hidden;
 
   #page {
@@ -14,8 +14,7 @@ body {
   header {
     @include navigation-bar;
     width: 100vw;
-    min-height: 10vh;
-
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,9 +29,8 @@ body {
     width: 100vw;
     height: 100vh;
     background-color: rgba(255, 255, 255, 0.5);
-    position: relative;
-
-    background-image: url(../img/pattern.svg);
+    background-image: linear-gradient(rgba(#c5c5c5, 0.1), rgba(#c5c5c5, 0.1)),
+      url(../img/pattern.svg);
     background-size: cover;
     background-position: top right;
     background-repeat: no-repeat;
@@ -41,8 +39,6 @@ body {
     border-bottom: 1px dotted rgba(31, 182, 122, 0.9);
 
     h1 {
-      position: relative;
-
       text-transform: uppercase;
       font-family: Arial, Helvetica, sans-serif;
       letter-spacing: 1px;
@@ -50,13 +46,11 @@ body {
       color: rgba(31, 182, 122, 0.8);
       -webkit-text-fill-color: transparent;
       -webkit-text-stroke-width: 1px;
+      transform: translate(0vw, -2vh);
     }
 
     h2 {
-      position: absolute;
-      top: 50.5%;
-      left: 65.5%;
-      transform: translate(-65.5%, -50.5%);
+      transform: translate(10vw, -10vh);
       margin-top: 40px;
       font-family: Arial, Helvetica, sans-serif;
       text-transform: uppercase;
@@ -156,7 +150,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
 
     h3 {
       text-transform: uppercase;
@@ -169,13 +162,10 @@ body {
     }
 
     h4 {
-      position: absolute;
-      top: 51%;
-      left: 64%;
-      transform: translate(-64%, -51%);
+      transform: translate(-2.8vw, 3vh);
+
       margin-top: 40px;
       font-family: Arial, Helvetica, sans-serif;
-
       text-transform: uppercase;
       font-size: 0.8rem;
       color: rgba(31, 182, 122, 0.8);
@@ -202,17 +192,16 @@ body {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     }
     p {
-      line-height: 1em;
+      line-height: 1.5em;
       font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
         "Lucida Sans", Arial, sans-serif;
-      font-size: 1.4em;
-      letter-spacing: -1px;
+      font-size: 1em;
       text-transform: uppercase;
-      color: rgba(31, 182, 122, 0.4);
+      color: rgba(31, 182, 122, 0.6);
       margin: 10px 0;
       span {
         margin: 0 10px;
-        color: rgba(31, 182, 122, 0.3);
+        color: rgba(31, 182, 122, 0.5);
       }
     }
 
@@ -277,7 +266,7 @@ body {
 
     .footerWrapper {
       p {
-        color: #f1f1f1;
+        color: #606060;
         font-weight: 600;
       }
     }

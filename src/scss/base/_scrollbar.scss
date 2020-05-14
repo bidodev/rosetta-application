@@ -14,3 +14,9 @@ body::-webkit-scrollbar-thumb {
   background-color: rgb(15, 15, 15);
   outline: none;
 }
+
+//scroolbar color change..
+.bg-active {
+  background-color: rgba(31, 182, 122, 0.4);
+  transition: all 1s ease-in-out;
+}

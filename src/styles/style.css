@@ -29,12 +29,12 @@ body::-webkit-scrollbar-thumb {
 
 .bg-active {
   background-color: rgba(31, 182, 122, 0.4);
-  transition: all 2s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 
 body {
   background-color: white;
-  height: 100%;
+  height: auto;
   overflow-x: hidden;
 }
 body #page {
@@ -43,7 +43,7 @@ body #page {
 }
 body header {
   width: 100vw;
-  min-height: 10vh;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,7 +64,7 @@ body header nav .logo a {
   text-decoration: none;
   font-family: monospace;
   letter-spacing: 10px;
-  color: black;
+  color: #606060;
 }
 body header nav ul {
   list-style: none;
@@ -95,8 +95,7 @@ body #banner {
   width: 100vw;
   height: 100vh;
   background-color: rgba(255, 255, 255, 0.5);
-  position: relative;
-  background-image: url(../img/pattern.svg);
+  background-image: linear-gradient(rgba(197, 197, 197, 0.1), rgba(197, 197, 197, 0.1)), url(../img/pattern.svg);
   background-size: cover;
   background-position: top right;
   background-repeat: no-repeat;
@@ -104,7 +103,6 @@ body #banner {
   border-bottom: 1px dotted rgba(31, 182, 122, 0.9);
 }
 body #banner h1 {
-  position: relative;
   text-transform: uppercase;
   font-family: Arial, Helvetica, sans-serif;
   letter-spacing: 1px;
@@ -112,12 +110,10 @@ body #banner h1 {
   color: rgba(31, 182, 122, 0.8);
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
+  transform: translate(0vw, -2vh);
 }
 body #banner h2 {
-  position: absolute;
-  top: 50.5%;
-  left: 65.5%;
-  transform: translate(-65.5%, -50.5%);
+  transform: translate(10vw, -10vh);
   margin-top: 40px;
   font-family: Arial, Helvetica, sans-serif;
   text-transform: uppercase;
@@ -202,7 +198,6 @@ body .credits {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
 }
 body .credits h3 {
   text-transform: uppercase;
@@ -214,10 +209,7 @@ body .credits h3 {
   -webkit-text-stroke-width: 1px;
 }
 body .credits h4 {
-  position: absolute;
-  top: 51%;
-  left: 64%;
-  transform: translate(-64%, -51%);
+  transform: translate(-2.8vw, 3vh);
   margin-top: 40px;
   font-family: Arial, Helvetica, sans-serif;
   text-transform: uppercase;
@@ -242,17 +234,16 @@ body #middleSection h3 {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 body #middleSection p {
-  line-height: 1em;
+  line-height: 1.5em;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
-  font-size: 1.4em;
-  letter-spacing: -1px;
+  font-size: 1em;
   text-transform: uppercase;
-  color: rgba(31, 182, 122, 0.4);
+  color: rgba(31, 182, 122, 0.6);
   margin: 10px 0;
 }
 body #middleSection p span {
   margin: 0 10px;
-  color: rgba(31, 182, 122, 0.3);
+  color: rgba(31, 182, 122, 0.5);
 }
 body #middleSection #middleContainer {
   width: 80%;
@@ -313,18 +304,55 @@ body #footer .footerWrapper p {
   font-family: Arial, Helvetica, sans-serif;
 }
 body #footer .footerWrapper p {
-  color: #f1f1f1;
+  color: #606060;
   font-weight: 600;
 }
 
-.bg-active {
-  background-color: rgba(31, 182, 122, 0.4);
-  transition: all 2s ease-in-out;
+/*----------GRID-----------*/
+.container-books {
+  padding: 5em 5em;
+  display: grid;
+  gap: 2em;
+  grid-template-columns: repeat(auto-fit, minmax(20vw, 1fr));
+  background-color: white;
+}
+.container-books .quote {
+  padding: 5px;
+}
+.container-books .quote h3 {
+  font-size: 1.3rem;
+  padding: 2px 10px;
+  color: #d1d1d1;
+}
+.container-books .quote h6 {
+  font-size: 0.8rem;
+  padding: 5px 2px 5px 10px;
+  color: rgba(31, 182, 122, 0.4);
+}
+.container-books .quote h5 {
+  padding: 2px;
+  color: #9c9c9c;
+}
+.container-books .quote p {
+  padding: 2px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #a8a8a8;
+  font-size: 1rem;
+}
+.container-books .quote .img-box {
+  width: 140px;
+  height: 200px;
+  padding-bottom: 15px;
+}
+.container-books .quote .img-box img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 body {
   background-color: white;
-  height: 100%;
+  height: auto;
   overflow-x: hidden;
 }
 body #page {
@@ -333,7 +361,7 @@ body #page {
 }
 body header {
   width: 100vw;
-  min-height: 10vh;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -354,7 +382,7 @@ body header nav .logo a {
   text-decoration: none;
   font-family: monospace;
   letter-spacing: 10px;
-  color: black;
+  color: #606060;
 }
 body header nav ul {
   list-style: none;
@@ -385,8 +413,7 @@ body #banner {
   width: 100vw;
   height: 100vh;
   background-color: rgba(255, 255, 255, 0.5);
-  position: relative;
-  background-image: url(../img/pattern.svg);
+  background-image: linear-gradient(rgba(197, 197, 197, 0.1), rgba(197, 197, 197, 0.1)), url(../img/pattern.svg);
   background-size: cover;
   background-position: top right;
   background-repeat: no-repeat;
@@ -394,7 +421,6 @@ body #banner {
   border-bottom: 1px dotted rgba(31, 182, 122, 0.9);
 }
 body #banner h1 {
-  position: relative;
   text-transform: uppercase;
   font-family: Arial, Helvetica, sans-serif;
   letter-spacing: 1px;
@@ -402,12 +428,10 @@ body #banner h1 {
   color: rgba(31, 182, 122, 0.8);
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
+  transform: translate(0vw, -2vh);
 }
 body #banner h2 {
-  position: absolute;
-  top: 50.5%;
-  left: 65.5%;
-  transform: translate(-65.5%, -50.5%);
+  transform: translate(10vw, -10vh);
   margin-top: 40px;
   font-family: Arial, Helvetica, sans-serif;
   text-transform: uppercase;
@@ -492,7 +516,6 @@ body .credits {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
 }
 body .credits h3 {
   text-transform: uppercase;
@@ -504,10 +527,7 @@ body .credits h3 {
   -webkit-text-stroke-width: 1px;
 }
 body .credits h4 {
-  position: absolute;
-  top: 51%;
-  left: 64%;
-  transform: translate(-64%, -51%);
+  transform: translate(-2.8vw, 3vh);
   margin-top: 40px;
   font-family: Arial, Helvetica, sans-serif;
   text-transform: uppercase;
@@ -532,17 +552,16 @@ body #middleSection h3 {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 body #middleSection p {
-  line-height: 1em;
+  line-height: 1.5em;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
-  font-size: 1.4em;
-  letter-spacing: -1px;
+  font-size: 1em;
   text-transform: uppercase;
-  color: rgba(31, 182, 122, 0.4);
+  color: rgba(31, 182, 122, 0.6);
   margin: 10px 0;
 }
 body #middleSection p span {
   margin: 0 10px;
-  color: rgba(31, 182, 122, 0.3);
+  color: rgba(31, 182, 122, 0.5);
 }
 body #middleSection #middleContainer {
   width: 80%;
@@ -603,7 +622,7 @@ body #footer .footerWrapper p {
   font-family: Arial, Helvetica, sans-serif;
 }
 body #footer .footerWrapper p {
-  color: #f1f1f1;
+  color: #606060;
   font-weight: 600;
 }
 
@@ -636,7 +655,7 @@ body #footer .footerWrapper p {
     text-decoration: none;
     font-family: monospace;
     letter-spacing: 10px;
-    color: black;
+    color: #606060;
   }
   body header nav ul {
     list-style: none;
@@ -668,27 +687,25 @@ body #footer .footerWrapper p {
     height: 100vh;
     background-color: #f3f3f3;
     background-size: cover;
-    background-image: url(../img/green-line2.svg);
+    background-image: linear-gradient(rgba(197, 197, 197, 0.1), rgba(197, 197, 197, 0.1)), url(../img/green-line2.svg);
     background-repeat: no-repeat;
   }
   body .container h1 {
-    font-size: 5rem;
+    font-size: 6rem;
     color: rgba(31, 182, 122, 0.9);
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width: 1px;
     font-family: Arial, Helvetica, sans-serif;
-    position: relative;
     text-transform: uppercase;
+    transform: translate(0vw, -2vh);
   }
   body .container h4 {
-    position: absolute;
-    top: 32%;
-    left: 48%;
     margin-top: 40px;
     font-family: Arial, Helvetica, sans-serif;
     text-transform: uppercase;
     font-size: 0.8rem;
     color: rgba(31, 182, 122, 0.8);
+    transform: translate(7.5vw, -15vh);
   }
   body .container .header-search {
     display: flex;
@@ -698,14 +715,14 @@ body #footer .footerWrapper p {
     width: auto;
   }
   body .container .header-search .search-field {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     padding: 15px 40px;
     line-height: 1.4;
     margin-right: 0.3rem;
-    background-color: rgba(253, 200, 175, 0.2);
+    background-color: rgba(96, 96, 96, 0.1);
     outline: none;
     border: none;
-    border: 1px dotted rgba(31, 182, 122, 0.6);
+    border: 1px solid rgba(31, 182, 122, 0.6);
     transition: color 3s ease-in-out;
   }
   body .container .header-search .search-field:hover {
@@ -713,16 +730,11 @@ body #footer .footerWrapper p {
     border: 1px solid rgba(31, 182, 122, 0.6);
   }
   body .container .header-search ::placeholder {
-    color: rgba(249, 105, 37, 0.4);
+    color: rgba(31, 182, 122, 0.9);
   }
   body .container .header-search textarea:focus,
 body .container .header-search input:focus {
-    color: black;
-  }
-  body .container .header-search input,
-body .container .header-search select,
-body .container .header-search textarea {
-    color: #fdc8af;
+    color: rgba(31, 182, 122, 0.9);
   }
   body .container .header-search .fetch-values {
     position: relative;
@@ -732,8 +744,7 @@ body .container .header-search textarea {
     cursor: pointer;
     border: none;
     background-color: transparent;
-    border: 1px dotted rgba(31, 182, 122, 0.7);
-    box-shadow: 1px 1px rgba(179, 178, 178, 0.4);
+    border: 1px solid rgba(31, 182, 122, 0.7);
     color: #1fb67a;
     transition: color 0.2s ease-in-out;
   }
@@ -846,47 +857,23 @@ body .container .header-search textarea {
   body .result #containePagination a:active {
     color: #9b9b9b;
   }
-}
-/*----------GRID-----------*/
-.container-books {
-  padding: 5em 5em;
-  display: grid;
-  gap: 2em;
-  grid-template-columns: repeat(auto-fit, minmax(20vw, 1fr));
-  background-color: white;
-}
-.container-books .quote {
-  padding: 5px;
-}
-.container-books .quote h3 {
-  font-size: 1.3rem;
-  padding: 2px 10px;
-  color: #d1d1d1;
-}
-.container-books .quote h6 {
-  font-size: 0.8rem;
-  padding: 5px 2px 5px 10px;
-  color: rgba(31, 182, 122, 0.4);
-}
-.container-books .quote h5 {
-  padding: 2px;
-  color: #9c9c9c;
-}
-.container-books .quote p {
-  padding: 2px;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #a8a8a8;
-  font-size: 1rem;
-}
-.container-books .quote .img-box {
-  width: 140px;
-  height: 200px;
-  padding-bottom: 15px;
-}
-.container-books .quote .img-box img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+  body #searchFooter {
+    width: 100vw;
+    height: 5vh;
+  }
+  body #searchFooter .footerWrapSearch {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  body #searchFooter .footerWrapSearch p {
+    font-size: 0.7rem;
+    color: #353535;
+    font-family: Arial, Helvetica, sans-serif;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
