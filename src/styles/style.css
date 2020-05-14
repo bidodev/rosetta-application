@@ -443,76 +443,6 @@ body #footer .footerWrapper p {
   margin: 0 10px 0 10px;
   text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
-<<<<<<< HEAD
-=======
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  color: rgba(31, 182, 122, 0.8);
-}
-body #middleSection {
-  width: 100vw;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #ffffff;
-  padding: 120px 0 200px 0;
-}
-body #middleSection h3 {
-  font-size: 1.5em;
-  margin-top: 0;
-  color: rgba(31, 182, 122, 0.5);
-  font-style: italic;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-body #middleSection p {
-  line-height: 1.5em;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
-  font-size: 1em;
-  text-transform: uppercase;
-  color: rgba(31, 182, 122, 0.6);
-  margin: 10px 0;
-}
-body #middleSection p span {
-  margin: 0 10px;
-  color: rgba(31, 182, 122, 0.5);
-}
-body #middleSection #middleContainer {
-  width: 80%;
-  display: grid;
-  grid-template-columns: 30% auto;
-  border-bottom: 1px dotted rgba(31, 182, 122, 0.9);
-  justify-content: center;
-  align-items: center;
-  margin: 10px 0;
-}
-body #middleSection #middleContainer .boxImgTeam1, body #middleSection #middleContainer .boxImgTeam2, body #middleSection #middleContainer .boxImgTeam3 {
-  width: 130px;
-  height: 130px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 100%;
-  position: relative;
-  margin: 10px;
-  background-image: url(../img/rumi.jpg);
-}
-body #middleSection #middleContainer .boxImgTeam1:after, body #middleSection #middleContainer .boxImgTeam2:after, body #middleSection #middleContainer .boxImgTeam3:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 100%;
-  background-color: rgba(244, 248, 246, 0.5);
-  background-image: linear-gradient(45deg, #808080 25%, transparent 25%), linear-gradient(-45deg, #808080 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #808080 75%), linear-gradient(-45deg, transparent 75%, #808080 75%);
-  background-size: 2px 2px;
-  background-position: center;
-  /* background-position: 0 0, 5px 0, 5px -5px, 0px 5px; */
-  opacity: 0.8;
->>>>>>> master
 }
 #pagination-cont a:active {
   color: #9b9b9b;
@@ -538,7 +468,7 @@ body #middleSection #middleContainer .boxImgTeam1:after, body #middleSection #mi
   }
   body header {
     width: 100vw;
-    min-height: 10vh;
+    height: 5vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -734,7 +664,6 @@ body #middleSection #middleContainer .boxImgTeam1:after, body #middleSection #mi
     padding: 12px 20px;
     color: rgba(31, 182, 122, 0.8);
     outline: none;
-    -webkit-appearance: none;
   }
 }
 

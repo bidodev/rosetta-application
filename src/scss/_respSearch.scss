@@ -19,7 +19,7 @@
     header {
       @include navigation-bar;
       width: 100vw;
-      min-height: 10vh;
+      height: 5vh;
 
       display: flex;
       justify-content: center;
@@ -222,7 +222,6 @@
           padding: 12px 20px;
           color: rgba(31, 182, 122, 0.8);
           outline: none;
-          -webkit-appearance: none;
         }
 
         .search-languages {

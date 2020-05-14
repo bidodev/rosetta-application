@@ -14,6 +14,7 @@ export const clearResults = () => (elements.booksContainer.innerHTML = "");
 //finction to scroll to the top of the page
 export const goUp = () => {
   window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  elements.searchHeader.style.background = "none";
 };
 
 //function to scroll into the results
