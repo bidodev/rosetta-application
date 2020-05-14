@@ -58,8 +58,18 @@ const controlSearch = async () => {
 
     //time to use our object "search"
     //render results on the UI, passing an object inside the function..
-    searchView.renderResults(state.search);
-    console.log(state.search);
+    searchView.renderResults(search);
+
+    const scrollToResultPage = () => {
+      if (search.result) {
+        elements.result.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+          inline: "nearest",
+        });
+      }
+    };
+    scrollToResultPage();
   } catch (error) {
     console.log(error);
   }

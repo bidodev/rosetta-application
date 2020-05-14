@@ -20,6 +20,16 @@ export const clearResults = () => {
   elements.resultDiv.innerHTML = "";
 };
 
+// export const scrollToResultPage = () => {
+//   if (search.result) {
+//     elements.result.scrollIntoView({
+//       behavior: "smooth",
+//       block: "start",
+//       inline: "nearest",
+//     });
+//   }
+// };
+
 /** Limit string..
  *
  */
@@ -38,7 +48,7 @@ const limitResults = (str, limit) => {
   return str;
 };
 
-const renderBook = book => {
+const renderBook = (book) => {
   let { title, description, authors, pageCount, imageLinks } = book.volumeInfo;
 
   if (!description) {
@@ -60,7 +70,7 @@ const renderBook = book => {
   elements.resultDiv.insertAdjacentHTML("beforeend", markUp);
 };
 
-export const renderResults = data => {
+export const renderResults = (data) => {
   const { query, result } = data;
   // console.log(decodeURI(query));
 
