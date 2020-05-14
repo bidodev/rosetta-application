@@ -51,6 +51,8 @@ const controlSearch = async () => {
 
       //jump to the results
       searchView.scrollToResultPage();
+      elements.favorites.style.color = "#606060";
+      elements.searchHeader.style.background = "#1fb67a66";
     }
   } catch (error) {
     console.log(error);
