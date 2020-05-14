@@ -3,7 +3,7 @@ import Search from "./models/Search.js";
 
 //query input value
 export const getSearchQuery = () => elements.searchQuery.value;
-
+export const storeUserInput = () => elements.searchQuery.value;
 export const getSearchType = () => elements.searchType.value;
 
 export const clearInput = () => (elements.searchQuery.value = "");
@@ -46,7 +46,7 @@ const limitResults = (str, limit) => {
   return str;
 };
 
-const renderBook = book => {
+const renderBook = (book) => {
   let { title, description, authors, pageCount, imageLinks } = book.volumeInfo;
 
   if (!description) {
@@ -68,7 +68,7 @@ const renderBook = book => {
   elements.resultDiv.insertAdjacentHTML("beforeend", markUp);
 };
 
-export const renderResults = data => {
+export const renderResults = (data) => {
   const { query, result } = data;
   // console.log(decodeURI(query));
 

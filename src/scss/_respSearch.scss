@@ -76,31 +76,22 @@
         // --------------
         //
         .search-field {
-          font-size: 0.9rem;
           padding: 15px 40px;
           line-height: 1.4;
-
           margin-right: 0.3rem;
           // color and opacity 0.3
-          background-color: rgb(96, 96, 96, 0.1);
+          background-color: rgba(253, 200, 175, 0.2);
           outline: none;
           border: none;
-
-          border: 1px solid rgba(31, 182, 122, 0.6);
+          border: 1px dotted rgba(31, 182, 122, 0.6);
           transition: color 3s ease-in-out;
-
+          color: rgb(211, 115, 71);
           &:hover {
-            color: rgba(31, 182, 122, 0.9);
             border: 1px solid rgba(31, 182, 122, 0.6);
           }
         }
-
         ::placeholder {
-          color: rgba(31, 182, 122, 0.9);
-        }
-        textarea:focus,
-        input:focus {
-          color: rgba(31, 182, 122, 0.9);
+          color: rgba(249, 105, 37, 0.4);
         }
 
         // -------------
