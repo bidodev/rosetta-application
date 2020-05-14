@@ -20,9 +20,9 @@
     <!-- ----------------------------------- -->
     <!-- ----------------------------------- -->
     <header id="header">
-      <nav>
+      <nav class="navbar">
         <h3 class="logo">
-          <a href="index.html">ros3tta</a>
+          <a href="./index.html">ros3tta</a>
         </h3>
         <ul>
           <li id="favorites"><a href="#">favorites</a></li>
@@ -48,24 +48,19 @@
         <!-- cta button -->
         <button type="button" disabled class="fetch-values">Search</button>
       </div>
-      <h4>
-        stimulate your research
-      </h4>
+      <h4>stimulate your research</h4>
     </div>
-    <!-- ------------------------------------- -->
-    <!-- ------------------------------------- -->
-    <!-- ------------------------------------- -->
-    <!-- ------------------------------------- -->
+
     <!-- results displayed to the users -->
     <!-- the result from the API -->
-    <!-- filters to the results -->
+
     <div class="result">
       <h4>Stay Inspired</h4>
+
+      <!-- refefine search -->
       <section class="filters">
         <select class="select-type">
-          <option value="author" selected
-            >By Author</i>
-          </option>
+          <option value="author" selected>By Author </option>
           <option value="title">Title</option>
           <option value="publisher">Publisher</option>
           <option value="subject">Subject</option>
@@ -86,34 +81,25 @@
           <option value="newest" selected>Sorted by date</option>
         </select>
       </section>
-
-      <!-- --------------------------------------- -->
-      <!-- --------------------------------------- -->
-      <!-- --------------------------------------- -->
-      <section class="container-books">
-        <!-- Results from the search.. -->
-      </section>
-
-      <!----------------------------------------->
-      <div id="containePagination">
-        <div class="pagination">
-          <a href="#" class="page">1</a><a href="#" class="page">2</a
-          ><a href="#" class="page">3</a><span class="page active">4</span
-          ><a href="#" class="page">5</a><a href="#" class="page">6</a
-          ><a href="#" class="page">...</a>
-        </div>
-      </div>
-      
-
-      <footer id="footer">  <div class="button_up"></a> <div></div></div></footer>
-    
-
     </div>
-    <!-- ----------------------------------- -->
-    <!-- ----------------------------------- -->
+    <!-- --------------------------------------- -->
+    <section class="container-books">
+      <!-- Results from the search.. -->
+    </section>
 
-    <!-- ----------------------------------- -->
-    <!-- ----------------------------------- -->
+    <!----------------------------------------->
+    <div id="pagination-cont">
+      <div class="pagination">
+        <a href="#" class="page">1</a> <span class="page active">2</span
+        ><a href="#" class="page">3</a><a href="#" class="page">4</a
+        ><a href="#" class="page">5</a><a href="#" class="page">6</a
+        ><a href="#" class="page">...</a>
+      </div>
+    </div>
+
+    <footer id="footer-search">
+      <div class="button_up"><div></div></div>
+    </footer>
 
     <script type="module" src="./scripts/app.js"></script>
     <!-- ------------------------------------------------- -->

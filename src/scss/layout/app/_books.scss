@@ -10,27 +10,30 @@
 
 /*----------GRID-----------*/
 .container-books {
-  padding: 5em 5em;
+  padding: 3em 7em;
   display: grid;
 
-  gap: 2em;
-  grid-template-columns: repeat(auto-fit, minmax(20vw, 1fr));
+  gap: 3em 2em;
+  grid-template-columns: repeat(auto-fit, minmax(18vw, 1fr));
+  min-height: 80vh;
   // the auto fit will make it adaptable to the device.
   // the minmax means that the box will always keep that size, unless i change it.
   // if you dont add the fraction, leaving alone the 250px, the box will occupy the 100% width, but using the fraction will put it in 2 rows.
-  background-color: white;
+  background-color: #fff;
 
   .quote {
-    padding: 5px;
-
     h3 {
       font-size: 1.3rem;
-      color: rgb(209, 209, 209);
+      color: #606060;
     }
     h6 {
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       margin-bottom: 0.8rem;
-      color: rgba(31, 182, 122, 0.4);
+      color: rgba(31, 182, 122, 0.7);
+      span {
+        color: rgba(31, 182, 122, 0.5);
+        font-size: 0.7rem;
+      }
     }
     h5 {
       padding: 2px;
@@ -39,24 +42,34 @@
     p {
       padding: 2px;
       font-family: Arial, Helvetica, sans-serif;
-      color: rgb(168, 168, 168);
-      font-size: 1rem;
+      color: #909090;
+      font-size: 0.95rem;
     }
 
     .img-box {
       width: 140px;
       height: 202px;
-      padding-bottom: 15px;
-      box-shadow: 3px -3px 1rem -3px rgba(0, 0, 0, 0.2);
+      margin: 0.9rem 0.6rem;
+      box-shadow: 3px -3px 0.8rem -3px rgba(0, 0, 0, 0.5);
+      transform: scale(1.1);
+      opacity: 0.7;
+      transition: all 0.3s;
 
       img {
         width: 100%;
         height: auto;
         object-fit: cover;
       }
+      &:hover {
+        transform: scale(1.03);
+        opacity: 1;
+      }
     }
   }
 }
+// .container-books :first-child {
+//   background-color: red;
+// }
 
 // PAGINATION
 

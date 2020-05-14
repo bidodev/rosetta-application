@@ -1,14 +1,16 @@
 @charset "UTF-8";
 
+// 1. Configuration and helpers
+@import "abstracts/variables", "abstracts/mixins";
+
 // 2. Animations
 @import "animations/loader";
 
 // 3. Base stuff
 @import "base/base", "base/scrollbar";
 
-@import "mixin";
-@import "indexContent";
-@import "search";
-@import "mixin";
-@import "indexContent";
+// 4. Layout for the Website and App
+@import "layout/site/content";
+@import "layout/app/books", "layout/app/pagination", "layout/app/footer";
+
 @import "respSearch";

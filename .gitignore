@@ -1,2 +1,7 @@
 dist/
+
+#node modules
 node_modules/
+
+#css styles
+src/styles/

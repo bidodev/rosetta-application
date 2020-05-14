@@ -51,8 +51,48 @@ export default class Search {
         if (!items) {
           items = [];
         }
+        const noCover =
+          "https://www.forewordreviews.com/books/covers/strategic-market-research.jpg";
 
-        this.result = items;
+        const validateData = items.map(item => {
+          const info = item.volumeInfo;
+
+          let { title, publisher } = info;
+
+          const link = info.previewLink;
+          const imgLink = info.imageLinks ? info.imageLinks.thumbnail : noCover;
+
+          //validate authors
+          const author =
+            info.authors.length > 1
+              ? info.authors[0] +
+                ` and ${info.authors.length > 2 ? "others" : "other"} ${
+                  info.authors.length - 1
+                }`
+              : info.authors;
+
+          const published = info.publishedDate;
+
+          const description = info.description
+            ? info.description
+            : "No description available";
+
+          const pageCount = info.pageCount ? info.pageCount : "Unknown";
+          // const desc = info.subtitle;
+
+          return {
+            title,
+            description,
+            link,
+            imgLink,
+            author,
+            publisher,
+            published,
+            pageCount,
+          };
+        });
+
+        this.result = validateData;
       };
 
       extractInfo(data);
