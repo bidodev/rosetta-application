@@ -284,7 +284,7 @@ body #middleSection #middleContainer .boxImgTeam1, body #middleSection #middleCo
   border-radius: 100%;
   position: relative;
   margin: 10px;
-  background-image: url(../img/orwell.jpg);
+  background-image: url(../img/rumi.jpg);
 }
 body #middleSection #middleContainer .boxImgTeam1:after, body #middleSection #middleContainer .boxImgTeam3:after, body #middleSection #middleContainer .boxImgTeam2:after {
   content: "";
@@ -384,7 +384,7 @@ body #footer .footerWrapper p {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(31, 182, 122, 0.4);
+  background-color: #1fb67a66;
 }
 
 .button_up div {
@@ -627,7 +627,7 @@ body #middleSection #middleContainer .boxImgTeam1, body #middleSection #middleCo
   border-radius: 100%;
   position: relative;
   margin: 10px;
-  background-image: url(../img/orwell.jpg);
+  background-image: url(../img/rumi.jpg);
 }
 body #middleSection #middleContainer .boxImgTeam1:after, body #middleSection #middleContainer .boxImgTeam2:after, body #middleSection #middleContainer .boxImgTeam3:after {
   content: "";
@@ -876,6 +876,7 @@ body #footer .footerWrapper p {
     padding: 12px 20px;
     color: rgba(31, 182, 122, 0.8);
     outline: none;
+    -webkit-appearance: none;
   }
   body .result #containePagination {
     width: 100%;

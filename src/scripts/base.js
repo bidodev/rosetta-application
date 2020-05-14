@@ -10,6 +10,7 @@ export const elements = {
   filters: document.querySelector(".filters"),
   buttonUp: document.querySelector(".button_up"),
   searchHeader: document.getElementById("header"),
+  favorites: document.getElementById("favorites"),
 };
 
 export const elementsStr = {
