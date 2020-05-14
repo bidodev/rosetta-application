@@ -1,17 +1,20 @@
-//IMPORT BASE / CLASSES / VIEWS //
+// -----------------------------------------------------------------------------
+// This file contains the whole flow of the application.
+// -----------------------------------------------------------------------------
 
-//import all DOM queries as elements..
+//import HTML elements
 import { elements, renderSpinner } from "./base.js";
 
 //import Search class
 import Search from "./models/Search.js";
 
 //import everything which is public from views as searcView
-import * as searchView from "./views.js";
+import * as searchView from "./views/views.js";
 
-//default language for the search
-const defaultLanguage = "en";
-
+// default language for the results
+// Current browser language
+// const language = window.navigator.language;
+const language = "en";
 /**Global state of the application
  * - Search object
  * - Description object
@@ -19,15 +22,16 @@ const defaultLanguage = "en";
  */
 const state = {};
 
-//MAIN CONTROLLER
+/**
+ * Main controller
+ */
 const controlSearch = async () => {
   try {
     const defSearch = {
-      // get the values from the user..
-      query: searchView.getSearchQuery(),
-      //default language to search..
-      language: defaultLanguage,
+      query: searchView.getSearchQuery(), //get the search value from the user
+      language: language, //default language for the results
     };
+    console.log(defSearch);
 
     /**
      * First we create a new instance of class Search, it will create an object..
@@ -74,12 +78,26 @@ elements.filterLanguages.addEventListener("change", searchView.filters);
 elements.orderBy.addEventListener("change", searchView.filters);
 
 //ENTER BUTTON
-document.addEventListener("keypress", (event) => {
+document.addEventListener("keypress", event => {
   //check if the user pressed the return key (enter)
   if (event.keyCode === 13) {
     controlSearch();
   }
 });
+
+// window.onscroll = function () {
+//   myFunction();
+// };
+
+// const navbar = document.querySelector("navbar");
+// const sticky = navbar.offsetTop;
+
+// function myFunction() {
+//   window.pageYOffset >= sticky
+//     ? navbar.classList.add("fixed-top")
+//     : //add bootstrap fixed-top class
+//       navbar.classList.remove("fixed-top");
+// }
 
 //X BUTTON
 let spanX = document.querySelector(".spanX");

@@ -1,5 +1,5 @@
-import { elements, renderSpinner, removeSpinner } from "./base.js";
-import Search from "./models/Search.js";
+import { elements, renderSpinner, removeSpinner } from "../base.js";
+import Search from "../models/Search.js";
 
 //query input value
 export const getSearchQuery = () => elements.searchQuery.value;
@@ -34,14 +34,13 @@ const limitResults = (str, limit) => {
   return str;
 };
 
-const renderBook = (book) => {
+const renderBook = book => {
   let { title, description, authors, pageCount, imageLinks } = book.volumeInfo;
   let { thumbnail } = imageLinks;
 
   if (!description) {
     description = "No description available";
   }
-  console.log(imageLinks);
 
   let markUp = `
     <div class="quote">
@@ -58,7 +57,7 @@ const renderBook = (book) => {
   elements.resultDiv.insertAdjacentHTML("beforeend", markUp);
 };
 
-export const renderResults = (data) => {
+export const renderResults = data => {
   const { query, result } = data;
   // console.log(decodeURI(query));
 
