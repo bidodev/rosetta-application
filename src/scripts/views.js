@@ -1,4 +1,4 @@
-import { DOMstrings as elements } from "./elements.js";
+import { elements } from "./base.js";
 import Search from "./models/Search.js";
 
 //query input value
