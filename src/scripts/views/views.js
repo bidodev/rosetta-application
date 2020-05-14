@@ -74,6 +74,7 @@ export const renderResults = data => {
   const { result } = data;
 
   //we make the filters appears again on the page
+  document.querySelector(".main-content").style.display = "block";
   elements.result.style.display = "flex";
   result.forEach(renderBook);
 };

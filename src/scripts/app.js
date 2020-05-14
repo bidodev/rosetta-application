@@ -61,7 +61,7 @@ const controlSearch = async () => {
         searchView.clearInput();
 
         elements.favorites.style.color = "#606060";
-        elements.searchHeader.style.background = "#f3f3f3";
+        elements.searchHeader.style.background = "rgba(250, 250, 250, 0.9)";
       }
     }
   } catch (error) {
