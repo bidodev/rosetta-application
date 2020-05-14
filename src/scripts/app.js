@@ -1,7 +1,7 @@
 //IMPORT BASE / CLASSES / VIEWS //
 
 //import all DOM queries as elements..
-import { DOMstrings as elements } from "./elements.js";
+import { elements, renderSpinner } from "./base.js";
 
 //import Search class
 import Search from "./models/Search.js";
@@ -11,6 +11,14 @@ import * as searchView from "./views.js";
 
 //default language for the search
 const defaultLanguage = "en";
+
+/**Global state of the map
+ * - Search object
+ * - Description object
+ * - Books object
+ */
+
+const state = {};
 
 //MAIN CONTROLLER
 const controlSearch = async () => {
@@ -33,34 +41,22 @@ const controlSearch = async () => {
      * type = title, author and so on..
      * result = value with the data from GOOGLE BOOKS API
      */
-    const search = new Search(defSearch);
+    state.search = new Search(defSearch);
 
-    //get the results from the Google Books API.
-    await search.fetchResults();
-
-    //we return the status of our button to normal if the search return something..
-    if (search.result) {
-      searchView.removerSpinner();
-    }
-    //console.log("controlSearch -> search", search);
+    //search for books based on the query values the Google Books API.
+    //since we can only render the results after having the data, we need to use await.
+    await state.search.fetchResults();
 
     //Prepare the UI for the RESULTS.
     searchView.clearResults();
 
     //time to use our object "search"
-    //render results on the UI, passing an object inside the function..
-    searchView.renderResults(search);
+    searchView.renderResults(state.search);
 
-    const scrollToResultPage = () => {
-      if (search.result) {
-        elements.result.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-          inline: "nearest",
-        });
-      }
-    };
-    scrollToResultPage();
+    //render results on the UI, passing an object inside the function..
+    if (state.search.result) {
+      searchView.scrollToResultPage();
+    }
   } catch (error) {
     console.log(error);
   }
@@ -83,7 +79,7 @@ elements.filterLanguages.addEventListener("change", searchView.filters);
 elements.orderBy.addEventListener("change", searchView.filters);
 
 //ENTER BUTTON
-document.addEventListener("keypress", (event) => {
+document.addEventListener("keypress", event => {
   //check if the user pressed the return key (enter)
   if (event.keyCode === 13) {
     controlSearch();
