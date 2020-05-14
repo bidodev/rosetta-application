@@ -20,6 +20,9 @@ export const clearResults = () => {
   elements.resultDiv.innerHTML = "";
 };
 
+/** Limit string..
+ *
+ */
 const limitResults = (str, limit) => {
   const res = [];
 
