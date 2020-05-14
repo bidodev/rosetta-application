@@ -47,29 +47,16 @@ const controlSearch = async () => {
     //since we can only render the results after having the data, we need to use await.
     await state.search.fetchResults();
 
-    //we return the status of our button to normal if the search return something..
-    if (state.search.result) {
-      searchView.removerSpinner();
-    }
-    //console.log("controlSearch -> search", search);
-
     //Prepare the UI for the RESULTS.
     searchView.clearResults();
 
     //time to use our object "search"
-    //render results on the UI, passing an object inside the function..
-    searchView.renderResults(search);
+    searchView.renderResults(state.search);
 
-    const scrollToResultPage = () => {
-      if (search.result) {
-        elements.result.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-          inline: "nearest",
-        });
-      }
-    };
-    scrollToResultPage();
+    //render results on the UI, passing an object inside the function..
+    if (state.search.result) {
+      searchView.scrollToResultPage();
+    }
   } catch (error) {
     console.log(error);
   }
