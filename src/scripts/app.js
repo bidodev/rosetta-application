@@ -89,12 +89,14 @@ elements.searchQuery.addEventListener("keyup", disableBtn);
 function disableBtn() {
   if (elements.searchQuery.value.length > 0) {
     spanX.style.opacity = 1;
+
     spanX.addEventListener("click", () => {
       searchView.clearResults();
       searchView.clearInput();
       elements.result.style.display = "none";
       spanX.style.opacity = 0;
     });
+
     btn.disabled = false;
   } else {
     spanX.style.opacity = 0;
