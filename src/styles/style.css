@@ -357,8 +357,9 @@ body #footer .footerWrapper p {
   padding: 3em 7em;
   display: grid;
   gap: 3em 2em;
-  grid-template-columns: repeat(auto-fit, minmax(20vw, 1fr));
-  background-color: white;
+  grid-template-columns: repeat(auto-fit, minmax(18vw, 1fr));
+  min-height: 80vh;
+  background-color: #fff;
 }
 .container-books .quote h3 {
   font-size: 1.3rem;
@@ -425,6 +426,38 @@ body #footer .footerWrapper p {
   transform: rotate(45deg);
   border-top: 2px solid white;
   border-left: 2px solid white;
+}
+
+#pagination-cont {
+  width: 100%;
+  height: 20vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#pagination-cont a {
+  font-size: 0.8rem;
+  color: rgba(31, 182, 122, 0.8);
+  margin: 0 10px 0 10px;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#pagination-cont a:active {
+  color: #9b9b9b;
+}
+
+#footer-search {
+  width: 100vw;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fafafa;
+  font-size: 0.7rem;
+  color: #353535;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 @media screen and (min-width: 1024px) {
@@ -631,42 +664,6 @@ body #footer .footerWrapper p {
     padding: 12px 20px;
     color: rgba(31, 182, 122, 0.8);
     outline: none;
-  }
-  body .result #pagination-cont {
-    width: 100%;
-    height: 20vh;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  body .result #pagination-cont a {
-    font-size: 0.8rem;
-    color: rgba(31, 182, 122, 0.8);
-    margin: 0 10px 0 10px;
-    text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  body .result #pagination-cont a:active {
-    color: #9b9b9b;
-  }
-  body #searchFooter {
-    width: 100vw;
-    height: 5vh;
-  }
-  body #searchFooter .footerWrapSearch {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.8);
-  }
-  body #searchFooter .footerWrapSearch p {
-    font-size: 0.7rem;
-    color: #353535;
-    font-family: Arial, Helvetica, sans-serif;
   }
 }
 

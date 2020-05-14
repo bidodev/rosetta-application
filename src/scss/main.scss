@@ -9,7 +9,8 @@
 // 3. Base stuff
 @import "base/base", "base/scrollbar";
 
+// 4. Layout for the Website and App
 @import "layout/site/content";
-@import "layout/app/books";
+@import "layout/app/books", "layout/app/pagination", "layout/app/footer";
 
 @import "respSearch";

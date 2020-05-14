@@ -6,10 +6,10 @@ import { state } from "../app.js";
 export const getSearchQuery = () => elements.searchQuery.value;
 export const getSearchType = () => elements.searchType.value;
 export const clearInput = () => {
-  spanX.style.opacity = 0;
+  elements.spanx.style.opacity = 0;
   elements.searchQuery.value = "";
 };
-export const clearResults = () => (elements.resultDiv.innerHTML = "");
+export const clearResults = () => (elements.booksContainer.innerHTML = "");
 
 //finction to scroll to the top of the page
 export const goUp = () => {
@@ -44,26 +44,29 @@ const limitResults = (str, limit) => {
 };
 
 const renderBook = book => {
-  let { title, description, authors, pageCount, imageLinks } = book.volumeInfo;
-  let { thumbnail } = imageLinks;
-
-  if (!description) {
-    description = "No description available";
-  }
+  let {
+    title,
+    description,
+    author,
+    pageCount,
+    imgLink,
+    link,
+    published,
+    publisher,
+  } = book;
 
   let markUp = `
     <div class="quote">
       <h3>${limitResults(title, 20)}</h3>
-      <h6>${authors} - <span>${pageCount} pages</span></h6>
-      <img class="img-box img1" src="${thumbnail}" alt="${title}" />
+      <h6>${author} - <span>${pageCount} pages</span></h6>
+      <img class="img-box img1" src="${imgLink}" alt="${title}" />
       <p>
       ${limitResults(description, 300)}
       </p>
-      
     </div>
   `;
 
-  elements.resultDiv.insertAdjacentHTML("beforeend", markUp);
+  elements.booksContainer.insertAdjacentHTML("beforeend", markUp);
 };
 
 export const renderResults = data => {
@@ -71,7 +74,6 @@ export const renderResults = data => {
 
   //we make the filters appears again on the page
   elements.result.style.display = "flex";
-
   result.forEach(renderBook);
 };
 
@@ -95,7 +97,7 @@ export async function filters() {
   const search = new Search(filters);
 
   //4. Insert the spinner / loader inside the container after the first child
-  renderSpinner(elements.resultDiv, "afterbegin");
+  renderSpinner(elements.booksContainer, "afterbegin");
 
   //5. Get the results from the Google Books API
   await search.fetchResults();
