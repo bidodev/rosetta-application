@@ -13,8 +13,9 @@
 @import "layout/site/content";
 
 // 5. Layout for the App
-@import "layout/app/header.scss", "layout/app/main.scss", "layout/app/books",
-  "layout/app/pagination", "layout/app/footer";
+@import "layout/app/header.scss", "layout/app/_filters.scss",
+  "layout/app/main.scss", "layout/app/books", "layout/app/pagination",
+  "layout/app/footer";
 
 // 6. Search Aplication Styling
 @import "respSearch";
