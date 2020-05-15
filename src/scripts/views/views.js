@@ -44,7 +44,7 @@ const limitResults = (str, limit) => {
   return str;
 };
 
-const renderBook = (book) => {
+const renderBook = book => {
   let {
     title,
     description,
@@ -70,7 +70,7 @@ const renderBook = (book) => {
   elements.booksContainer.insertAdjacentHTML("beforeend", markUp);
 };
 
-export const renderResults = (data) => {
+export const renderResults = data => {
   const { result } = data;
 
   //we make the filters appears again on the page
@@ -99,7 +99,7 @@ export async function filters() {
   const search = new Search(filters);
 
   //4. Insert the spinner / loader inside the container after the first child
-  renderSpinner(elements.spinnerArea, "afterbegin");
+  renderSpinner(elements.booksContainer, "afterbegin");
 
   //5. Get the results from the Google Books API
   await search.fetchResults();
