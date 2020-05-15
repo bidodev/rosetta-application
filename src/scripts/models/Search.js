@@ -15,7 +15,7 @@ export default class Search {
 
       const defSearch = `${encodeURIComponent(this.query)}&langRestrict=${
         this.language
-      }&maxResults=8`;
+      }&maxResults=${this.maxResults}`;
 
       const filteredSearch = `${this.searchType}:${encodeURIComponent(
         this.query
@@ -54,6 +54,16 @@ export default class Search {
         const noCover =
           "https://www.forewordreviews.com/books/covers/strategic-market-research.jpg";
 
+        //validate the author strings
+        const validateAuthor = authors => {
+          if (!authors) {
+            authors = "Unknown Author";
+          } else if (authors.length > 1) {
+            return `Authors: ${authors[0]} and more ${authors.length - 1}`;
+          }
+          return `Author: ${authors}`;
+        };
+
         const validateData = items.map(item => {
           const info = item.volumeInfo;
 
@@ -61,15 +71,8 @@ export default class Search {
 
           const link = info.previewLink;
           const imgLink = info.imageLinks ? info.imageLinks.thumbnail : noCover;
-
+          const author = validateAuthor(info.authors);
           //validate authors
-          const author =
-            info.authors.length > 1
-              ? info.authors[0] +
-                ` and ${info.authors.length > 2 ? "others" : "other"} ${
-                  info.authors.length - 1
-                }`
-              : info.authors;
 
           const published = info.publishedDate;
 

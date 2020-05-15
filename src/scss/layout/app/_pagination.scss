@@ -5,14 +5,17 @@
   background-color: rgb(255, 255, 255);
   @include flex-center-column;
 
-  a {
-    font-size: 0.8rem;
-    color: rgba(31, 182, 122, 0.8);
+  .page {
+    font-size: 1rem;
+    color: rgba(31, 182, 122, 0.7);
     margin: 0 10px 0 10px;
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
     &:active {
       color: rgb(155, 155, 155);
+    }
+    &:hover {
+      color: rgba(31, 182, 122, 1);
     }
   }
 }
