@@ -3,25 +3,24 @@
 // -----------------------------------------------------------------------------
 
 .loader {
-  margin: 10rem auto;
+  margin: 4rem auto;
   text-align: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 1% 90%;
+  box-shadow: inset 0 0 0.3rem 0.1rem rgba(31, 182, 122, 0.6),
+    inset 0 0 0.1rem 0 rgba(31, 182, 122, 0.6),
+    0 0 1.25rem 0.1rem rgba(31, 182, 122, 0.6);
+  animation: rotate 0.1s infinite linear;
+  -webkit-animation: rotate 0.1s infinite linear;
 }
-.loader svg {
-  height: 2.5rem;
-  width: 2.5rem;
-  fill: $primary-color;
-  transform-origin: 44% 50%;
-  animation: rotate 1.5s infinite linear;
-}
-
 @keyframes rotate {
   0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(360deg);
+    transform: rotate(720deg);
+    -webkit-transform: rotate(720deg);
   }
 }
+
 .navbar {
   //border: 1px solid green;
   max-width: 90vw;

@@ -86,7 +86,7 @@ elements.filterLanguages.addEventListener("change", searchView.filters);
 elements.orderBy.addEventListener("change", searchView.filters);
 
 //ENTER BUTTON
-document.addEventListener("keypress", event => {
+document.addEventListener("keypress", (event) => {
   //check if the user pressed the return key (enter)
   if (event.keyCode === 13) {
     controlSearch();
@@ -108,26 +108,24 @@ document.addEventListener("keypress", event => {
 // }
 
 //X BUTTON
-let spanX = document.querySelector(".spanX");
-let btn = document.querySelector(".fetch-values");
 
 elements.searchQuery.addEventListener("keyup", disableBtn);
 
-btn.disabled = true;
+elements.btn.disabled = true;
 function disableBtn() {
   if (elements.searchQuery.value.length > 0) {
-    spanX.style.opacity = 1;
-    spanX.addEventListener("click", () => {
-      btn.disabled = true;
-      spanX.style.opacity = 0;
+    elements.spanX.style.opacity = 1;
+    elements.spanX.addEventListener("click", () => {
+      elements.btn.disabled = true;
+      elements.spanX.style.opacity = 0;
       searchView.clearInput();
       searchView.clearResults();
       elements.result.style.display = "none";
     });
-    btn.disabled = false;
+    elements.btn.disabled = false;
   } else {
-    btn.disabled = true;
-    spanX.style.opacity = 0;
+    elements.btn.disabled = true;
+    elements.spanX.style.opacity = 0;
     searchView.clearInput();
     searchView.clearResults();
     elements.result.style.display = "none";
