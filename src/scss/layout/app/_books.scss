@@ -10,9 +10,10 @@
 
 /*----------GRID-----------*/
 .container-books {
-  padding: 3em 7em;
-  display: grid;
+  width: 100vw;
+  padding: 3em 10vw;
 
+  display: grid;
   gap: 3em 2em;
   grid-template-columns: repeat(auto-fit, minmax(18vw, 1fr));
   min-height: 80vh;
@@ -20,7 +21,6 @@
   // the minmax means that the box will always keep that size, unless i change it.
   // if you dont add the fraction, leaving alone the 250px, the box will occupy the 100% width, but using the fraction will put it in 2 rows.
   background-color: #fff;
-
   .quote {
     h3 {
       font-size: 1.3rem;
@@ -68,12 +68,6 @@
     }
   }
 }
-// .container-books :first-child {
-//   background-color: red;
-// }
-
-// PAGINATION
-
 // stying scroll to the top button
 
 #footer {

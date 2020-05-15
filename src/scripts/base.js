@@ -8,16 +8,22 @@ export const elements = {
   searchQuery: document.querySelector(".search-field"),
   orderBy: document.querySelector(".order-by"),
   searchType: document.querySelector(".select-type"),
+  filterLanguages: document.querySelector(".search-languages"),
   booksContainer: document.querySelector(".container-books"),
   result: document.querySelector(".result"),
   fetchBtn: document.querySelector(".fetch-values"),
-  filterLanguages: document.querySelector(".search-languages"),
   container: document.querySelector(".container"),
   filters: document.querySelector(".filters"),
   buttonUp: document.querySelector(".button_up"),
   searchHeader: document.getElementById("header"),
   spanx: document.querySelector(".spanX"),
   navbar: document.querySelector(".header-nav"),
+  pagination: document.querySelector(".pagination"),
+};
+
+export const configs = {
+  current_page: 1,
+  rows: 8,
 };
 
 export const elementsStr = {
@@ -54,29 +60,10 @@ export const removeSpinner = function () {
   }
 };
 
+//fix and remove the navigation bar on the top
 export const fixedNav = function () {
   this.scrollY > this.innerHeight / 1
     ? elements.navbar.classList.add("fixed-top")
     : //add bootstrap fixed-top class
       elements.navbar.classList.remove("fixed-top");
-};
-
-export const disableBtn = function () {
-  if (elements.searchQuery.value.length > 0) {
-    elements.spanx.style.opacity = 1;
-    elements.spanx.addEventListener("click", () => {
-      elements.fetchBtn.disabled = true;
-      elements.spanx.style.opacity = 0;
-      searchView.clearInput();
-      searchView.clearResults();
-      elements.result.style.display = "none";
-    });
-    elements.fetchBtn.disabled = false;
-  } else {
-    elements.fetchBtn.disabled = true;
-    elements.spanx.style.opacity = 0;
-    searchView.clearInput();
-    searchView.clearResults();
-    elements.result.style.display = "none";
-  }
 };

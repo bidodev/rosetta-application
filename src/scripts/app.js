@@ -1,9 +1,9 @@
 // -----------------------------------------------------------------------------
-// This file contains the whole flow of the application.
+// This file contains is the controller of the application
 // -----------------------------------------------------------------------------
 
 //import base functions and elements
-import { elements, fixedNav, disableBtn } from "./base.js";
+import { elements, fixedNav } from "./base.js";
 
 //import Search class
 import Search from "./models/Search.js";
@@ -67,9 +67,11 @@ const controlSearch = async () => {
 };
 
 //EVENTS HANDLER
-
 //SEARCH BUTTON
 elements.fetchBtn.addEventListener("click", controlSearch);
+
+//GOUP BUTTON
+elements.buttonUp.addEventListener("click", searchView.goUp);
 
 //ENTER BUTTON
 document.addEventListener("keypress", event => {
@@ -82,19 +84,17 @@ document.addEventListener("keypress", event => {
 //AUTO NAVBAR
 window.addEventListener("scroll", fixedNav);
 
-//X BUTTON
-elements.searchQuery.addEventListener("keyup", disableBtn);
+//Disable search (x button)
+elements.searchQuery.addEventListener("keyup", searchView.disableSearch);
 
 //EVENTS HANDLER FOR THE FILTERS BUTTONS
 //ORDERS RESULTS BY TYPE
-elements.searchType.addEventListener("change", searchView.filters);
+const refineSearch = [
+  elements.searchType,
+  elements.filterLanguages,
+  elements.orderBy,
+];
 
-//ORDER RESULTS BY
-// elements.filterLanguages.addEventListener("change", searchView.filterLanguages);
-elements.filterLanguages.addEventListener("change", searchView.filters);
-
-//ORDERS RESULTS BY STATUS
-elements.orderBy.addEventListener("change", searchView.filters);
-
-//GOUP BUTTON
-elements.buttonUp.addEventListener("click", searchView.goUp);
+refineSearch.forEach(filter => {
+  filter.addEventListener("change", searchView.filters);
+});

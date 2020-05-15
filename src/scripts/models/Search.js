@@ -15,7 +15,7 @@ export default class Search {
 
       const defSearch = `${encodeURIComponent(this.query)}&langRestrict=${
         this.language
-      }&maxResults=8`;
+      }&maxResults=32`;
 
       const filteredSearch = `${this.searchType}:${encodeURIComponent(
         this.query

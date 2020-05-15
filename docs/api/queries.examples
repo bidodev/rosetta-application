@@ -1,0 +1,13 @@
+/* Queries Examples */
+
+//Here is an example of searching for Daniel Keyes' "Flowers for Algernon":
+https://www.googleapis.com/books/v1/volumes?q=flowers+inauthor:keyes
+ 
+//get results with Maxresult filters
+https://www.googleapis.com/books/v1/volumes?q=harry+potter&maxResults=15
+
+//filter by language..
+https://www.googleapis.com/books/v1/volumes?q=harry+potter&langRestrict=fr
+
+//more parameters
+https://developers.google.com/books/docs/v1/using#st_params
