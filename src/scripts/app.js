@@ -59,9 +59,6 @@ const controlSearch = async () => {
 
         //clear the search input
         searchView.clearInput();
-
-        elements.favorites.style.color = "#606060";
-        elements.searchHeader.style.background = "rgba(250, 250, 250, 0.9)";
       }
     }
   } catch (error) {
@@ -93,19 +90,19 @@ document.addEventListener("keypress", event => {
   }
 });
 
-// window.onscroll = function () {
-//   myFunction();
-// };
+window.onscroll = function () {
+  myFunction();
+};
 
-// const navbar = document.querySelector("navbar");
-// const sticky = navbar.offsetTop;
+const navbar = document.querySelector(".header-nav");
+const sticky = navbar.offsetTop;
 
-// function myFunction() {
-//   window.pageYOffset >= sticky
-//     ? navbar.classList.add("fixed-top")
-//     : //add bootstrap fixed-top class
-//       navbar.classList.remove("fixed-top");
-// }
+function myFunction() {
+  window.pageYOffset >= sticky
+    ? navbar.classList.add("fixed-top")
+    : //add bootstrap fixed-top class
+      navbar.classList.remove("fixed-top");
+}
 
 //X BUTTON
 let spanX = document.querySelector(".spanX");
