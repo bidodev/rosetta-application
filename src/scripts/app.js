@@ -94,11 +94,11 @@ window.onscroll = function () {
   myFunction();
 };
 
+window.addEventListener("scroll", fixedNav);
 const navbar = document.querySelector(".header-nav");
-const sticky = navbar.offsetTop;
 
-function myFunction() {
-  window.pageYOffset >= sticky
+function fixedNav() {
+  this.scrollY > this.innerHeight / 1
     ? navbar.classList.add("fixed-top")
     : //add bootstrap fixed-top class
       navbar.classList.remove("fixed-top");
