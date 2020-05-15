@@ -7,8 +7,8 @@
   text-align: center;
 }
 .loader svg {
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 2rem;
+  width: 2rem;
   fill: $primary-color;
   transform-origin: 44% 50%;
   animation: rotate 1.5s infinite linear;
@@ -21,14 +21,4 @@
   100% {
     transform: rotate(360deg);
   }
-}
-.navbar {
-  //border: 1px solid green;
-  max-width: 90vw;
-  max-height: 10vh;
-}
-
-.fixed-top {
-  border: 1px solid black;
-  width: 100%;
 }
