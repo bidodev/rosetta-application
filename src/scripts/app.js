@@ -3,7 +3,7 @@
 // -----------------------------------------------------------------------------
 
 //import base functions and elements
-import { elements } from "./base.js";
+import { elements, fixedNav, disableBtn } from "./base.js";
 
 //import Search class
 import Search from "./models/Search.js";
@@ -71,6 +71,20 @@ const controlSearch = async () => {
 //SEARCH BUTTON
 elements.fetchBtn.addEventListener("click", controlSearch);
 
+//ENTER BUTTON
+document.addEventListener("keypress", event => {
+  //check if the user pressed the return key (enter)
+  if (event.keyCode === 13) {
+    controlSearch();
+  }
+});
+
+//AUTO NAVBAR
+window.addEventListener("scroll", fixedNav);
+
+//X BUTTON
+elements.searchQuery.addEventListener("keyup", disableBtn);
+
 //EVENTS HANDLER FOR THE FILTERS BUTTONS
 //ORDERS RESULTS BY TYPE
 elements.searchType.addEventListener("change", searchView.filters);
@@ -82,53 +96,5 @@ elements.filterLanguages.addEventListener("change", searchView.filters);
 //ORDERS RESULTS BY STATUS
 elements.orderBy.addEventListener("change", searchView.filters);
 
-//ENTER BUTTON
-document.addEventListener("keypress", event => {
-  //check if the user pressed the return key (enter)
-  if (event.keyCode === 13) {
-    controlSearch();
-  }
-});
-
-window.onscroll = function () {
-  myFunction();
-};
-
-window.addEventListener("scroll", fixedNav);
-const navbar = document.querySelector(".header-nav");
-
-function fixedNav() {
-  this.scrollY > this.innerHeight / 1
-    ? navbar.classList.add("fixed-top")
-    : //add bootstrap fixed-top class
-      navbar.classList.remove("fixed-top");
-}
-
-//X BUTTON
-let spanX = document.querySelector(".spanX");
-let btn = document.querySelector(".fetch-values");
-
-elements.searchQuery.addEventListener("keyup", disableBtn);
-
-btn.disabled = true;
-function disableBtn() {
-  if (elements.searchQuery.value.length > 0) {
-    spanX.style.opacity = 1;
-    spanX.addEventListener("click", () => {
-      btn.disabled = true;
-      spanX.style.opacity = 0;
-      searchView.clearInput();
-      searchView.clearResults();
-      elements.result.style.display = "none";
-    });
-    btn.disabled = false;
-  } else {
-    btn.disabled = true;
-    spanX.style.opacity = 0;
-    searchView.clearInput();
-    searchView.clearResults();
-    elements.result.style.display = "none";
-  }
-}
-
+//GOUP BUTTON
 elements.buttonUp.addEventListener("click", searchView.goUp);
