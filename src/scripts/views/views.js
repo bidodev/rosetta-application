@@ -91,7 +91,8 @@ function displayList(items, wrapper, rows_per_page, page) {
     let markUp = `
       <div class="quote">
         <h3>${limitResults(title, 20)}</h3>
-        <h6>${author} - <span>${pageCount} pages</span></h6>
+        <h6>${author}</h6>
+        <h6><span>${pageCount} pages</span></h6>
         <img class="img-box img1" src="${imgLink}" alt="${title}" />
         <p>
         ${limitResults(description, 200)}
@@ -145,7 +146,7 @@ export async function filters() {
     query: state.search.query,
     language: elements.filterLanguages.value,
     type: elements.searchType.value,
-    max: 32,
+    max: configs.maxResults,
     order: elements.orderBy.value,
   };
 

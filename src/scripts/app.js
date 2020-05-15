@@ -1,9 +1,9 @@
-// -----------------------------------------------------------------------------
-// This file contains is the controller of the application
-// -----------------------------------------------------------------------------
+// -------------------------------------------------------------------------------------------------------------------
+// This file contains is the controller (Accepts input and converts it to commands for the model or view.)
+// -------------------------------------------------------------------------------------------------------------------
 
 //import base functions and elements
-import { elements, fixedNav } from "./base.js";
+import { elements, configs, fixedNav } from "./base.js";
 
 //import Search class
 import Search from "./models/Search.js";
@@ -14,7 +14,6 @@ import * as searchView from "./views/views.js";
 // default language for the results
 // Current browser language
 // const language = window.navigator.language;
-const language = "en";
 
 /**Global state of the application
  * - Search object
@@ -30,7 +29,8 @@ const controlSearch = async () => {
   try {
     const defSearch = {
       query: searchView.getSearchQuery(), //get the search value from the user
-      language: language, //default language for the results
+      language: configs.defaultLanguage, //default language for the results
+      max: configs.maxResults,
     };
 
     if (defSearch.query) {

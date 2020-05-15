@@ -22,8 +22,9 @@ export const elements = {
 };
 
 export const configs = {
-  current_page: 1,
-  rows: 8,
+  defaultLanguage: "en",
+  rows: 8, //how many items generate in each page (pagination)
+  maxResults: 32, //how many items get from the API.
 };
 
 export const elementsStr = {
