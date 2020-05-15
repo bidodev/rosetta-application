@@ -15,13 +15,6 @@
     background-color: rgb(255, 255, 255);
     height: 100%;
     overflow-x: hidden;
-    background-color: #f3f3f3;
-    background-size: cover;
-    background-image: linear-gradient(rgba(#fff, 0.2), rgba(#fff, 0.1)),
-      url(../img/green-line2.svg);
-    background-position: top right;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
 
     header {
       @include navigation-bar;
@@ -42,6 +35,12 @@
       @include flex-center-column;
       width: 100vw;
       height: 100vh;
+      background-color: #f3f3f3;
+      background-size: cover;
+      background-image: linear-gradient(rgba(#fff, 0.6), rgba(#000, 0.2)),
+        url(../img/books-gestalt.png);
+      background-position: top right;
+      background-repeat: no-repeat;
 
       h1 {
         font-size: 6rem;
