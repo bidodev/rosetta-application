@@ -1,5 +1,5 @@
 import Search from "../models/Search.js";
-import { elements, renderSpinner, removeSpinner } from "../base.js";
+import { elements, configs, renderSpinner, removeSpinner } from "../base.js";
 import { state } from "../app.js";
 
 //query input value
@@ -8,6 +8,7 @@ export const getSearchType = () => elements.searchType.value;
 export const clearInput = () => {
   elements.spanx.style.opacity = 0;
   elements.searchQuery.value = "";
+  elements.fetchBtn.disabled = true;
 };
 export const clearResults = () => (elements.booksContainer.innerHTML = "");
 
@@ -15,6 +16,19 @@ export const clearResults = () => (elements.booksContainer.innerHTML = "");
 export const goUp = () => {
   window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   elements.searchHeader.style.background = "none";
+};
+
+export const disableSearch = function () {
+  if (elements.searchQuery.value.length > 0) {
+    elements.spanx.style.opacity = 1;
+    //add event to the x
+    elements.spanx.addEventListener("click", () => {
+      clearInput();
+    });
+    elements.fetchBtn.disabled = false;
+  } else {
+    clearInput();
+  }
 };
 
 //function to scroll into the results
@@ -44,40 +58,84 @@ const limitResults = (str, limit) => {
   return str;
 };
 
-const renderBook = book => {
-  let {
-    title,
-    description,
-    author,
-    pageCount,
-    imgLink,
-    link,
-    published,
-    publisher,
-  } = book;
-
-  let markUp = `
-    <div class="quote">
-      <h3>${limitResults(title, 20)}</h3>
-      <h6>${author} - <span>${pageCount} pages</span></h6>
-      <img class="img-box img1" src="${imgLink}" alt="${title}" />
-      <p>
-      ${limitResults(description, 300)}
-      </p>
-    </div>
-  `;
-
-  elements.booksContainer.insertAdjacentHTML("beforeend", markUp);
-};
-
 export const renderResults = data => {
   const { result } = data;
 
   //we make the filters appears again on the page
   document.querySelector(".main-content").style.display = "block";
   elements.result.style.display = "flex";
-  result.forEach(renderBook);
+  displayResults(result);
 };
+
+function displayList(items, wrapper, rows_per_page, page) {
+  wrapper.innerHTML = "";
+  page--;
+  let start = rows_per_page * page; // get the specific amount of item we need in each page
+  let end = start + rows_per_page;
+  let paginatedItems = items.slice(start, end); // to get an array out of the displayed items in each page
+
+  // _________creating a div for each item _________________
+
+  paginatedItems.forEach(item => {
+    let {
+      title,
+      description,
+      author,
+      pageCount,
+      imgLink,
+      link,
+      published,
+      publisher,
+    } = item;
+
+    let markUp = `
+      <div class="quote">
+        <h3>${limitResults(title, 20)}</h3>
+        <h6>${author}</h6>
+        <h6><span>${pageCount} pages</span></h6>
+        <img class="img-box img1" src="${imgLink}" alt="${title}" />
+        <p>
+        ${limitResults(description, 200)}
+        </p>
+      </div>
+    `;
+    elements.booksContainer.insertAdjacentHTML("beforeend", markUp); //   value to display in each div
+  });
+}
+
+// __________________ setteing page numbers _________________________
+
+function setupPagination(items, wrapper, rows_per_page) {
+  wrapper.innerHTML = "";
+
+  let page_count = Math.ceil(items.length / rows_per_page); // number of pages depending on the ammount of data from API
+
+  for (let i = 1; i < page_count + 1; i++) {
+    let btn = paginationButton(i, items);
+    wrapper.appendChild(btn);
+  }
+}
+
+//___________________ Generat buttons to represent the number of the pages ______________________________
+
+function paginationButton(page, items) {
+  console.log(page, items);
+  let button = document.createElement("a");
+  button.innerHTML = `<a href="#" class="page">${page}</a>`;
+
+  button.addEventListener("click", e => {
+    e.preventDefault();
+    state.currentPage = page;
+    displayList(
+      items,
+      elements.booksContainer,
+      configs.rows,
+      state.currentPage
+    );
+  });
+
+  return button;
+}
 
 /** filters()
  * compose the call to the API
@@ -88,7 +146,7 @@ export async function filters() {
     query: state.search.query,
     language: elements.filterLanguages.value,
     type: elements.searchType.value,
-    max: 8,
+    max: configs.maxResults,
     order: elements.orderBy.value,
   };
 
@@ -111,5 +169,14 @@ export async function filters() {
   let { result } = search;
 
   //8. For each element inside the array call the renderBook function
-  result.forEach(renderBook);
+  displayResults(result);
 }
+
+const displayResults = data => {
+  //save the status of the currentPage for the pagination.
+  state.currentPage = 1;
+
+  //generate smth
+  displayList(data, elements.booksContainer, configs.rows, state.currentPage);
+  setupPagination(data, elements.pagination, configs.rows);
+};

@@ -1,9 +1,9 @@
-// -----------------------------------------------------------------------------
-// This file contains the whole flow of the application.
-// -----------------------------------------------------------------------------
+// -------------------------------------------------------------------------------------------------------------------
+// This file contains is the controller (Accepts input and converts it to commands for the model or view.)
+// -------------------------------------------------------------------------------------------------------------------
 
 //import base functions and elements
-import { elements } from "./base.js";
+import { elements, configs, fixedNav } from "./base.js";
 
 //import Search class
 import Search from "./models/Search.js";
@@ -14,7 +14,6 @@ import * as searchView from "./views/views.js";
 // default language for the results
 // Current browser language
 // const language = window.navigator.language;
-const language = "en";
 
 /**Global state of the application
  * - Search object
@@ -30,7 +29,8 @@ const controlSearch = async () => {
   try {
     const defSearch = {
       query: searchView.getSearchQuery(), //get the search value from the user
-      language: language, //default language for the results
+      language: configs.defaultLanguage, //default language for the results
+      max: configs.maxResults,
     };
 
     if (defSearch.query) {
@@ -67,20 +67,11 @@ const controlSearch = async () => {
 };
 
 //EVENTS HANDLER
-
 //SEARCH BUTTON
 elements.fetchBtn.addEventListener("click", controlSearch);
 
-//EVENTS HANDLER FOR THE FILTERS BUTTONS
-//ORDERS RESULTS BY TYPE
-elements.searchType.addEventListener("change", searchView.filters);
-
-//ORDER RESULTS BY
-// elements.filterLanguages.addEventListener("change", searchView.filterLanguages);
-elements.filterLanguages.addEventListener("change", searchView.filters);
-
-//ORDERS RESULTS BY STATUS
-elements.orderBy.addEventListener("change", searchView.filters);
+//GOUP BUTTON
+elements.buttonUp.addEventListener("click", searchView.goUp);
 
 //ENTER BUTTON
 document.addEventListener("keypress", event => {
@@ -90,45 +81,20 @@ document.addEventListener("keypress", event => {
   }
 });
 
-window.onscroll = function () {
-  myFunction();
-};
-
+//AUTO NAVBAR
 window.addEventListener("scroll", fixedNav);
-const navbar = document.querySelector(".header-nav");
 
-function fixedNav() {
-  this.scrollY > this.innerHeight / 1
-    ? navbar.classList.add("fixed-top")
-    : //add bootstrap fixed-top class
-      navbar.classList.remove("fixed-top");
-}
+//Disable search (x button)
+elements.searchQuery.addEventListener("keyup", searchView.disableSearch);
 
-//X BUTTON
-let spanX = document.querySelector(".spanX");
-let btn = document.querySelector(".fetch-values");
+//EVENTS HANDLER FOR THE FILTERS BUTTONS
+//ORDERS RESULTS BY TYPE
+const refineSearch = [
+  elements.searchType,
+  elements.filterLanguages,
+  elements.orderBy,
+];
 
-elements.searchQuery.addEventListener("keyup", disableBtn);
-
-btn.disabled = true;
-function disableBtn() {
-  if (elements.searchQuery.value.length > 0) {
-    spanX.style.opacity = 1;
-    spanX.addEventListener("click", () => {
-      btn.disabled = true;
-      spanX.style.opacity = 0;
-      searchView.clearInput();
-      searchView.clearResults();
-      elements.result.style.display = "none";
-    });
-    btn.disabled = false;
-  } else {
-    btn.disabled = true;
-    spanX.style.opacity = 0;
-    searchView.clearInput();
-    searchView.clearResults();
-    elements.result.style.display = "none";
-  }
-}
-
-elements.buttonUp.addEventListener("click", searchView.goUp);
+refineSearch.forEach(filter => {
+  filter.addEventListener("change", searchView.filters);
+});
