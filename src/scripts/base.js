@@ -20,7 +20,7 @@ export const elements = {
   navbar: document.querySelector(".header-nav"),
   pagination: document.querySelector(".pagination"),
   main: document.querySelector(".main-content"),
-  spinnerAria: document.querySelector(".spinnerAria"),
+  spinnerArea: document.querySelector(".spinnerArea"),
 };
 
 export const configs = {

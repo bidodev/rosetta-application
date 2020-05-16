@@ -20,11 +20,12 @@
   // the auto fit will make it adaptable to the device.
   // the minmax means that the box will always keep that size, unless i change it.
   // if you dont add the fraction, leaving alone the 250px, the box will occupy the 100% width, but using the fraction will put it in 2 rows.
-  background-color: #fff;
+  background-color: rgba(250, 250, 250, 0.8);
+  opacity: 0.9;
   .quote {
     h3 {
       font-size: 1.3rem;
-      color: #606060;
+      color: rgb(96, 96, 96);
     }
     h6 {
       font-size: 0.8rem;
