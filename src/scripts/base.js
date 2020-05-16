@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------------
-// This file contains functions, elements in general which are statics.
+// This file contains functions, elements in general that are statics.
 // For example DOMString, layout componenets (navbar, loaders, goUp button)
-// Dinamynic things which general return or manipulate data, should be put inside views
+// Dinamynic things which in general return or manipulate data, should be put inside views
 // -----------------------------------------------------------------------------
 
 export const elements = {
@@ -19,6 +19,7 @@ export const elements = {
   spanx: document.querySelector(".spanX"),
   navbar: document.querySelector(".header-nav"),
   pagination: document.querySelector(".pagination"),
+  main: document.querySelector(".main-content"),
 };
 
 export const configs = {
@@ -63,8 +64,11 @@ export const removeSpinner = function () {
 
 //fix and remove the navigation bar on the top
 export const fixedNav = function () {
-  this.scrollY > this.innerHeight / 1
-    ? elements.navbar.classList.add("fixed-top")
-    : //add bootstrap fixed-top class
-      elements.navbar.classList.remove("fixed-top");
+  if (this.scrollY > this.innerHeight) {
+    elements.navbar.classList.add("fixed-top");
+    document.body.classList.add("bg-active");
+  } else {
+    elements.navbar.classList.remove("fixed-top");
+    document.body.classList.remove("bg-active");
+  }
 };
