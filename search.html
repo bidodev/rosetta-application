@@ -7,16 +7,11 @@
       href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;1,200&display=swap"
       rel="stylesheet"
     />
-    <script
-      src="https://kit.fontawesome.com/c37eed92f1.js"
-      crossorigin="anonymous"
-    ></script>
-
     <link rel="stylesheet" type="text/css" href="./styles/style.css" />
-
     <title>Rosetta Search</title>
   </head>
   <body>
+    <!-- Small Navigation on the TOP -->
     <div class="header-nav">
       <nav class="navbar">
         <h3 class="logo">
@@ -28,11 +23,13 @@
         </ul>
       </nav>
     </div>
+
+    <!-- Lading Page Container-->
     <div class="container">
-      <!-- <h1 class="heading-search">Rosetta</h1> -->
-      <!-- SEARCH BOX -------->
+      <!-- Search Container -->
       <div class="header-search">
         <div class="spanX">x</div>
+        <!-- Input Search -->
         <input
           class="search-field"
           type="text"
@@ -41,20 +38,21 @@
           spellcheck="false"
           placeholder="Search by author, book name, subject..."
         />
-        <!-- cta button -->
+        <!-- Cta Button -->
         <button type="button" disabled class="fetch-values">Search</button>
       </div>
       <h4>stimulate your research</h4>
     </div>
 
-    <!-- results displayed to the users -->
-    <!-- the result from the API -->
+    <!-- The main container containers [filters, results, pagination and footers] -->
+    <!-- by default this whole container is hidden -->
     <main class="main-content">
-      <div class="result">
+      <!--  Filters Section -->
+      <section class="result">
         <h4>Stay Inspired</h4>
 
-        <!-- refefine search -->
-        <section class="filters">
+        <!-- Refefine Search -->
+        <div class="filters">
           <select class="select-type">
             <option value="author" selected>By Author </option>
             <option value="title">Title</option>
@@ -76,25 +74,30 @@
             <option value="relevance" selected>Sorted by relevance</option>
             <option value="newest" selected>Sorted by date</option>
           </select>
-        </section>
-      </div>
-      <!-- --------------------------------------- -->
+          <div class="spinnerArea"></div>
+        </div>
+      </section>
+      <!-- Parent element for the results -->
       <section class="container-books">
-        <!-- Results from the search.. -->
+        <!-- items from the search.. -->
+        <!-- generated dinamyc on views.js -->
       </section>
 
-      <!----------------------------------------->
+      <!-- Parent element for the pagination -->
       <div id="pagination-cont">
         <div class="pagination">
           <!-- generate the numbers of the pages -->
+          <!-- generated dinamyc on views.js -->
         </div>
       </div>
 
+      <!-- Footer of the page -->
       <footer id="footer-search">
         <div class="button_up"><div></div></div>
       </footer>
     </main>
+
+    <!-- ----------------JavaScript main controller---------------- -->
     <script type="module" src="./scripts/app.js"></script>
-    <!-- ------------------------------------------------- -->
   </body>
 </html>
