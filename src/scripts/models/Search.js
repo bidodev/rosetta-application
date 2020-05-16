@@ -11,40 +11,6 @@ export default class Search {
 
   async fetchResults() {
     try {
-      let baseURL = "https://www.googleapis.com/books/v1/volumes?q=";
-
-      const defSearch = `${encodeURIComponent(this.query)}&langRestrict=${
-        this.language
-      }&maxResults=${this.maxResults}`;
-
-      const filteredSearch = `${this.searchType}:${encodeURIComponent(
-        this.query
-      )}&langRestrict=${this.language}&maxResults=${this.maxResults}&orderBy=${
-        this.orderBy
-      }`;
-
-      //check if the search has any filter applied
-      this.searchType !== undefined
-        ? (baseURL += filteredSearch)
-        : (baseURL += defSearch);
-
-      //console.log(baseURL);
-      const response = await fetch(baseURL);
-      const data = await response.json();
-
-      /**
-       * Google will return to us an object with 3 properties..
-       * 
-       * {
-       *    "kind": "books#volumes",
-            "totalItems": 454,
-            "items": [
-                //it returns an array of objects
-            ]
-       * }
-       * the items properties is the our data, for more informations check docs/example.callapi.json
-       */
-      //console.log(data);
       const extractInfo = res => {
         let { items } = res;
 
@@ -98,8 +64,41 @@ export default class Search {
         this.result = validateData;
       };
 
+      let baseURL = "https://www.googleapis.com/books/v1/volumes?q=";
+
+      const defSearch = `${encodeURIComponent(this.query)}&langRestrict=${
+        this.language
+      }&maxResults=${this.maxResults}`;
+
+      const filteredSearch = `${this.searchType}:${encodeURIComponent(
+        this.query
+      )}&langRestrict=${this.language}&maxResults=${this.maxResults}&orderBy=${
+        this.orderBy
+      }`;
+
+      //check if the search has any filter applied
+      this.searchType !== undefined
+        ? (baseURL += filteredSearch)
+        : (baseURL += defSearch);
+
+      //console.log(baseURL);
+      const response = await fetch(baseURL);
+      const data = await response.json();
+
+      //send the data fo be filtered before return
       extractInfo(data);
-      //this.result = data.items; //we need just items
+      /**
+       * The API will return to us an object with 3 properties..
+       * 
+       * {
+       *    "kind": "books#volumes",
+            "totalItems": 454,
+            "items": [
+                //it returns an array of objects
+            ]
+       * }
+       * the items properties is the our data, for more informations check docs/example.callapi.json
+       */
     } catch (error) {
       console.log(error);
     }

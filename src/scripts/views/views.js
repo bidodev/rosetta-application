@@ -1,5 +1,4 @@
-import Search from "../models/Search.js";
-import { elements, configs, renderSpinner, removeSpinner } from "../base.js";
+import { elements, configs } from "../base.js";
 import { state } from "../app.js";
 
 //query input value
@@ -15,7 +14,6 @@ export const clearResults = () => (elements.booksContainer.innerHTML = "");
 //finction to scroll to the top of the page
 export const goUp = () => {
   window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-  elements.searchHeader.style.background = "none";
 };
 
 export const disableSearch = function () {
@@ -58,23 +56,63 @@ const limitResults = (str, limit) => {
   return str;
 };
 
-export const renderResults = data => {
-  const { result } = data;
+//controller display results
+export const displayResults = () => {
+  console.log(state.search);
+  //get the array of books from state
+  const { result } = state.search;
 
-  //we make the filters appears again on the page
-  document.querySelector(".main-content").style.display = "block";
-  elements.result.style.display = "flex";
-  displayResults(result);
+  //save the status of the currentPage for the pagination.
+  state.currentPage = 1;
+
+  //show the whole main ()
+  elements.main.style.display = "block";
+
+  //generate the dinamic content
+  displayList(result, elements.booksContainer, configs.rows, state.currentPage);
+  setupPagination(result, elements.pagination, configs.rows);
 };
 
-function displayList(items, wrapper, rows_per_page, page) {
+// __________________ settting page numbers ______________________________________//
+function setupPagination(items, wrapper, itemsPerPage) {
+  wrapper.innerHTML = "";
+
+  let pageCount = Math.ceil(items.length / itemsPerPage); // number of pages depending on the ammount of data from API
+
+  for (let i = 1; i < pageCount + 1; i++) {
+    let numberBtn = paginationButton(i, items);
+    wrapper.appendChild(numberBtn);
+  }
+}
+
+//___________________ Generat buttons to represent the number of the pages ______________________________
+
+function paginationButton(page, items) {
+  let button = document.createElement("a");
+  button.innerHTML = `<a href="#" class="page">${page}</a>`;
+
+  button.addEventListener("click", e => {
+    e.preventDefault();
+    state.currentPage = page;
+
+    displayList(
+      items,
+      elements.booksContainer,
+      configs.rows,
+      state.currentPage
+    );
+  });
+
+  return button;
+}
+
+// __________________ display the results inside the div _________________________//
+function displayList(items, wrapper, itemsPerPage, page) {
   wrapper.innerHTML = "";
   page--;
-  let start = rows_per_page * page; // get the specific amount of item we need in each page
-  let end = start + rows_per_page;
+  let start = itemsPerPage * page; // get the specific amount of item we need in each page
+  let end = start + itemsPerPage;
   let paginatedItems = items.slice(start, end); // to get an array out of the displayed items in each page
-
-  // _________creating a div for each item _________________
 
   paginatedItems.forEach(item => {
     let {
@@ -102,81 +140,3 @@ function displayList(items, wrapper, rows_per_page, page) {
     elements.booksContainer.insertAdjacentHTML("beforeend", markUp); //   value to display in each div
   });
 }
-
-// __________________ setteing page numbers _________________________
-
-function setupPagination(items, wrapper, rows_per_page) {
-  wrapper.innerHTML = "";
-
-  let page_count = Math.ceil(items.length / rows_per_page); // number of pages depending on the ammount of data from API
-
-  for (let i = 1; i < page_count + 1; i++) {
-    let btn = paginationButton(i, items);
-    wrapper.appendChild(btn);
-  }
-}
-
-//___________________ Generat buttons to represent the number of the pages ______________________________
-
-function paginationButton(page, items) {
-  console.log(page, items);
-  let button = document.createElement("a");
-  button.innerHTML = `<a href="#" class="page">${page}</a>`;
-
-  button.addEventListener("click", e => {
-    e.preventDefault();
-    state.currentPage = page;
-    displayList(
-      items,
-      elements.booksContainer,
-      configs.rows,
-      state.currentPage
-    );
-  });
-
-  return button;
-}
-
-/** filters()
- * compose the call to the API
- */
-export async function filters() {
-  //1. Get all the values from the UI to create an object which we're going using to do a new search.
-  const filters = {
-    query: state.search.query,
-    language: elements.filterLanguages.value,
-    type: elements.searchType.value,
-    max: configs.maxResults,
-    order: elements.orderBy.value,
-  };
-
-  //2. Clear previous results before update
-  clearResults();
-
-  //3. Sending a new object with all the arguments to perform the search
-  const search = new Search(filters);
-
-  //4. Insert the spinner / loader inside the container after the first child
-  renderSpinner(elements.booksContainer, "afterbegin");
-
-  //5. Get the results from the Google Books API
-  await search.fetchResults();
-
-  //6. Remove the loader from the container
-  removeSpinner();
-
-  //7. Destructiring the object
-  let { result } = search;
-
-  //8. For each element inside the array call the renderBook function
-  displayResults(result);
-}
-
-const displayResults = data => {
-  //save the status of the currentPage for the pagination.
-  state.currentPage = 1;
-
-  //generate smth
-  displayList(data, elements.booksContainer, configs.rows, state.currentPage);
-  setupPagination(data, elements.pagination, configs.rows);
-};
