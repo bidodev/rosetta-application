@@ -1,0 +1,24 @@
+// -----------------------------------------------------------------------------
+// This file contains styles related dynamics components in the page..
+// -----------------------------------------------------------------------------
+
+.loader {
+  margin: 10rem auto;
+  text-align: center;
+}
+.loader svg {
+  height: 2rem;
+  width: 2rem;
+  fill: $primary-color;
+  transform-origin: 44% 50%;
+  animation: rotate 1.5s infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
