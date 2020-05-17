@@ -14,7 +14,7 @@
         a {
           font-family: Nunito;
           font-weight: bold;
-          font-size: 1.15rem;
+          font-size: 1.1rem;
           letter-spacing: 2px;
           color: rgba($primary-color, 1);
         }
@@ -66,6 +66,7 @@
     text-transform: uppercase;
     font-size: 1rem;
     color: rgba(31, 182, 122, 1);
+    letter-spacing: 0.8px;
   }
 
   .spanX {
@@ -102,6 +103,7 @@
   background-color: rgba(31, 182, 122, 0.8);
   border: 1px dotted rgba(31, 182, 122, 1);
   color: #fff;
+  letter-spacing: 0.8px;
   transition: color 0.3s ease-in-out;
 
   //only allow hover when the button is enabled
@@ -127,4 +129,7 @@
     border: 1px solid rgba(31, 182, 122, 1);
     background-color: rgba(245, 245, 245, 0.9);
   }
+}
+::placeholder {
+  letter-spacing: 1px;
 }

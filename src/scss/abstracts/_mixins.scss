@@ -15,6 +15,7 @@
       font-family: monospace;
       letter-spacing: 10px;
       color: rgb(0, 0, 0);
+      font-size: 1.5rem;
     }
 
     ul {
@@ -32,6 +33,7 @@
         text-decoration: none;
         color: rgb(0, 0, 0);
         border-bottom: 4px solid transparent;
+        font-size: 1.1rem;
         &:hover {
           color: rgba(31, 182, 122, 0.9);
           padding-bottom: 3px;
