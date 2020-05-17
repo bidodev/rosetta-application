@@ -1,4 +1,5 @@
 import { elements, configs } from "../base.js";
+import { noCover } from "../config.js";
 import { state } from "../app.js";
 
 //import Search class
@@ -113,6 +114,8 @@ var modal = document.querySelector(".modal");
 
 async function toggleModal() {
   const id = event.target.parentElement.id;
+  const found = state.search.result.find(element => element.id === id);
+
   state.book = new Book(id);
 
   await state.book.getBook();
@@ -128,6 +131,19 @@ async function toggleModal() {
     categories,
     imageLinks,
   } = state.book.result;
+
+  //workarround to fix undefined
+  function checkImg(imgObj) {
+    if (imgObj) {
+      if (imgObj.medium) {
+        return imgObj.medium;
+      } else {
+        return imgObj.thumbnail;
+      }
+    } else {
+      return noCover;
+    }
+  }
   document.querySelector(".modal-content").innerHTML = `
   <span class='close-button'>&times;</span>
   
@@ -138,7 +154,7 @@ async function toggleModal() {
   <div class="book-wrapper">
     <div class="bookcover">
       <img
-        src="${imageLinks.medium}"
+        src="${checkImg(imageLinks)}"
         alt="Front Cover"
         title="Front Cover"
       />
@@ -153,13 +169,13 @@ async function toggleModal() {
         <div>
           <span>${publisher}</span>, <span>${publishedDate}</span> -
           <a class="secondary" href=""
-            ><span>${categories}</span></a
+            ><span>${categories ? categories[0] : ""}</span></a
           >
           - <span>${pageCount} pages</span>
         </div>
       </div>
       <div class="synopsis">
-          <p>${description}</p>
+          <p>${description ? description : "Description not available"}</p>
       </div>
     </div>
   </div>
