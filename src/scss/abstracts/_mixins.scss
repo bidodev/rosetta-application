@@ -3,11 +3,8 @@
 // ----------------
 @mixin navigation-bar {
   nav {
-    text-transform: uppercase;
-    font-family: Nunito;
-    font-weight: 600;
     width: 90%;
-    min-height: 8vh;
+    min-height: 10vh;
 
     display: flex;
     justify-content: space-between;
@@ -17,7 +14,7 @@
       text-decoration: none;
       font-family: monospace;
       letter-spacing: 10px;
-      color: #606060;
+      color: rgb(0, 0, 0);
     }
 
     ul {
@@ -33,10 +30,10 @@
 
       a {
         text-decoration: none;
-        color: rgba(31, 182, 122, 0.9);
+        color: rgb(0, 0, 0);
         border-bottom: 4px solid transparent;
         &:hover {
-          opacity: 0.6;
+          color: rgba(31, 182, 122, 0.9);
           padding-bottom: 3px;
           border-bottom: 4px solid rgba(31, 182, 122, 0.6);
           transition: border-bottom 0.5s ease-in-out;
@@ -60,9 +57,11 @@
 }
 @mixin flex-row {
   display: flex;
+  flex-direction: row;
 }
 @mixin flex-center-row {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
@@ -92,7 +91,7 @@
 
     p {
       font-size: 0.7rem;
-      color: rgb(31, 182, 122);
+      color: rgba(31, 182, 122);
       font-family: Arial, Helvetica, sans-serif;
     }
   }

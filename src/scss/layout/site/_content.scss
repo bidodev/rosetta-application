@@ -42,7 +42,6 @@ body {
 
     h1 {
       position: relative;
-
       text-transform: uppercase;
       font-family: Arial, Helvetica, sans-serif;
       letter-spacing: 1px;
@@ -55,8 +54,8 @@ body {
     h2 {
       position: absolute;
       top: 50.5%;
-      left: 65.5%;
-      transform: translate(-65.5%, -50.5%);
+      left: 60%;
+      transform: translate(-60%, -50.5%);
       margin-top: 40px;
       font-family: Arial, Helvetica, sans-serif;
       text-transform: uppercase;
@@ -84,7 +83,7 @@ body {
 
     .introTop {
       width: 100%;
-      height: 110vh;
+      height: 120vh;
       background-color: rgb(255, 255, 255, 0.9);
       @include flex-center-column;
       font-family: sans-serif;
@@ -108,6 +107,8 @@ body {
         font-size: 1.2rem;
         color: rgba(31, 182, 122, 0.5);
         padding: 5px 0;
+        line-height: 1.6;
+        text-align: justify;
       }
 
       // BTN See more
@@ -170,8 +171,8 @@ body {
     h4 {
       position: absolute;
       top: 51%;
-      left: 64%;
-      transform: translate(-64%, -51%);
+      left: 59.2%;
+      transform: translate(-59.2%, -51%);
       margin-top: 40px;
       font-family: Arial, Helvetica, sans-serif;
 
@@ -218,7 +219,7 @@ body {
     #middleContainer {
       width: 80%;
       display: grid;
-      grid-template-columns: 30% auto;
+      grid-template-columns: 20% auto;
       border-bottom: 1px dotted rgba(31, 182, 122, 0.9);
       justify-content: center;
       align-items: center;
@@ -228,7 +229,7 @@ body {
       //
       .boxImgTeam1 {
         @include boxImgTeam;
-        background-image: url(../img/orwell.jpg);
+        background-image: url(../img/rumi.jpg);
         &:after {
           content: "";
           position: absolute;

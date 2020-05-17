@@ -5,7 +5,10 @@
   width: 100vw;
   height: auto;
   position: fixed;
+
   nav {
+    font-family: Nunito;
+    text-transform: uppercase;
     ul {
       li {
         a {
@@ -62,7 +65,7 @@
     margin-top: 1.8rem;
     text-transform: uppercase;
     font-size: 1rem;
-    color: #fff;
+    color: rgba(31, 182, 122, 1);
   }
 
   .spanX {
