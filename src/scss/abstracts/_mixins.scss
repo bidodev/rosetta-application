@@ -14,7 +14,7 @@
       text-decoration: none;
       font-family: monospace;
       letter-spacing: 10px;
-      color: rgb(0, 0, 0);
+      color: rgba(19, 18, 18, 0.883);
       font-size: 1.5rem;
     }
 
@@ -26,12 +26,12 @@
         margin-right: 20px;
         font-family: Arial, Helvetica, sans-serif;
         font-size: 0.8rem;
-        color: rgb(0, 0, 0);
+        color: rgba(24, 22, 22, 0.877);
       }
 
       a {
         text-decoration: none;
-        color: rgb(0, 0, 0);
+        color: rgb(22, 22, 22);
         border-bottom: 4px solid transparent;
         font-size: 1.1rem;
         &:hover {
