@@ -3,13 +3,12 @@
 // 1. Configuration and helpers
 @import "abstracts/variables", "abstracts/mixins";
 
-// 2. Base stuff
-@import "base/base", "base/scrollbar", "base/loader";
-
 // 3. Layout for the Website and App
 @import "layout/site/content";
+// 2. Base stuff
+@import "base/base", "base/scrollbar", "base/loader";
 
 // 4. Layout for the App
 @import "layout/app/header.scss", "layout/app/_filters.scss",
   "layout/app/main.scss", "layout/app/books", "layout/app/pagination",
-  "layout/app/footer";
+  "layout/app/footer", "layout/app/modal";

@@ -1,0 +1,95 @@
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.1);
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 1rem 1.5rem;
+  width: auto;
+  height: 60vh;
+  border-radius: 0.5rem;
+}
+.close-button {
+  float: right;
+  width: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  background-color: lightgray;
+}
+.close-button:hover {
+  background-color: darkgray;
+}
+.show-modal {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+.hidden {
+  display: none;
+}
+
+.book-wrapper {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  margin-top: 1rem;
+  grid-template-columns: 15vw 30vw;
+}
+
+.book-wrapper-intern {
+  height: 45vh;
+}
+
+.synopsis {
+  height: 80%;
+  overflow: auto;
+  p {
+    color: #909090;
+  }
+}
+.bookinfo_sectionwrap {
+  div {
+    color: #606060;
+    margin-bottom: 0.5rem;
+  }
+  margin-bottom: 1rem;
+}
+
+.booktitle {
+  color: #606060;
+  span {
+    margin-left: 1rem;
+    font-size: 1rem;
+    color: rgba(31, 182, 122, 1);
+  }
+}
+
+.bookcover {
+  img {
+    width: 90%;
+  }
+}
+.secondary {
+  text-decoration: none;
+  color: #606060;
+  span {
+    color: #3ea6ff;
+  }
+}
+//#606060
+//

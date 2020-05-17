@@ -3,11 +3,6 @@
 // RESULT section
 // -------------------------    ***
 //
-//
-// I added the grid here because the way the grid is build dont need media queries, as its responsive on its own.
-//
-//
-
 /*----------GRID-----------*/
 .container-books {
   width: 100vw;
@@ -22,7 +17,7 @@
   // if you dont add the fraction, leaving alone the 250px, the box will occupy the 100% width, but using the fraction will put it in 2 rows.
   background-color: rgba(250, 250, 250, 0.8);
   opacity: 0.9;
-  .quote {
+  .book {
     h3 {
       font-size: 1.3rem;
       color: rgb(96, 96, 96);

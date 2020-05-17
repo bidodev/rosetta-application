@@ -1,6 +1,8 @@
+import { noCover, baseURL } from "../config.js";
+
 export default class Search {
-  constructor(_filters) {
-    let { query, language, type, max, order } = _filters;
+  constructor(filters) {
+    let { query, language, type, max, order } = filters;
 
     if (query) this.query = query;
     if (language) this.language = language;
@@ -17,8 +19,6 @@ export default class Search {
         if (!items) {
           items = [];
         }
-        const noCover =
-          "https://www.forewordreviews.com/books/covers/strategic-market-research.jpg";
 
         //validate the author strings
         const validateAuthor = authors => {
@@ -33,8 +33,8 @@ export default class Search {
         const validateData = items.map(item => {
           const info = item.volumeInfo;
 
-          let { title, publisher } = info;
-
+          const id = item.id;
+          const { title, publisher } = info;
           const link = info.previewLink;
           const imgLink = info.imageLinks ? info.imageLinks.thumbnail : noCover;
           const author = validateAuthor(info.authors);
@@ -50,6 +50,7 @@ export default class Search {
           // const desc = info.subtitle;
 
           return {
+            id,
             title,
             description,
             link,
@@ -64,8 +65,6 @@ export default class Search {
         this.result = validateData;
       };
 
-      let baseURL = "https://www.googleapis.com/books/v1/volumes?q=";
-
       const defSearch = `${encodeURIComponent(this.query)}&langRestrict=${
         this.language
       }&maxResults=${this.maxResults}`;
@@ -77,15 +76,18 @@ export default class Search {
       }`;
 
       //check if the search has any filter applied
+      let urlAPI = "";
+
       this.searchType !== undefined
-        ? (baseURL += filteredSearch)
-        : (baseURL += defSearch);
+        ? (urlAPI = baseURL + filteredSearch)
+        : (urlAPI = baseURL + defSearch);
 
       //console.log(baseURL);
-      const response = await fetch(baseURL);
+      const response = await fetch(urlAPI);
       const data = await response.json();
 
       //send the data fo be filtered before return
+      console.log(data);
       extractInfo(data);
       /**
        * The API will return to us an object with 3 properties..
