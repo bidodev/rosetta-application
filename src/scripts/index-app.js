@@ -100,8 +100,42 @@ credits.innerHTML = "<h3>CREDITS</h3>  <h4>The Team</h4>";
 // ----------------------------------------------------
 //                         MIDDLE
 // ----------------------------------------------------
+
 //
 const middleSection = document.querySelector("#middleSection");
+//
+//                         
+//
+//****NEW */
+// ----------------------------------------------------
+//
+//
+//                           *
+//
+// ----------------------------------------------------
+//                         BOTTOM
+// ----------------------------------------------------
+//
+
+const bottomSection = document.querySelector("#bottomSection");
+const formWrapper = document.createElement("div");
+formWrapper.classList.add("formWrapper");
+const forma = document.querySelector("#form");
+
+//
+const bottomTitle = document.createElement("h1");
+
+bottomTitle.innerText = "LOG IN ";
+bottomTitle.style.margin = "10px";
+bottomTitle.style.padding = " 40px 0 10px 0";
+bottomTitle.style.fontSize = "1rem";
+
+// append
+bottomSection.appendChild(bottomTitle);
+bottomSection.appendChild(formWrapper);
+formWrapper.appendChild(forma);
+
+//****NEW */
 
 // ----------------------------------------------------
 //
