@@ -1,3 +1,4 @@
+import { baseURL } from "../config.js";
 export default class Book {
   constructor(id) {
     this.id = id;
@@ -5,9 +6,7 @@ export default class Book {
 
   async getBook() {
     try {
-      const result = await fetch(
-        `https://www.googleapis.com/books/v1/volumes/${this.id}`
-      );
+      const result = await fetch(`${baseURL}/${this.id}`);
       const data = await result.json();
 
       this.result = data.volumeInfo;

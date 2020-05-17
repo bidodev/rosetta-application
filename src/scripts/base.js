@@ -61,7 +61,7 @@ export const removeSpinner = function () {
 
 //fix and remove the navigation bar on the top
 export const fixedNav = function () {
-  if (this.scrollY > this.innerHeight / 8) {
+  if (this.scrollY > this.innerHeight) {
     elements.navbar.classList.add("fixed-top");
     document.body.classList.add("bg-active");
   } else {
