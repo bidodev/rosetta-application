@@ -266,6 +266,123 @@ body {
 
   // ----------------------------
   // ----------------------------
+  //   BOTTOM SECTION
+  // ----------------------------
+
+  #bottomSection {
+    @include flex-center-column;
+    width: 100vw;
+    height: auto;
+
+    h1 {
+      font-family: Arial, Helvetica, sans-serif;
+      color: rgba(31, 182, 122, 0.5);
+    }
+
+    .formWrapper {
+      width: 100%;
+      //the border is just to see where i am at border: 1px solid #000;
+      height: 20vh;
+      margin: 0 0 30px 0;
+      transition: 0.5s ease;
+      display: flex;
+      position: relative;
+
+      // ----------------
+      // form
+      // ----------------
+      .field-name,
+      .field-email,
+      .field-password,
+      .field-finish {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        //   with the following tranform translate it s going to position the perfctly in the center.
+        transform: translate(-50%, -50%);
+        background-color: white;
+        height: 40px;
+        width: 350px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 5px;
+        //   fading purposes
+        transition: all 0.5s ease;
+      }
+      ::placeholder {
+        color: rgba(249, 105, 37, 0.3);
+      }
+      // -----------------
+      // styles of the font awe icons **
+
+      .field-name i,
+      .field-email i,
+      .field-password i,
+      .field-finish i {
+        padding: 10px;
+        cursor: pointer;
+        color: rgba(31, 182, 122, 0.2);
+      }
+
+      .field-name input,
+      .field-email input,
+      .field-password input {
+        background: none;
+        border: none;
+        //   the flex is so that the input field can stretch from side to side
+        flex: 1;
+        //   the height is so that the input field can stretch from top to bottom
+        height: 100%;
+        outline: none;
+      }
+
+      // -----------------
+      //Dont forget to add the clase innactive to the parents in the html form ,except for the first block like so:
+      //<div class="field-password innactive">
+      //animation : hide / show
+      div.innactive {
+        opacity: 0;
+        //   with this pointer event you cannot click
+        pointer-events: none;
+        transform: translate(-50%, 50%);
+
+        p {
+          color: rgba(249, 105, 37, 0.3);
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 0.9rem;
+        }
+      }
+      div.active {
+        opacity: 1;
+        //   with this pointer you can click on
+        pointer-events: all;
+        transform: translate(-50%, -50%);
+      }
+      // ------------------------
+      //  ADD this after the  JS form is ready
+      // ------------------------
+      //   SHAKE ANIMATION
+      // ------------------------
+      @keyframes shake {
+        0% {
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+        50% {
+          transform: translate(-50%, -50%) rotate(10deg);
+        }
+        100% {
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+      }
+      // after the anim is set, go back to the JS file
+    }
+  }
+
+
+
+  // ----------------------------
+  // ----------------------------
   //               FOOTER SECTION
   // ----------------------------
 
