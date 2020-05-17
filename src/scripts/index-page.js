@@ -49,9 +49,11 @@ const topSection = document.querySelector("#topSection");
 //
 const introTop = document.createElement("div");
 introTop.classList.add("introTop");
+
 // text Title
 const titleTop = document.createElement("h1");
 titleTop.classList.add("about");
+
 titleTop.innerHTML = "ABOUT";
 // text description
 introTop.innerHTML =
@@ -172,7 +174,6 @@ const cred2 = document.querySelector(".credits h4");
 const tryItBtn = document.querySelector("#header li:nth-child(1)");
 const creditBtn = document.querySelector("#header li:nth-child(2)");
 const about = document.querySelector(".about");
-
 tryItBtn.classList.add("headerarabic");
 creditBtn.classList.add("headerarabic");
 
@@ -186,10 +187,11 @@ const changeToArabic = () => {
   creditBtn.innerHTML = "فريق العمل ";
   creditBtn.style.fontSize = "larger";
   introTop.innerHTML =
-    "<p> حتى يومنا هذا ، نسعى بنشاط إلى طرق جديدة ومنعشة للتعامل مع النشر نظرًا لمجموعة عناويننا الكبيرة ، فنحن نسعى إلى إثراء حياة قرائنا بالإضافة إلى الانخراط باستمرار في المشهد الإبداعي المحيط. </ p>" +
+    "<p> حتى يومنا هذا ، نسعى إلى طرق جديدة ومنعشة للتعامل مع النشر نظرًا لمجموعة عناويننا الكبيرة ، فنحن نسعى إلى إثراء حياة قرائنا بالإضافة إلى الانخراط باستمرار في المشهد الإبداعي المحيط. </ p>" +
     "<p> منذ البداية ، كنا نركز على الجمالية ، ولا سيما التصميم المرئي ، وعلى مدى العقدين الماضيين ، اتسع نطاق كل من المحتوى وخبرتنا. </ p>" +
     "<p> من خلال ملاحظة العديد من الثقافات والأشخاص والفنون وغيرهم من المخبرين الحميمين والملهمين ، نقوم بأرشفة واستباق الحركات الحيوية في العمارة والثقافة البصرية والتصميم والأزياء والهروب والطعام والمشروبات والسفر والفن المعاصر. </p> " +
     "<p> .بعد أن انضمت روزيتا إلى الرتب الأدبية في عام 2019 ، نطمح إلى ضمان وجود مكان للقراء من جميع الأعمار في العالم </p>";
+  introTop.style.textAlign = "right";
   memberName1.innerHTML = "زكريا";
   memberName1.style.textAlign = "right";
   teamMember1.style.textAlign = "right";
@@ -208,7 +210,7 @@ const changeToArabic = () => {
   كنت مديراً للمشروع ومسؤول أيضًا عن تطوير التطبيق
     | <span
     > المهام المتضمنة: إدارة الفريق ، تفويض المهام ،
-    دمج مكالمات الواجهة الأمامية والخلفية / واجهة برمجة التطبيقات.
+دمج مكالمات الواجهة الأمامية والخلفية / واجهة برمجة التطبيقات
   </span>
 </p>`;
   memberName3.innerHTML = "ميليسا";
