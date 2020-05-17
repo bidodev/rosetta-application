@@ -51,6 +51,7 @@ const introTop = document.createElement("div");
 introTop.classList.add("introTop");
 // text Title
 const titleTop = document.createElement("h1");
+titleTop.classList.add("about");
 titleTop.innerHTML = "ABOUT";
 // text description
 introTop.innerHTML =
@@ -153,3 +154,87 @@ bottomSection.appendChild(formWrapper);
 formWrapper.appendChild(forma);
 
 //****NEW */
+
+// ========================================== Arbic layout =================================================
+
+const arabicLang = document.querySelector(".arabicLang");
+const englishLang = document.querySelector(".englishLang");
+const teamMember1 = document.getElementById("teamMember1");
+const teamMember2 = document.getElementById("teamMember2");
+const teamMember3 = document.getElementById("teamMember3");
+const memberName1 = document.getElementById("memberName1");
+const memberName2 = document.getElementById("memberName2");
+const memberName3 = document.getElementById("memberName3");
+const ban1 = document.querySelector("#banner h1");
+const ban2 = document.querySelector("#banner h2");
+const cred = document.querySelector(".credits h3");
+const cred2 = document.querySelector(".credits h4");
+const tryItBtn = document.querySelector("#header li:nth-child(1)");
+const creditBtn = document.querySelector("#header li:nth-child(2)");
+const about = document.querySelector(".about");
+
+tryItBtn.classList.add("headerarabic");
+creditBtn.classList.add("headerarabic");
+
+const changeToArabic = () => {
+  cred2.style.opacity = 0;
+  cred.innerHTML = "فريق العمل ";
+  ban2.innerHTML = "القراءة الحرّة تصلح ما أفسدتهُ المدرسة";
+  titleTop.innerHTML = "لمحة عن الفريق";
+  tryItBtn.innerHTML = "ابدأ البحث";
+  tryItBtn.style.fontSize = "larger";
+  creditBtn.innerHTML = "فريق العمل ";
+  creditBtn.style.fontSize = "larger";
+  introTop.innerHTML =
+    "<p> حتى يومنا هذا ، نسعى بنشاط إلى طرق جديدة ومنعشة للتعامل مع النشر نظرًا لمجموعة عناويننا الكبيرة ، فنحن نسعى إلى إثراء حياة قرائنا بالإضافة إلى الانخراط باستمرار في المشهد الإبداعي المحيط. </ p>" +
+    "<p> منذ البداية ، كنا نركز على الجمالية ، ولا سيما التصميم المرئي ، وعلى مدى العقدين الماضيين ، اتسع نطاق كل من المحتوى وخبرتنا. </ p>" +
+    "<p> من خلال ملاحظة العديد من الثقافات والأشخاص والفنون وغيرهم من المخبرين الحميمين والملهمين ، نقوم بأرشفة واستباق الحركات الحيوية في العمارة والثقافة البصرية والتصميم والأزياء والهروب والطعام والمشروبات والسفر والفن المعاصر. </p> " +
+    "<p> .بعد أن انضمت روزيتا إلى الرتب الأدبية في عام 2019 ، نطمح إلى ضمان وجود مكان للقراء من جميع الأعمار في العالم </p>";
+  memberName1.innerHTML = "زكريا";
+  memberName1.style.textAlign = "right";
+  teamMember1.style.textAlign = "right";
+  teamMember1.style.fontSize = "16px";
+  teamMember1.innerHTML = `<p id = "teamMember1">
+  كنت مسؤولاً عن تصميم وتطوير تطبيق البحث
+  | <span
+    > المهام المتضمنة: البحث ، تطوير الحلول ، أداء
+    الصفحة ديناميكيًا ، إصلاح الأعطال في التطبيق </ span
+  >`;
+  memberName2.innerHTML = "بيدو";
+  memberName2.style.textAlign = "right";
+  teamMember2.style.textAlign = "right";
+  teamMember2.style.fontSize = "16px";
+  teamMember2.innerHTML = `<p id = "teamMember2">
+  كنت مديراً للمشروع ومسؤول أيضًا عن تطوير التطبيق
+    | <span
+    > المهام المتضمنة: إدارة الفريق ، تفويض المهام ،
+    دمج مكالمات الواجهة الأمامية والخلفية / واجهة برمجة التطبيقات.
+  </span>
+</p>`;
+  memberName3.innerHTML = "ميليسا";
+  memberName3.style.textAlign = "right";
+  teamMember3.style.textAlign = "right";
+  teamMember3.style.fontSize = "16px";
+  teamMember3.innerHTML = `<p id = "teamMember3">
+كنت مسؤولة عن تصميم مخطط الموقع و
+التوثيق | <span
+  > المهام المتضمنة: رسم الأنماط  | تصميم و
+  اضافة رسومات الى الموقع باستخدام عدة أدوات مختلفة </ span
+>
+</p>`;
+  tryItBtn.onclick = () => {
+    location.href = "search.html";
+  };
+  creditBtn.onclick = () => {
+    middleSection.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
+  };
+};
+
+arabicLang.addEventListener("click", changeToArabic);
+
+const ArabicSearchPage = () => {};
+tryItBtn.addEventListener("click", ArabicSearchPage);
