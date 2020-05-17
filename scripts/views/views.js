@@ -114,6 +114,8 @@ var modal = document.querySelector(".modal");
 
 async function toggleModal() {
   const id = event.target.parentElement.id;
+  const found = state.search.result.find(element => element.id === id);
+
   state.book = new Book(id);
 
   await state.book.getBook();
@@ -129,6 +131,19 @@ async function toggleModal() {
     categories,
     imageLinks,
   } = state.book.result;
+
+  //workarround to fix undefined
+  function checkImg(imgObj) {
+    if (imgObj) {
+      if (imgObj.medium) {
+        return imgObj.medium;
+      } else {
+        return imgObj.thumbnail;
+      }
+    } else {
+      return noCover;
+    }
+  }
   document.querySelector(".modal-content").innerHTML = `
   <span class='close-button'>&times;</span>
   
@@ -139,7 +154,7 @@ async function toggleModal() {
   <div class="book-wrapper">
     <div class="bookcover">
       <img
-        src="${imageLinks.medium ? imageLinks.medium : noCover}"
+        src="${checkImg(imageLinks)}"
         alt="Front Cover"
         title="Front Cover"
       />
