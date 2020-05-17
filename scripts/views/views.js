@@ -1,4 +1,5 @@
 import { elements, configs } from "../base.js";
+import { noCover } from "../config.js";
 import { state } from "../app.js";
 
 //import Search class
@@ -138,7 +139,7 @@ async function toggleModal() {
   <div class="book-wrapper">
     <div class="bookcover">
       <img
-        src="${imageLinks.medium}"
+        src="${imageLinks.medium ? imageLinks.medium : noCover}"
         alt="Front Cover"
         title="Front Cover"
       />
@@ -153,13 +154,13 @@ async function toggleModal() {
         <div>
           <span>${publisher}</span>, <span>${publishedDate}</span> -
           <a class="secondary" href=""
-            ><span>${categories}</span></a
+            ><span>${categories ? categories[0] : ""}</span></a
           >
           - <span>${pageCount} pages</span>
         </div>
       </div>
       <div class="synopsis">
-          <p>${description}</p>
+          <p>${description ? description : "Description not available"}</p>
       </div>
     </div>
   </div>
