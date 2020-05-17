@@ -65,11 +65,11 @@ export default class Search {
         this.result = validateData;
       };
 
-      const defSearch = `${encodeURIComponent(this.query)}&langRestrict=${
+      const defSearch = `?q=${encodeURIComponent(this.query)}&langRestrict=${
         this.language
       }&maxResults=${this.maxResults}`;
 
-      const filteredSearch = `${this.searchType}:${encodeURIComponent(
+      const filteredSearch = `?q=${this.searchType}:${encodeURIComponent(
         this.query
       )}&langRestrict=${this.language}&maxResults=${this.maxResults}&orderBy=${
         this.orderBy
