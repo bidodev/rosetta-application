@@ -1,6 +1,9 @@
 import { elements, configs } from "../base.js";
 import { state } from "../app.js";
 
+//import Search class
+import Book from "../models/Book.js";
+
 //query input value
 export const getSearchQuery = () => elements.searchQuery.value;
 export const getSearchType = () => elements.searchType.value;
@@ -106,6 +109,74 @@ function paginationButton(page, items) {
   return button;
 }
 
+var modal = document.querySelector(".modal");
+
+async function toggleModal() {
+  const id = event.target.parentElement.id;
+  state.book = new Book(id);
+
+  await state.book.getBook();
+  let {
+    title,
+    subtitle,
+    authors,
+    publisher,
+    publishedDate,
+    description,
+    industryIdentifiers,
+    pageCount,
+    categories,
+    imageLinks,
+  } = state.book.result;
+  document.querySelector(".modal-content").innerHTML = `
+  <span class='close-button'>&times;</span>
+  
+  <h2 class="booktitle">${title}<span class="subtitle">${
+    subtitle ? subtitle : ""
+  }</span></h2>
+
+  <div class="book-wrapper">
+    <div class="bookcover">
+      <img
+        src="${imageLinks.medium}"
+        alt="Front Cover"
+        title="Front Cover"
+      />
+    </div>
+    <div class="book-wrapper-intern">
+      <div class="bookinfo_sectionwrap">
+        <div>
+          <a href="" class="secondary"
+            ><span dir="ltr">${authors}</span></a
+          >
+        </div>
+        <div>
+          <span>${publisher}</span>, <span>${publishedDate}</span> -
+          <a class="secondary" href=""
+            ><span>${categories}</span></a
+          >
+          - <span>${pageCount} pages</span>
+        </div>
+      </div>
+      <div class="synopsis">
+          <p>${description}</p>
+      </div>
+    </div>
+  </div>
+</div>
+  `;
+  modal.classList.add("show-modal");
+  document.querySelector(".header-nav").classList.add("hidden");
+  document
+    .querySelector(".close-button")
+    .addEventListener("click", windowOnClick);
+}
+
+function windowOnClick() {
+  modal.classList.remove("show-modal");
+  document.querySelector(".header-nav").classList.remove("hidden");
+}
+
 // __________________ display the results inside the div _________________________//
 function displayList(items, wrapper, itemsPerPage, page) {
   wrapper.innerHTML = "";
@@ -116,6 +187,7 @@ function displayList(items, wrapper, itemsPerPage, page) {
 
   paginatedItems.forEach(item => {
     let {
+      id,
       title,
       description,
       author,
@@ -127,7 +199,7 @@ function displayList(items, wrapper, itemsPerPage, page) {
     } = item;
 
     let markUp = `
-      <div class="quote">
+      <div class="book" id ="${id}" >
         <h3>${limitResults(title, 20)}</h3>
         <h6>${author}</h6>
         <h6><span>${pageCount} pages</span></h6>
@@ -138,5 +210,9 @@ function displayList(items, wrapper, itemsPerPage, page) {
       </div>
     `;
     elements.booksContainer.insertAdjacentHTML("beforeend", markUp); //   value to display in each div
+    const box = document.querySelectorAll(".img-box");
+    box.forEach(book => {
+      book.addEventListener("click", toggleModal);
+    });
   });
 }
