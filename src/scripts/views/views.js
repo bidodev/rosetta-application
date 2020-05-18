@@ -1,6 +1,6 @@
-import { elements, configs } from "../base.js";
-import { noCover } from "../config.js";
+import { elements } from "../base.js";
 import { state } from "../app.js";
+import { configs } from "../configs.js";
 
 //import Search class
 import Book from "../models/Book.js";
@@ -148,7 +148,7 @@ async function toggleModal() {
         return imgObj.thumbnail;
       }
     } else {
-      return noCover;
+      return configs.noCover;
     }
   }
   document.querySelector(".modal-content").innerHTML = `
