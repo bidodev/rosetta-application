@@ -227,6 +227,9 @@ const changeToArabic = () => {
   tryItBtn.onclick = () => {
     location.href = "search.html";
   };
+  englishLang.onclick = () => {
+    location.href = "index.html";
+  };
   creditBtn.onclick = () => {
     middleSection.scrollIntoView({
       behavior: "smooth",
@@ -235,8 +238,3 @@ const changeToArabic = () => {
     });
   };
 };
-
-arabicLang.addEventListener("click", changeToArabic);
-
-const ArabicSearchPage = () => {};
-tryItBtn.addEventListener("click", ArabicSearchPage);
