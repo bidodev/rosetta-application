@@ -238,3 +238,5 @@ const changeToArabic = () => {
     });
   };
 };
+
+arabicLang.addEventListener("click", changeToArabic);
