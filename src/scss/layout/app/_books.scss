@@ -64,28 +64,3 @@
     }
   }
 }
-// stying scroll to the top button
-
-#footer {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.button_up {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(31, 182, 122, 0.5);
-}
-
-.button_up div {
-  width: 0.6rem;
-  height: 0.6rem;
-  margin-top: 0.3rem;
-  transform: rotate(45deg);
-  border-top: 2px solid white;
-  border-left: 2px solid white;
-}
