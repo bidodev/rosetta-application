@@ -1,4 +1,4 @@
-import { noCover, baseURL } from "../config.js";
+import { configs } from "../configs.js";
 
 export default class Search {
   constructor(filters) {
@@ -36,7 +36,9 @@ export default class Search {
           const id = item.id;
           const { title, publisher } = info;
           const link = info.previewLink;
-          const imgLink = info.imageLinks ? info.imageLinks.thumbnail : noCover;
+          const imgLink = info.imageLinks
+            ? info.imageLinks.thumbnail
+            : configs.noCover;
           const author = validateAuthor(info.authors);
           //validate authors
 
@@ -79,11 +81,13 @@ export default class Search {
       let urlAPI = "";
 
       this.searchType !== undefined
-        ? (urlAPI = baseURL + filteredSearch)
-        : (urlAPI = baseURL + defSearch);
+        ? (urlAPI = configs.baseURL + filteredSearch)
+        : (urlAPI = configs.baseURL + defSearch);
 
       //console.log(baseURL);
       const response = await fetch(urlAPI);
+      console.log("Search -> fetchResults -> urlAPI", urlAPI);
+
       const data = await response.json();
 
       //send the data fo be filtered before return

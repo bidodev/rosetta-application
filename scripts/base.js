@@ -21,12 +21,7 @@ export const elements = {
   pagination: document.querySelector(".pagination"),
   main: document.querySelector(".main-content"),
   spinnerArea: document.querySelector(".spinnerArea"),
-};
-
-export const configs = {
-  defaultLanguage: "en",
-  rows: 8, //how many items generate in each page (pagination)
-  maxResults: 32, //how many items get from the API.
+  modal: document.querySelector(".modal"),
 };
 
 export const elementsStr = {

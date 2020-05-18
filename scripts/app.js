@@ -3,13 +3,10 @@
 // -------------------------------------------------------------------------------------------------------------------
 
 //import base functions and elements
-import {
-  elements,
-  configs,
-  fixedNav,
-  renderSpinner,
-  removeSpinner,
-} from "./base.js";
+import { elements, fixedNav, renderSpinner, removeSpinner } from "./base.js";
+
+//import configs
+import { configs } from "./configs.js";
 
 //import Search class
 import Search from "./models/Search.js";
