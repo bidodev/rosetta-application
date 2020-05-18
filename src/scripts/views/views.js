@@ -102,7 +102,7 @@ function paginationButton(page, items) {
   let button = document.createElement("a");
   button.innerHTML = `<a href="#" class="page">${page}</a>`;
 
-  button.addEventListener("click", (e) => {
+  button.addEventListener("click", e => {
     e.preventDefault();
     state.currentPage = page;
 
@@ -117,11 +117,9 @@ function paginationButton(page, items) {
   return button;
 }
 
-var modal = document.querySelector(".modal");
-
 async function toggleModal() {
   const id = event.target.parentElement.id;
-  const found = state.search.result.find((element) => element.id === id);
+  //const found = state.search.result.find(element => element.id === id);
 
   state.book = new Book(id);
 
@@ -188,16 +186,16 @@ async function toggleModal() {
   </div>
 </div>
   `;
-  modal.classList.add("show-modal");
-  document.querySelector(".header-nav").classList.add("hidden");
+  elements.modal.classList.add("show-modal");
+  elements.navbar.classList.add("hidden");
   document
     .querySelector(".close-button")
     .addEventListener("click", windowOnClick);
 }
 
 function windowOnClick() {
-  modal.classList.remove("show-modal");
-  document.querySelector(".header-nav").classList.remove("hidden");
+  elements.modal.classList.remove("show-modal");
+  elements.navbar.classList.remove("hidden");
 }
 
 // __________________ display the results inside the div _________________________//
@@ -208,7 +206,7 @@ function displayList(items, wrapper, itemsPerPage, page) {
   let end = start + itemsPerPage;
   let paginatedItems = items.slice(start, end); // to get an array out of the displayed items in each page
 
-  paginatedItems.forEach((item) => {
+  paginatedItems.forEach(item => {
     let {
       id,
       title,
@@ -234,7 +232,7 @@ function displayList(items, wrapper, itemsPerPage, page) {
     `;
     elements.booksContainer.insertAdjacentHTML("beforeend", markUp); //   value to display in each div
     const box = document.querySelectorAll(".img-box");
-    box.forEach((book) => {
+    box.forEach(book => {
       book.addEventListener("click", toggleModal);
     });
   });

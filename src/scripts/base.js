@@ -21,6 +21,7 @@ export const elements = {
   pagination: document.querySelector(".pagination"),
   main: document.querySelector(".main-content"),
   spinnerArea: document.querySelector(".spinnerArea"),
+  modal: document.querySelector(".modal"),
 };
 
 export const elementsStr = {
