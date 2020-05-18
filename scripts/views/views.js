@@ -7,7 +7,11 @@ import Book from "../models/Book.js";
 
 //query input value
 export const getSearchQuery = () => elements.searchQuery.value;
+
+//query search type value
 export const getSearchType = () => elements.searchType.value;
+
+//clear search input
 export const clearInput = () => {
   elements.spanx.style.opacity = 0;
   elements.searchQuery.value = "";

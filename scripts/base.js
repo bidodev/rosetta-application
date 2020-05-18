@@ -14,7 +14,7 @@ export const elements = {
   fetchBtn: document.querySelector(".fetch-values"),
   container: document.querySelector(".container"),
   filters: document.querySelector(".filters"),
-  buttonUp: document.querySelector(".button_up"),
+  buttonUp: document.querySelector(".button-up"),
   searchHeader: document.getElementById("header"),
   spanx: document.querySelector(".spanX"),
   navbar: document.querySelector(".header-nav"),
