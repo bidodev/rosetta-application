@@ -8,3 +8,23 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+
+.englishLang,
+.arabicLang {
+  border: none;
+  background: transparent;
+  font-size: large;
+  color: black;
+  outline: none;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.headerarabic:hover {
+  color: rgba(31, 182, 122, 0.9);
+  padding-bottom: 3px;
+  border-bottom: 4px solid rgba(31, 182, 122, 0.6);
+  transition: border-bottom 0.5s ease-in-out;
+  cursor: pointer;
+}
