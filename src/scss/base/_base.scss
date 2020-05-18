@@ -28,14 +28,3 @@ body {
   font-family: "Nunito", sans-serif;
   line-height: 1.6;
 }
-
-.englishLang,
-.arabicLang {
-  border: none;
-  background: transparent;
-  font-size: large;
-  color: black;
-  &:hover {
-    cursor: pointer;
-  }
-}
