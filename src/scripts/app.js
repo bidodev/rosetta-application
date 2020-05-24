@@ -103,7 +103,11 @@ const controlFilters = async () => {
 
 //EVENTS HANDLER
 //SEARCH BUTTON
+
+//development
 elements.fetchBtn.addEventListener("click", controlSearch);
+
+
 
 //EVENTS HANDLER FOR THE FILTERS BUTTONS
 //ORDERS RESULTS BY TYPE
@@ -122,9 +126,6 @@ elements.buttonUp.addEventListener("click", searchView.goUp);
 
 //AUTO NAVBAR
 window.addEventListener("scroll", fixedNav);
-
-//Disable search (x button)
-elements.searchQuery.addEventListener("keyup", searchView.disableSearch);
 
 //ENTER BUTTON
 document.addEventListener("keypress", event => {

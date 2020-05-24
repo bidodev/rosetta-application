@@ -13,10 +13,9 @@ export const getSearchType = () => elements.searchType.value;
 
 //clear search input
 export const clearInput = () => {
-  elements.spanx.style.opacity = 0;
   elements.searchQuery.value = "";
-  elements.fetchBtn.disabled = true;
 };
+
 export const clearResults = () => (elements.booksContainer.innerHTML = "");
 
 //finction to scroll to the top of the page

@@ -11,11 +11,12 @@
     align-items: center;
 
     .logo a {
+      opacity: 0;
       text-decoration: none;
-      font-family: monospace;
-      letter-spacing: 10px;
+      letter-spacing: 8px;
       color: rgb(0, 0, 0);
       font-size: 1.5rem;
+      color: #606060;
     }
 
     ul {
@@ -24,16 +25,14 @@
       li {
         display: inline;
         margin-right: 20px;
-        font-family: Arial, Helvetica, sans-serif;
         font-size: 0.8rem;
-        color: rgb(0, 0, 0);
       }
 
       a {
         text-decoration: none;
-        color: rgb(0, 0, 0);
         border-bottom: 4px solid transparent;
         font-size: 1.1rem;
+        color: $primary-color;
         &:hover {
           color: rgba(31, 182, 122, 0.9);
           padding-bottom: 3px;

@@ -1,12 +1,13 @@
 .result {
   width: 100vw;
-  height: 50vh;
-  border-bottom: 1px dotted rgba(31, 182, 122, 0.9);
-  background-color: rgb(247, 247, 247, 0.8);
-  @include flex-center-column;
+  height: 45vh;
+  background-color: rgb(250, 250, 250, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 
   h4 {
-    padding: 20px 0 100px 0;
     font-size: 1.7rem;
     font-weight: 100;
     color: rgba(31, 182, 122, 0.8);
@@ -15,13 +16,10 @@
   //
   // FILTERS
   .filters {
-    padding: 15px 20px;
-    margin: 20px 0 50px 0;
-
     .select-type {
       border: 1px dotted rgba(31, 182, 122, 0.6);
       background-color: transparent;
-      padding: 12px 20px;
+      padding: 12px 1rem;
       color: rgba(31, 182, 122, 0.8);
       outline: none;
     }
