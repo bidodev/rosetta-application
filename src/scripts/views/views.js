@@ -6,7 +6,7 @@ import { configs } from "../configs.js";
 import Book from "../models/Book.js";
 
 //query input value
-export const getSearchQuery = () => elements.searchQuery.value;
+export const getSearchQuery = () => elements.searchQuery.value.trim();
 
 //query search type value
 export const getSearchType = () => elements.searchType.value;
@@ -66,7 +66,7 @@ const limitResults = (str, limit) => {
 
 //controller display results
 export const displayResults = () => {
-  console.log(state.search);
+  //console.log(state.search);
   //get the array of books from state
   const { result } = state.search;
 
@@ -140,6 +140,7 @@ async function toggleModal() {
     categories,
     imageLinks,
   } = state.book.result;
+  console.log("imageLinks", imageLinks);
 
   //workarround to fix undefined
   function checkImg(imgObj) {

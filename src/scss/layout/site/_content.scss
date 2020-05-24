@@ -81,62 +81,10 @@ body {
     background-attachment: fixed;
     transition: all 3s ease-in-out;
 
-    .introTop {
-      width: 100%;
-      height: 120vh;
-      background-color: rgb(255, 255, 255, 0.9);
-      @include flex-center-column;
-      font-family: sans-serif;
-      border-bottom: 1px dotted rgba(31, 182, 122, 0.9);
-      position: relative;
-
-      h1 {
-        position: absolute;
-        top: 12%;
-        left: 50%;
-        transform: translate(-50%, -12%);
-
-        font-family: "Times New Roman", Times, serif;
-        text-transform: uppercase;
-        font-size: 1.4rem;
-        color: rgba(31, 182, 122, 0.5);
-      }
-
-      p {
-        width: 45%;
-        font-size: 1.2rem;
-        color: rgba(31, 182, 122, 0.5);
-        padding: 5px 0;
-        line-height: 1.6;
-        text-align: justify;
-      }
-
-      // BTN See more
-      .seeMoreBtn {
-        position: absolute;
-        bottom: 12%;
-        left: 50%;
-        transform: translate(-50%, -12%);
-        padding: 15px 20px;
-
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-        text-transform: uppercase;
-        font-size: 0.8rem;
-        color: rgba(31, 182, 122, 0.4);
-        border: 1px solid rgba(31, 182, 122, 0.4);
-        transition: 0.2s ease-in-out;
-        &:hover {
-          border: 1px solid rgba(31, 182, 122, 0.9);
-          color: rgba(31, 182, 122, 0.9);
-        }
-      }
-    }
-
     .topSectionImg {
       width: 100%;
       height: 80vh;
-      background-image: url(../img/books-gestalt.png);
+      background-image: url(../img/books-gestalt.jpg);
       background-size: cover;
       background-position: top right;
       background-repeat: no-repeat;

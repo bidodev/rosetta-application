@@ -113,9 +113,9 @@ const refineSearch = [
   elements.orderBy,
 ];
 
-refineSearch.forEach(filter => {
-  filter.addEventListener("change", controlFilters);
-});
+refineSearch.forEach(filter =>
+  filter.addEventListener("change", controlFilters)
+);
 
 //GOUP BUTTON
 elements.buttonUp.addEventListener("click", searchView.goUp);

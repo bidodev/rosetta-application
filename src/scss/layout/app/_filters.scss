@@ -1,8 +1,8 @@
 .result {
   width: 100vw;
-  height: 40vh;
-
-  background-color: rgba(244, 244, 244, 0.8);
+  height: 50vh;
+  border-bottom: 1px dotted rgba(31, 182, 122, 0.9);
+  background-color: rgb(247, 247, 247, 0.8);
   @include flex-center-column;
 
   h4 {

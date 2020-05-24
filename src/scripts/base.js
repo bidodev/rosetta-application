@@ -31,7 +31,11 @@ export const elementsStr = {
 //insert the spinner loader..
 export const renderSpinner = (parent, where) => {
   const loader = `
-  <div class="${elementsStr.loader}"></div>`;
+  <div class="${elementsStr.loader}">
+    <svg>
+      <use href="img/icons.svg#icon-cw"></use>
+    </svg>
+  </div>`;
   parent.insertAdjacentHTML(where, loader);
   /** element.insertAdjacentHTML(position, text);
    * Parameters
