@@ -6,17 +6,16 @@ import { configs } from "../configs.js";
 import Book from "../models/Book.js";
 
 //query input value
-export const getSearchQuery = () => elements.searchQuery.value;
+export const getSearchQuery = () => elements.searchQuery.value.trim();
 
 //query search type value
 export const getSearchType = () => elements.searchType.value;
 
 //clear search input
 export const clearInput = () => {
-  elements.spanx.style.opacity = 0;
   elements.searchQuery.value = "";
-  elements.fetchBtn.disabled = true;
 };
+
 export const clearResults = () => (elements.booksContainer.innerHTML = "");
 
 //finction to scroll to the top of the page
@@ -24,18 +23,6 @@ export const goUp = () => {
   window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
 };
 
-export const disableSearch = function () {
-  if (elements.searchQuery.value.length > 0) {
-    elements.spanx.style.opacity = 1;
-    //add event to the x
-    elements.spanx.addEventListener("click", () => {
-      clearInput();
-    });
-    elements.fetchBtn.disabled = false;
-  } else {
-    clearInput();
-  }
-};
 
 //function to scroll into the results
 export const scrollToResultPage = () => {
@@ -66,7 +53,7 @@ const limitResults = (str, limit) => {
 
 //controller display results
 export const displayResults = () => {
-  console.log(state.search);
+  //console.log(state.search);
   //get the array of books from state
   const { result } = state.search;
 
@@ -140,6 +127,7 @@ async function toggleModal() {
     categories,
     imageLinks,
   } = state.book.result;
+  console.log("imageLinks", imageLinks);
 
   //workarround to fix undefined
   function checkImg(imgObj) {
