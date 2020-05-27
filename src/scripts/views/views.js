@@ -23,18 +23,6 @@ export const goUp = () => {
   window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
 };
 
-export const disableSearch = function () {
-  if (elements.searchQuery.value.length > 0) {
-    elements.spanx.style.opacity = 1;
-    //add event to the x
-    elements.spanx.addEventListener("click", () => {
-      clearInput();
-    });
-    elements.fetchBtn.disabled = false;
-  } else {
-    clearInput();
-  }
-};
 
 //function to scroll into the results
 export const scrollToResultPage = () => {

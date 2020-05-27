@@ -38,10 +38,16 @@
   min-height: 100vh;
   background-color: $secondary-color;
   background-size: cover;
-  background-image: url(../img/books-gestalt-min.png);
   background-attachment: fixed;
-  background-position: top right;
+  background-position: top;
   background-repeat: no-repeat;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($primary-color, $alpha: 0.2),
+      rgba($secondary-color, $alpha: 0.1)
+    ),
+    url(../img/books-gestalt-min.png);
+  
 
   h4 {
     margin-top: 1.8rem;
