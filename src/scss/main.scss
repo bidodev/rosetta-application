@@ -3,59 +3,12 @@
 // 1. Configuration and helpers
 @import "abstracts/variables", "abstracts/mixins";
 
-// 3. Layout for the Website and App
-@import "layout/site/content";
 // 2. Base stuff
 @import "base/base", "base/scrollbar", "base/loader";
 
-// 4. Layout for the App
-@import "layout/app/header.scss", "layout/app/_filters.scss",
+// 3. Layout for the App
+@import "layout/app/header.scss", "layout/app/about.scss","layout/app/_filters.scss",
   "layout/app/main.scss", "layout/app/books", "layout/app/pagination",
   "layout/app/footer", "layout/app/modal";
 
-@import "layout/site/content-queries";
 
-.introTop {
-  width: 100%;
-  height: 100vh;
-  background-color: rgb(247, 247, 247, 0.8);
-  @include flex-center-column;
-  position: relative;
-
-  h1 {
-    position: absolute;
-    top: 12%;
-    left: 50%;
-    transform: translate(-50%, -12%);
-    text-transform: uppercase;
-    font-size: 1.4rem;
-    color: rgba(31, 182, 122, 0.5);
-  }
-
-  p {
-    width: 45%;
-    font-size: 1.2rem;
-    color: rgba(31, 182, 122, 0.5);
-    padding: 5px 0;
-    line-height: 1.6;
-    text-align: justify;
-  }
-
-  // BTN See more
-  .seeMoreBtn {
-    position: absolute;
-    bottom: 12%;
-    left: 50%;
-    transform: translate(-50%, -12%);
-    padding: 15px 20px;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    color: rgba(31, 182, 122, 0.4);
-    border: 1px solid rgba(31, 182, 122, 0.4);
-    transition: 0.2s ease-in-out;
-    &:hover {
-      border: 1px solid rgba(31, 182, 122, 0.9);
-      color: rgba(31, 182, 122, 0.9);
-    }
-  }
-}
