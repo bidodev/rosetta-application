@@ -3,13 +3,10 @@
 // -------------------------------------------------------------------------------------------------------------------
 
 //import base functions and elements
-import {
-  elements,
-  configs,
-  fixedNav,
-  renderSpinner,
-  removeSpinner,
-} from "./base.js";
+import { elements, fixedNav, renderSpinner, removeSpinner } from "./base.js";
+
+//import configs
+import { configs } from "./configs.js";
 
 //import Search class
 import Search from "./models/Search.js";
@@ -106,7 +103,11 @@ const controlFilters = async () => {
 
 //EVENTS HANDLER
 //SEARCH BUTTON
+
+//development
 elements.fetchBtn.addEventListener("click", controlSearch);
+
+
 
 //EVENTS HANDLER FOR THE FILTERS BUTTONS
 //ORDERS RESULTS BY TYPE
@@ -116,18 +117,15 @@ const refineSearch = [
   elements.orderBy,
 ];
 
-refineSearch.forEach(filter => {
-  filter.addEventListener("change", controlFilters);
-});
+refineSearch.forEach(filter =>
+  filter.addEventListener("change", controlFilters)
+);
 
 //GOUP BUTTON
 elements.buttonUp.addEventListener("click", searchView.goUp);
 
 //AUTO NAVBAR
 window.addEventListener("scroll", fixedNav);
-
-//Disable search (x button)
-elements.searchQuery.addEventListener("keyup", searchView.disableSearch);
 
 //ENTER BUTTON
 document.addEventListener("keypress", event => {

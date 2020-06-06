@@ -3,159 +3,128 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- font awesome---------------- -->
     <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;1,200&display=swap"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
-      integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
-      crossorigin="anonymous"
     />
-
-    <!-- font awesome --------------->
-
+    <link rel="stylesheet" href="https://use.typekit.net/wvg6bbx.css" />
     <link rel="stylesheet" type="text/css" href="./styles/style.css" />
-    <title>Rosetta Team Project</title>
+    <title>Rosetta Search</title>
   </head>
   <body>
-    <!-- ----------------------------------- -->
-    <!-- ----------------------------------- -->
-    <!-- ----------------------------------- -->
-    <header id="header">
-      <nav>
-        <h3 class="logo"><a href="#">ROS3TTA</a></h3>
+    <div class="header-nav">
+      <nav class="navbar">
+        <h3 class="logo">
+          <a href="./index.html">ros3tta</a>
+        </h3>
         <ul>
-          <li><a href="search.html">TRY IT</a></li>
-          <li><a href="#bottomSection">LOG IN</a></li>
-          <li>
-            <a><button class="englishLang">En</button></a><a> /</a>
-            <a><button class="arabicLang">Ar</button></a>
-          </li>
+          <li id="favorites"><a href="#">My Books</a></li>
+          <li id="store"><a href="#about">About</a></li>
+          <li id="store"><a href="#search">Search</a></li>
         </ul>
       </nav>
-    </header>
-    <!-- ----------------------------------- -->
-    <!-- ----------------------------------- -->
-    <div id="page">
-      <!-- ----------------------------------- -->
-      <!-- ----------------------------------- -->
-      <section id="banner"></section>
-      <!-- ----------------------------------- -->
-      <section id="topSection"></section>
-      <!-- ----------------------------------- -->
-      <section id="middleSection">
-        <div id="middleContainer">
-          <div class="boxImgTeam1"></div>
-          <article>
-            <h3 id="memberName1">Zakaria</h3>
-            <p id="teamMember1">
-              I was responsible for designing and developing the SEARCH APP
-              |<span
-                >the tasks included: research, developing solutions, Functioning
-                the page dynamically, fixing bugs.</span
-              >
-            </p>
-          </article>
-        </div>
-        <!--  -->
-        <div id="middleContainer">
-          <div class="boxImgTeam2"></div>
-          <article>
-            <h3 id="memberName2">Bido</h3>
-            <p id="teamMember2">
-              I was the Project Manager, also responsible for the Search
-              Application and Github |<span
-                >the tasks included: Management of the team, delegate tasks,
-                integrate frontend and backend / api calls.
-              </span>
-            </p>
-          </article>
-        </div>
-        <!--  -->
-        <div id="middleContainer">
-          <div class="boxImgTeam3"></div>
-          <article>
-            <h3 id="memberName3">Melissa</h3>
-            <p id="teamMember3">
-              I was responsible for designing the Layout of the website and
-              documentation |<span
-                >the tasks included: drawing svg patterns | styling and
-                animating the site using SASS/CSS and Javascript. | README
-                files</span
-              >
-            </p>
-          </article>
-        </div>
-      </section>
-      <!-- ----------------------------------- -->
-      <!-- ----------------------------------- -->
-      <!-- ----------------------------------- -->
-      <!-- ----------------------------------- -->
-
-      <section id="bottomSection">
-        <!--  -->
-
-        <form id="form">
-          <!--  -->
-          <!--  -->
-          <!--  -->
-          <!-- USER -->
-          <div class="field-name">
-            <i class="fas fa-user"></i>
-            <input type="text" placeholder="Username" required />
-            <i class="fas fa-arrow-down"></i>
-          </div>
-          <!--  -->
-          <!--  -->
-          <!--  -->
-          <!-- EMAIL -->
-          <div class="field-email innactive">
-            <i class="fas fa-arrow-down"></i>
-            <input
-              type="email"
-              placeholder="Enter your email address"
-              required
-            />
-            <i class="fas fa-arrow-down"></i>
-          </div>
-          <!--  -->
-          <!--  -->
-          <!--  -->
-          <!-- PASSWORD -->
-
-          <div class="field-password innactive">
-            <i class="fas fa-key"></i>
-            <input type="password" placeholder="Password" required />
-            <i class="fas fa-arrow-down"></i>
-          </div>
-          <!--  -->
-          <!--  -->
-          <!--  -->
-          <!-- Field FINISH -->
-
-          <div class="field-finish innactive">
-            <i class="fas fa-heart"></i>
-            <p>Thank you</p>
-            <i class="fas fa-heart"></i>
-          </div>
-          <!--  -->
-          <!--  -->
-        </form>
-
-        <!--  -->
-      </section>
-
-      <!-- ----------------------------------- -->
-      <!-- ----------------------------------- -->
-      <!-- ----------------------------------- -->
-      <!-- ----------------------------------- -->
-      <footer id="footer"></footer>
-      <!-- ----------------------------------- -->
-      <!-- ----------------------------------- -->
     </div>
-    <!-- ----------------------------------- -->
-    <!-- ----------------------------------- -->
+    <!-- Lading Page Container-->
+    <div class="container">
+      <!-- Small Navigation on the TOP -->
+    </div>
 
-    <script src="./scripts/index-page.js"></script>
-    <script src="./scripts/form.js"></script>
+    <!-- The main container containers [filters, results, pagination and footers] -->
+    <!-- by default this whole container is hidden -->
+    <main class="main-content">
+      <!-- Footer of the page -->
+      <!--  Filters Section -->
+
+      <div id="about" class="introTop">
+        <h1  class="about">about</h1>
+        <p>
+          To this day Rosetta actively seeks new and refreshing ways to approach publishing Due to
+          our substantial range of titles, we pursue the enrichment of our reader's lives as well as
+          to continually engage with the surrounding creative landscape.
+        </p>
+        <p>
+          Since our creation we have been focusing on the aesthetic, particularly that of graphic
+          design and, over the last two decades, the scope of both our content and our expertise has
+          widened.
+        </p>
+        <p>
+          By observing a multitude of cultures, people, arts, and other intimate, inspirational
+          informants, we archive and anticipate vital movements in architecture, visual culture,
+          design &amp; fashion, escapism, food &amp; beverages, travel, and contemporary art.
+        </p>
+        <p>
+          After Little Rosetta joined the literary ranks in 2019, we aspire to ensure that there was
+          a place for reader's of all ages withing the world of Gestalten.
+        </p>
+      </div>
+      <!--  Filters Section -->
+      <section id="search" class="result">
+        <!-- Search Container -->
+
+        <h4>Stay Inspired</h4>
+        <div class="header-search">
+          <input
+            class="search-field"
+            type="search"
+            value=""
+            spellcheck="false"
+            placeholder="Search by author, book name, subject..."
+          />
+          <!-- Cta Button -->
+          <button type="button" class="fetch-values">Search</button>
+        </div>
+
+        <!-- Refefine Search -->
+        <div class="filters">
+          <select class="select-type">
+            <option value="author" selected>By Author </option>
+            <option value="title">Title</option>
+            <option value="publisher">Publisher</option>
+            <option value="subject">Subject</option>
+            <option value="isbn">Isbn</option>
+          </select>
+          <select class="search-languages">
+            <option value="en" selected>Any language</option>
+            <option value="en">English</option>
+            <option value="de">German</option>
+            <option value="pt">Portuguese</option>
+            <option value="es">Spanish</option>
+            <option value="fr">French</option>
+            <option value="ro">Romenian</option>
+            <option value="ar">Arabic</option>
+          </select>
+          <select class="order-by">
+            <option value="relevance" selected>Sort by relevance</option>
+            <option value="newest" selected>Sort by date</option>
+          </select>
+          <div class="spinnerArea"></div>
+        </div>
+      </section>
+      <!-- Parent element for the results -->
+      <section class="container-books">
+        <!-- items from the search.. -->
+        <!-- generated dinamyc on views.js -->
+      </section>
+
+      <!-- Parent element for the pagination -->
+      <div id="pagination-cont">
+        <div class="pagination">
+          <!-- generate the numbers of the pages -->
+          <!-- generated dinamyc on views.js -->
+        </div>
+      </div>
+
+      <!-- modal area -->
+      <div class="modal">
+        <div class="modal-content"></div>
+      </div>
+
+      <footer class="footer-search">
+        <div class="button-up"><div></div></div>
+      </footer>
+    </main>
+
+    <!-- ----------------JavaScript main controller---------------- -->
+    <script type="module" src="./scripts/app.js"></script>
   </body>
 </html>

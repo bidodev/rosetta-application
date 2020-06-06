@@ -11,11 +11,12 @@
     align-items: center;
 
     .logo a {
+      opacity: 0;
       text-decoration: none;
-      font-family: monospace;
-      letter-spacing: 10px;
-      color: rgba(19, 18, 18, 0.883);
+      letter-spacing: 8px;
+      color: rgb(0, 0, 0);
       font-size: 1.5rem;
+      color: #606060;
     }
 
     ul {
@@ -24,16 +25,14 @@
       li {
         display: inline;
         margin-right: 20px;
-        font-family: Arial, Helvetica, sans-serif;
         font-size: 0.8rem;
-        color: rgba(24, 22, 22, 0.877);
       }
 
       a {
         text-decoration: none;
-        color: rgb(22, 22, 22);
         border-bottom: 4px solid transparent;
         font-size: 1.1rem;
+        color: $primary-color;
         &:hover {
           color: rgba(31, 182, 122, 0.9);
           padding-bottom: 3px;
@@ -44,7 +43,50 @@
     }
   }
 }
+// ----------------------
+// navbar small
+// ----------------------
+@mixin navbar-sm {
+  nav {
+    width: 90%;
+    min-height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
+    .logo a {
+      text-decoration: none;
+      font-family: monospace;
+      letter-spacing: 7px;
+      color: rgb(0, 0, 0);
+      font-size: 0.9rem;
+    }
+
+    ul {
+      list-style: none;
+
+      li {
+        display: inline;
+        margin-right: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 0.6rem;
+        color: rgb(0, 0, 0);
+      }
+
+      a {
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+        border-bottom: 4px solid transparent;
+        &:hover {
+          color: rgba(31, 182, 122, 0.9);
+          padding-bottom: 3px;
+          border-bottom: 4px solid rgba(31, 182, 122, 0.6);
+          transition: border-bottom 0.5s ease-in-out;
+        }
+      }
+    }
+  }
+}
 // ----------------------
 
 @mixin flex-column {
@@ -79,6 +121,26 @@
   position: relative;
   margin: 10px;
 }
+@mixin boxImgTeam-sm {
+  width: 130px;
+  height: 130px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 0;
+  position: relative;
+  margin: 10px;
+}
+@mixin boxImgTeam-md {
+  width: 130px;
+  height: 130px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 0;
+  position: relative;
+  margin: 10px;
+}
 // ---------------------------
 //      FOOTER
 // ---------------------------
@@ -93,7 +155,7 @@
 
     p {
       font-size: 0.7rem;
-      color: rgba(31, 182, 122);
+      color: rgba(31, 182, 122, 0.7);
       font-family: Arial, Helvetica, sans-serif;
     }
   }

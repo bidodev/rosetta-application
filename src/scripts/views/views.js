@@ -1,18 +1,21 @@
-import { elements, configs } from "../base.js";
-import { noCover } from "../config.js";
+import { elements } from "../base.js";
 import { state } from "../app.js";
+import { configs } from "../configs.js";
 
 //import Search class
 import Book from "../models/Book.js";
 
 //query input value
-export const getSearchQuery = () => elements.searchQuery.value;
+export const getSearchQuery = () => elements.searchQuery.value.trim();
+
+//query search type value
 export const getSearchType = () => elements.searchType.value;
+
+//clear search input
 export const clearInput = () => {
-  elements.spanx.style.opacity = 0;
   elements.searchQuery.value = "";
-  elements.fetchBtn.disabled = true;
 };
+
 export const clearResults = () => (elements.booksContainer.innerHTML = "");
 
 //finction to scroll to the top of the page
@@ -20,18 +23,6 @@ export const goUp = () => {
   window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
 };
 
-export const disableSearch = function () {
-  if (elements.searchQuery.value.length > 0) {
-    elements.spanx.style.opacity = 1;
-    //add event to the x
-    elements.spanx.addEventListener("click", () => {
-      clearInput();
-    });
-    elements.fetchBtn.disabled = false;
-  } else {
-    clearInput();
-  }
-};
 
 //function to scroll into the results
 export const scrollToResultPage = () => {
@@ -62,7 +53,7 @@ const limitResults = (str, limit) => {
 
 //controller display results
 export const displayResults = () => {
-  console.log(state.search);
+  //console.log(state.search);
   //get the array of books from state
   const { result } = state.search;
 
@@ -70,7 +61,7 @@ export const displayResults = () => {
   state.currentPage = 1;
 
   //show the whole main ()
-  elements.main.style.display = "block";
+  elements.booksContainer.style.display = "grid";
 
   //generate the dinamic content
   displayList(result, elements.booksContainer, configs.rows, state.currentPage);
@@ -102,7 +93,7 @@ function paginationButton(page, items) {
   let button = document.createElement("a");
   button.innerHTML = `<a href="#" class="page">${page}</a>`;
 
-  button.addEventListener("click", (e) => {
+  button.addEventListener("click", e => {
     e.preventDefault();
     state.currentPage = page;
 
@@ -117,11 +108,9 @@ function paginationButton(page, items) {
   return button;
 }
 
-var modal = document.querySelector(".modal");
-
 async function toggleModal() {
   const id = event.target.parentElement.id;
-  const found = state.search.result.find((element) => element.id === id);
+  //const found = state.search.result.find(element => element.id === id);
 
   state.book = new Book(id);
 
@@ -138,6 +127,7 @@ async function toggleModal() {
     categories,
     imageLinks,
   } = state.book.result;
+  console.log("imageLinks", imageLinks);
 
   //workarround to fix undefined
   function checkImg(imgObj) {
@@ -148,7 +138,7 @@ async function toggleModal() {
         return imgObj.thumbnail;
       }
     } else {
-      return noCover;
+      return configs.noCover;
     }
   }
   document.querySelector(".modal-content").innerHTML = `
@@ -188,16 +178,16 @@ async function toggleModal() {
   </div>
 </div>
   `;
-  modal.classList.add("show-modal");
-  document.querySelector(".header-nav").classList.add("hidden");
+  elements.modal.classList.add("show-modal");
+  elements.navbar.classList.add("hidden");
   document
     .querySelector(".close-button")
     .addEventListener("click", windowOnClick);
 }
 
 function windowOnClick() {
-  modal.classList.remove("show-modal");
-  document.querySelector(".header-nav").classList.remove("hidden");
+  elements.modal.classList.remove("show-modal");
+  elements.navbar.classList.remove("hidden");
 }
 
 // __________________ display the results inside the div _________________________//
@@ -208,7 +198,7 @@ function displayList(items, wrapper, itemsPerPage, page) {
   let end = start + itemsPerPage;
   let paginatedItems = items.slice(start, end); // to get an array out of the displayed items in each page
 
-  paginatedItems.forEach((item) => {
+  paginatedItems.forEach(item => {
     let {
       id,
       title,
@@ -234,7 +224,7 @@ function displayList(items, wrapper, itemsPerPage, page) {
     `;
     elements.booksContainer.insertAdjacentHTML("beforeend", markUp); //   value to display in each div
     const box = document.querySelectorAll(".img-box");
-    box.forEach((book) => {
+    box.forEach(book => {
       book.addEventListener("click", toggleModal);
     });
   });

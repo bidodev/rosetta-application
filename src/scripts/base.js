@@ -14,19 +14,14 @@ export const elements = {
   fetchBtn: document.querySelector(".fetch-values"),
   container: document.querySelector(".container"),
   filters: document.querySelector(".filters"),
-  buttonUp: document.querySelector(".button_up"),
+  buttonUp: document.querySelector(".button-up"),
   searchHeader: document.getElementById("header"),
   spanx: document.querySelector(".spanX"),
   navbar: document.querySelector(".header-nav"),
   pagination: document.querySelector(".pagination"),
   main: document.querySelector(".main-content"),
   spinnerArea: document.querySelector(".spinnerArea"),
-};
-
-export const configs = {
-  defaultLanguage: "en",
-  rows: 8, //how many items generate in each page (pagination)
-  maxResults: 32, //how many items get from the API.
+  modal: document.querySelector(".modal"),
 };
 
 export const elementsStr = {
@@ -36,7 +31,11 @@ export const elementsStr = {
 //insert the spinner loader..
 export const renderSpinner = (parent, where) => {
   const loader = `
-  <div class="${elementsStr.loader}"></div>`;
+  <div class="${elementsStr.loader}">
+    <svg>
+      <use href="img/icons.svg#icon-cw"></use>
+    </svg>
+  </div>`;
   parent.insertAdjacentHTML(where, loader);
   /** element.insertAdjacentHTML(position, text);
    * Parameters
