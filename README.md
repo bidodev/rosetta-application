@@ -1,4 +1,10 @@
+# Rosetta - Bookfinder Website / App
 
+Credits go to:
+
+- Bido: https://github.com/bidodev
+- Zakaria: https://github.com/ZakariaHn
+- Melissa: https://github.com/nadiamariduena
 
 ![preview](https://imagizer.imageshack.com/img923/6141/XXyabD.jpg)
 
