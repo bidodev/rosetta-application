@@ -61,7 +61,7 @@ export const displayResults = () => {
   state.currentPage = 1;
 
   //show the whole main ()
-  elements.main.style.display = "block";
+  elements.booksContainer.style.display = "grid";
 
   //generate the dinamic content
   displayList(result, elements.booksContainer, configs.rows, state.currentPage);
