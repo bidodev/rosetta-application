@@ -1,6 +1,12 @@
 # Rosetta - Bookfinder Website / App
 
-Credits go to:
+> From version 2.0 onwards the credits goes to
+- Bido: https://github.com/bidodev
+
+> > The version deployed on Github Pages is version 2.0
+
+## Older Releases
+### Version 1.0
 
 - Bido: https://github.com/bidodev
 - Zakaria: https://github.com/ZakariaHn
