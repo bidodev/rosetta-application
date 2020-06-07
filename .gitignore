@@ -5,5 +5,3 @@ node_modules/
 
 #css styles
 src/styles/
-
-.prettierrc

@@ -1,8 +1,15 @@
 // -----------------------------------------------------------------------------
 // This file contains all application-wide Sass variables.
 // -----------------------------------------------------------------------------
-
 /// Copy text color
 /// @type Color
-$primary-color: rgba(31, 182, 122, 1) !default;
-$secondary-color: rgba(243, 243, 243, 1) !default;
+$primary-color: rgb(31, 182, 122) !default;
+$secondary-color: rgb(243, 243, 243) !default;
+$tertiary-color: rgb(229, 229, 229) !default;
+
+:root {
+  // RIGHT, will work in all Sass versions.
+  --primary-color: #{$primary-color};
+}
+
+
