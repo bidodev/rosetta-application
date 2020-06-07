@@ -1,29 +1,45 @@
 {
-  "name": "rosetta-searching",
-  "version": "1.0.0",
-  "description": "Rosetta",
+  "name": "rosetta-book-finder",
+  "version": "2.0.0",
+  "description": "Wsetta-book-finder",
   "main": "index.js",
   "scripts": {
-    "start": "run-p liveserver watch:styles",
-    "build": "run-s clean clean:styles build:styles prefix:css copy",
-    "deploy": "run-s build publish",
-    "liveserver": "live-server src",
-    "build:styles": "sass src/scss/main.scss:src/styles/style.css",
-    "watch:styles": "sass src/scss/main.scss:src/styles/style.css --watch",
-    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' src/styles/style.css -o src/styles/style.css",
-    "clean": "rm -rf dist",
-    "clean:styles": "rm -rf src/styles",
-    "copy": "mkdir dist && rsync -avr --exclude=\"/scss\" src/ dist",
-    "publish": "gh-pages -d dist",
-    "ungit": "ungit"
+    "dev": "webpack --mode development --watch",
+    "build": "webpack --mode production",
+    "deploy": "npm run build && gh-pages -d dist"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bidodev/rosetta-application.git"
+  },
+  "keywords": [],
   "author": "Bido",
-  "license": "ISC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bidodev/rosetta-application/issues"
+  },
+  "homepage": "https://github.com/bidodev/rosetta-application#readme",
   "devDependencies": {
-    "autoprefixer": "^9.7.6",
-    "gh-pages": "^2.1.1",
-    "npm-run-all": "^4.1.1",
-    "postcss-cli": "^7.1.0",
-    "sass": "^1.26.3"
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "autoprefixer": "^9.4.10",
+    "babel-loader": "^8.0.5",
+    "@babel/plugin-transform-runtime": "^7.10.1",
+    "@babel/runtime": "^7.10.2",
+    "browser-sync": "^2.26.3",
+    "browser-sync-webpack-plugin": "^2.2.2",
+    "css-loader": "^2.1.1",
+    "file-loader": "^3.0.1",
+    "gh-pages": "^2.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "node-sass": "^4.11.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "uglifyjs-webpack-plugin": "^2.1.2",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3"
   }
 }

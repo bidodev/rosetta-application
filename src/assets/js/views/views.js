@@ -1,5 +1,5 @@
 import { elements } from "../base.js";
-import { state } from "../app.js";
+import { state } from "../index.js";
 import { configs } from "../configs.js";
 
 //import Search class

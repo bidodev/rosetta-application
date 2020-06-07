@@ -1,18 +1,19 @@
 // -------------------------------------------------------------------------------------------------------------------
 // This file contains the controller (Accepts input and converts it to commands for the model or view.)
 // -------------------------------------------------------------------------------------------------------------------
+import "@scss/main.scss";
 
 //import base functions and elements
-import { elements, fixedNav, renderSpinner, removeSpinner } from "./base.js";
+import { elements, fixedNav, renderSpinner, removeSpinner } from "./base";
 
 //import configs
-import { configs } from "./configs.js";
+import { configs } from "./configs";
 
 //import Search class
-import Search from "./models/Search.js";
+import Search from "./models/Search";
 
 //import everything which is public from views as searcView
-import * as searchView from "./views/views.js";
+import * as searchView from "./views/views";
 
 /**Global state of the application
  * - Search object
