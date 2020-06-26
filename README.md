@@ -1,8 +1,6 @@
 # Rosetta - Bookfinder Website / App
 > The version deployed on Github Pages is version 2.0
 
-# Project "Instagram mock-up"
-
 ## About: 
 1. This was a group project from **DCI's WEB Development Course**, which We attended between 2019 - 2021. 
 
@@ -21,3 +19,9 @@
 #### Documentation
 * <a href="https://github.com/bidodev/rosetta-application/tree/master/docs" alt="instagram-lookalike" target="_blank">API Queries</a>
 
+## Images Preview
+### A simple Search with some filters
+![screenshot](./docs/imgs/results.png)
+
+### Modal preview of a book.
+![screenshot](./docs/imgs/modal.png)
