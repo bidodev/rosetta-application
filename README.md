@@ -20,8 +20,11 @@
 * <a href="https://github.com/bidodev/rosetta-application/tree/master/docs" alt="instagram-lookalike" target="_blank">API Queries</a>
 
 ## Images Preview
-### A simple Search with some filters
+### A Search by Author
 ![screenshot](./docs/imgs/results.png)
+
+### Filters
+![screenshot](./docs/imgs/filters.png)
 
 ### Modal preview of a book.
 ![screenshot](./docs/imgs/modal.png)
