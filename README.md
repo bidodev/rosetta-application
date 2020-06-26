@@ -3,10 +3,12 @@
 
 # Project "Instagram mock-up"
 
-## **About**: 
+## About: 
 1. This was a group project from **DCI's WEB Development Course**, which We attended between 2019 - 2021. 
-2. The application was built using Javascript, HTML and SASS. The mainly goal was the use of APIs and DOM Manipulation.
-3. This project uses *Google Books API*, *Webpack*, *Babel*, *MVC Design Pattern* 
+
+### 🚀 Technologies used
+1. The application was built using Javascript, HTML and SASS. The mainly goal was the use of APIs and DOM Manipulation.
+2. This project uses *Google Books API*, *Webpack*, *Babel*, *MVC Design Pattern* 
 
 ### Credits goes to:
 - Bido: https://github.com/bidodev
