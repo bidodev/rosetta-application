@@ -1,5 +1,5 @@
 # Rosetta - Bookfinder Website / App
-> > The version deployed on Github Pages is version 2.0
+> The version deployed on Github Pages is version 2.0
 
 # Project "Instagram mock-up"
 
@@ -15,8 +15,9 @@
 - Zakaria: https://github.com/ZakariaHn
 - Melissa: https://github.com/nadiamariduena
 
-#### Live Version: 
-https://bidodev.github.io/rosetta-application/
+#### Live Version
+* <a href="https://bidodev.github.io/rosetta-application" alt="deployed-version" target="_blank">Deployed Version</a>
 
 #### Documentation
-* [https://github.com/bidodev/rosetta-application/tree/master/docs](API Queries)
+* <a href="https://github.com/bidodev/rosetta-application/tree/master/docs" alt="instagram-lookalike" target="_blank">API Queries</a>
+
