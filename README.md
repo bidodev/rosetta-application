@@ -24,7 +24,7 @@
 ![screenshot](./docs/imgs/results.png)
 
 ### Filters Options
-![screenshot](./docs/imgs/results.png)
+![screenshot](./docs/imgs/filters.png)
 
 ### Modal preview of a book.
 ![screenshot](./docs/imgs/modal.png)
