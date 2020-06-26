@@ -1,20 +1,20 @@
 # Rosetta - Bookfinder Website / App
 > > The version deployed on Github Pages is version 2.0
 
-> From version 2.0 onwards the credits goes to
-- Bido: https://github.com/bidodev
+# Project "Instagram mock-up"
 
-## Older Releases
-### Credits version 1.0
+## **About**: 
+1. This was a group project from **DCI's WEB Development Course**, which We attended between 2019 - 2021. 
+2. The application was built using Javascript, HTML and SASS. The mainly goal was the use of APIs and DOM Manipulation.
+3. This project uses *Google Books API*, *Webpack*, *Babel*, *MVC Design Pattern* 
 
+### Credits goes to:
 - Bido: https://github.com/bidodev
 - Zakaria: https://github.com/ZakariaHn
 - Melissa: https://github.com/nadiamariduena
 
-![preview](https://imagizer.imageshack.com/img923/6141/XXyabD.jpg)
+#### Live Version: 
+https://bidodev.github.io/rosetta-application/
 
-![preview](https://imagizer.imageshack.com/img922/8571/TCxmVD.jpg)
-
-![preview](https://imagizer.imageshack.com/img924/3499/mHIOdx.jpg)
-
-![preview](https://imagizer.imageshack.com/img922/1220/7i1jyv.jpg)
+#### Documentation
+* [https://github.com/bidodev/rosetta-application/tree/master/docs](API Queries)
