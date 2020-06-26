@@ -23,8 +23,8 @@
 ### A Search by Author
 ![screenshot](./docs/imgs/results.png)
 
-### Filters
-![screenshot](./docs/imgs/filters.png)
+### Filters Options
+![screenshot](./docs/imgs/results.png)
 
 ### Modal preview of a book.
 ![screenshot](./docs/imgs/modal.png)
