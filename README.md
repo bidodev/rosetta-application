@@ -1,5 +1,5 @@
 # Rosetta - Bookfinder Website / App
-> The version deployed on Github Pages is version 2.0
+![screenshot](./docs/imgs/rosetta.png)
 
 ## About: 
 1. This was a group project from **DCI's WEB Development Course**, which We attended between 2019 - 2021. 
